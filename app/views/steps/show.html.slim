@@ -1,6 +1,7 @@
 p#notice = notice
 
-
-= link_to 'Edit', edit_step_path(@step)
-'  |
-= link_to 'Back', steps_path
+ul
+  h1 Show Step
+  li = link_to 'User', user_path(current_user), controller: :user
+  li = link_to 'Edit', edit_step_path(@step)
+  li = link_to 'Back', steps_path

@@ -2,7 +2,13 @@ h1 Editing job
 
 == render 'form'
 
+== render 'steps/form'
+
+ul
+  h3 Steps
+  - @job.steps.each do |s|
+    li =s.title
+
 = link_to 'Show', @job
 '  |
 = link_to 'Back', jobs_path
-

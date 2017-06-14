@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#home'
   resources :users, controller: 'users'
   resources :jobs, controller: 'jobs'
+  resources :steps, controller: 'steps'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

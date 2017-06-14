@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = current_user.jobs.all
   end
 
   # GET /jobs/1
@@ -13,12 +13,18 @@ class JobsController < ApplicationController
   end
 
   # GET /jobs/new
+
   def new
     @job = Job.new
+    # render :"steps/new"
+
+
   end
 
   # GET /jobs/1/edit
   def edit
+    @job = Job.find(params[:id])
+    @step = @job.steps.new
   end
 
   # POST /jobs

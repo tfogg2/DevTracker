@@ -1,7 +1,8 @@
-= simple_form_for(@step) do |f|
+= simple_form_for @step do |f|
   = f.error_notification
 
-  .form-inputs
+  .form-inputs = f.input :title
+  .form-inputs = f.input :job_id, as: :hidden
+  .form-inputs = f.input :time
 
-  .form-actions
-    = f.button :submit
+  .form-actions = f.button :submit
