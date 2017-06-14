@@ -1,0 +1,28 @@
+p#notice = notice
+ul
+  li = @user.name
+  li = @user.email
+  -if @user.email === current_user.email
+    li = link_to 'Edit', edit_user_path(@user)
+
+
+div class="jobs"
+  div class="jobs-header"
+    h4 Jobs
+  div class="jobs-body"
+    - @user.jobs.each do |job|
+      li = job.client
+    button = link_to 'Create Job', new_job_path(@user)
+
+
+
+
+
+
+
+
+
+
+
+
+= link_to 'Back', users_path
