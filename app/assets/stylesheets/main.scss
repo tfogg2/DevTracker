@@ -1,0 +1,38 @@
+ul{
+  list-style: none;
+}
+a{
+  // text-decoration: none;
+  color: #3c3c3c;
+}
+h1{
+  color: #797979;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    black;
+     opacity: .5;
+}
+#nav{
+  float: right;
+}
+#content{
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-inputs{
+  margin: 20px 0;
+}
+.form-inputs input{
+  margin: 10px 0;
+  width: 400px;
+  height: 25px;
+  padding: 5px;
+  font-size: 90%;
+  // border-radius: 10px;
+}
+.form-actions input{
+  width: 200px;
+  height: 40px;
+  margin-bottom: 10px;
+}

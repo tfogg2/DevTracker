@@ -11,24 +11,10 @@ div class="jobs"
     h4 Jobs
   div class="jobs-body"
     - @user.jobs.each do |job|
-      li = link_to job.client, edit_job_path(job)
+      li = link_to job.name, edit_job_path(job)
       -if job.steps.any?
         ul
           h4 Steps
           - job.steps.each do |step|
             li = step.title
     button = link_to 'Create Job', new_job_path(@user)
-
-
-
-
-
-
-
-
-
-
-
-
-
-= link_to 'Back', users_path

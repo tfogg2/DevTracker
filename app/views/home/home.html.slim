@@ -1,10 +1,19 @@
 nav id="navbar"
-  h1 id="logo" TrackTheDev.com
-  ul class="nav"
 
-    - if user_signed_in?
-      li = link_to current_user.email, user_path(current_user)
-      li = link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete
-    - else
-      li = link_to "Login", new_user_session_path
-      li = link_to "Signup for free", new_user_registration_path
+  h1 class="dash" A simple dashboard for your freelance project(s).
+  - if user_signed_in?
+    button = link_to "Start your first project", new_job_path
+  -else
+    button = link_to "Start your first project", new_user_registration_path
+  div class="login"
+    p Already started?
+    = link_to "Login", new_user_session_path
+
+
+  /ul class="nav"
+  /  - if user_signed_in?
+  /    li = link_to current_user.email, user_path(current_user)
+  /    li = link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete
+  /  - else
+  /    li = link_to "Login", new_user_session_path
+  /    li = link_to "Signup for free", new_user_registration_path
