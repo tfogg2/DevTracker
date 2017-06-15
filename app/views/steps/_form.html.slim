@@ -1,4 +1,4 @@
-= simple_form_for @step do |f|
+= simple_form_for [@project, @step] do |f|
   = f.error_notification
 
   .form-inputs = f.input :title, placeholder: "Title", label: false

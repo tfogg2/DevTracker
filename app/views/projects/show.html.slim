@@ -7,7 +7,7 @@ div id="project-show"
   div id="progress-bar"
     p This is where the progress bar will go
   div id="steps"
-    button = link_to "Add Step", '#', class: "create-step modal-btn"
+    button = link_to "Add Step", '#', class: "create-step modal-btn", data: {'project-id': @project.id}
 
     -if @project.steps.any?
     ol

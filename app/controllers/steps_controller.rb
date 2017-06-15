@@ -1,10 +1,11 @@
 class StepsController < ApplicationController
+  before_action :set_project
   before_action :set_step, only: [:show, :edit, :update, :destroy]
 
   # GET /steps
   # GET /steps.json
   def index
-    @steps = Step.all
+    @steps = @project.steps.all
   end
 
   # GET /steps/1
@@ -14,7 +15,7 @@ class StepsController < ApplicationController
 
   # GET /steps/new
   def new
-    @step = Step.new
+    @step = @project.steps.new
   end
 
   # GET /steps/1/edit
@@ -24,15 +25,14 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-
-    @step = Step.new(step_params)
+    @step = @project.steps.new(step_params)
 
     respond_to do |format|
       if @step.save
-        format.html { redirect_to @step, notice: 'Step was successfully created.' }
+        format.html { redirect_to project_path(@project), notice: 'Step was successfully created.' }
         format.json { render :show, status: :created, location: @step }
       else
-        format.html { render :new }
+        format.html { redirect_to project_path(@project), notice: 'Step was successfully created.' }
         format.json { render json: @step.errors, status: :unprocessable_entity }
       end
     end
@@ -64,8 +64,12 @@ class StepsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_project
+      @project = current_user.projects.find(params[:project_id])
+    end
+
     def set_step
-      @step = Step.find(params[:id])
+      @step = @project.steps.find(params[:step_id] || params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

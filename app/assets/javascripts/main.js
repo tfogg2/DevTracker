@@ -32,7 +32,8 @@ $(document).ready(function(){
 		// var modal = document.getElementById('modal');
 	});
 	$('.create-step').on('click', function(){
-		$.getScript('/steps/new');
+		var project_id = $(this).data('project-id');
+		$.getScript('/projects/'+project_id+'/steps/new');
 		// $('#modal').show();
 		// Do this at the end so it doesn't actually click the link!
 		return false;
