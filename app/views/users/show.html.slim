@@ -6,15 +6,15 @@ ul
     li = link_to 'Edit', edit_user_path(@user)
 
 
-div class="jobs"
-  div class="jobs-header"
-    h4 Jobs
-  div class="jobs-body"
-    - @user.jobs.each do |job|
-      li = link_to job.name, edit_job_path(job)
-      -if job.steps.any?
+div class="projects"
+  div class="projects-header"
+    h4 Projects
+  div class="projects-body"
+    - @user.projects.each do |project|
+      li = link_to project.name, edit_project_path(project)
+      -if project.steps.any?
         ul
           h4 Steps
-          - job.steps.each do |step|
+          - project.steps.each do |step|
             li = step.title
-    button = link_to 'Create Job', new_job_path(@user)
+    button = link_to 'Create project', new_project_path(@user)

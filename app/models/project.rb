@@ -1,5 +1,5 @@
-class Job < ApplicationRecord
+class Project < ApplicationRecord
 	belongs_to :user
 	has_many :steps
-	
+
 end

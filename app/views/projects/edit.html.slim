@@ -1,15 +1,15 @@
-h1 Edit job
+h1 Edit Project
 
 == render 'form'
 
 h3 Add Steps
 == render 'steps/form'
 
--if @job.steps.any?
+-if @project.steps.any?
 ul
   h3 Steps
-  - @job.steps.each do |s|
+  - @project.steps.each do |s|
     li = s.title
-= link_to 'Show', @job
+= link_to 'Show', @project
 '  |
 = link_to current_user.email, user_path(current_user)
