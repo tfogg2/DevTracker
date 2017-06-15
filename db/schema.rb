@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615165508) do
+ActiveRecord::Schema.define(version: 20170615175602) do
 
-  create_table "jobs", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "client"
-    t.integer "time"
+    t.integer "hours"
     t.integer "user_id"
     t.string "name"
     t.string "description"
-    t.index ["user_id"], name: "index_jobs_on_user_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "steps", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.integer "time"
-    t.boolean "completion", default: false
+    t.integer "hours"
     t.integer "job_id"
+    t.string "status"
     t.index ["job_id"], name: "index_steps_on_job_id"
   end
 
