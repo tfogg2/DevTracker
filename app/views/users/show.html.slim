@@ -17,4 +17,4 @@ div class="projects"
           h4 Steps
           - project.steps.each do |step|
             li = step.title
-    button = link_to 'Create project', new_project_path(@user), class: "modal-btn"
+    button = link_to 'Create project', '#', class: "modal-btn create-project"
