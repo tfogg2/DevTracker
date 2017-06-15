@@ -9,7 +9,9 @@
   </head>
 
   <body>
-
+    <div id="modal">
+      <div id="modal-holder"></div>
+    </div>
     <ul id="nav">
       <%- if user_signed_in? %>
          <li><%= link_to current_user.email, user_path(current_user) %>
@@ -22,7 +24,6 @@
     <div id="content">
       <h1><%= link_to "FreeDash.io", root_path %></h1>
       <%= yield %>
-      <div id="modal-holder"></div>
     </div>
   </body>
 </html>

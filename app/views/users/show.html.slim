@@ -11,10 +11,10 @@ div class="projects"
     h4 Projects
   div class="projects-body"
     - @user.projects.each do |project|
-      li = link_to project.name, edit_project_path(project)
+      li = link_to project.name, project_path(project)
       -if project.steps.any?
         ul
           h4 Steps
           - project.steps.each do |step|
             li = step.title
-    button = link_to 'Create project', new_project_path(@user), class: "modal-btn"
+    button = link_to 'Create project', '#', class: "modal-btn create-project", data: @user.id

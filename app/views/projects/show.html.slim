@@ -7,8 +7,14 @@ div id="project-show"
   div id="progress-bar"
     p This is where the progress bar will go
   div id="steps"
+    button = link_to "Add Step", '#', class: "create-step modal-btn"
+
+    -if @project.steps.any?
     ol
-      li This is where the steps will go.
+      h3 Steps
+      - @project.steps.each do |s|
+        li = s.title
+        li This is where the steps will go.
 
 = link_to 'Edit', edit_project_path(@project)
 '  |
