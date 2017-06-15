@@ -16,9 +16,8 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    # respond_modal_with @project
     # render :"steps/new"
-
-
   end
 
   # GET /projects/1/edit
@@ -32,6 +31,7 @@ class ProjectsController < ApplicationController
   def create
     @user = current_user
     @project = current_user.projects.new(project_params)
+    # respond_modal_with @project, location: user_path
 
     respond_to do |format|
       if @project.save
