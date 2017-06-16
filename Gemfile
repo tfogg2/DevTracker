@@ -30,6 +30,9 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'delayed_job_active_record'
+gem 'progress_job'
+
 gem "react-rails"
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

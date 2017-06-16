@@ -2,9 +2,13 @@ nav id="navbar"
 
   h1 class="dash" A simple dashboard for your freelance project(s).
   - if user_signed_in?
-    button = link_to "Start your first project", new_project_path
+    = link_to new_project_path do
+      button class="start-btn" Start your first project
+    end
   -else
-    button = link_to "Start your first project", new_user_registration_path
+     = link_to new_user_registration_path do
+       button class="start-btn" Start your first project
+     end
   div class="login"
     p Already started?
     = link_to "Login", new_user_session_path

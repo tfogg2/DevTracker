@@ -1,9 +1,9 @@
 p#notice = notice
-ul
-  li = @user.name
-  li = @user.email
-  -if @user.email === current_user.email
-    li = link_to 'Edit', edit_user_path(@user)
+/ul
+/  li = @user.name
+/  li = @user.email
+/  -if @user.email === current_user.email
+/    li = link_to 'Edit', edit_user_path(@user)
 
 
 div class="projects"
@@ -17,4 +17,6 @@ div class="projects"
           h4 Steps
           - project.steps.each do |step|
             li = step.title
-    button = link_to 'Create project', '#', class: "modal-btn create-project", data: @user.id
+    = link_to '#', data: @user.id do
+      button class="modal-btn create-project" Create Project
+    end

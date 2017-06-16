@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
   before_action :set_project
   before_action :set_step, only: [:show, :edit, :update, :destroy]
+  helper_method :status_label
 
   # GET /steps
   # GET /steps.json
@@ -20,6 +21,8 @@ class StepsController < ApplicationController
 
   # GET /steps/1/edit
   def edit
+
+
   end
 
   # POST /steps
@@ -43,7 +46,7 @@ class StepsController < ApplicationController
   def update
     respond_to do |format|
       if @step.update(step_params)
-        format.html { redirect_to @step, notice: 'Step was successfully updated.' }
+        format.html { redirect_to project_path(@project), notice: 'Step was successfully updated.' }
         format.json { render :show, status: :ok, location: @step }
       else
         format.html { render :edit }

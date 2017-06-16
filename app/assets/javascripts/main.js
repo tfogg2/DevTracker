@@ -39,6 +39,20 @@ $(document).ready(function(){
 		return false;
 		// var modal = document.getElementById('modal');
 	});
+
+	var step = document.getElementsByClassName('step-title')
+	console.log(step)
+	$(step).on('click', function(){
+		var project_id = $(this).data('project-id');
+		var step_id = $(this).data('step-id')
+		$.getScript('/projects/'+project_id+'/steps/'+step_id+'/edit');
+
+		return false;
+	});
+
+
+
+
 });
 // $('.modal-btn').on('click', function(){
 //   var data = $(this).data.val();

@@ -2,11 +2,20 @@ ul{
   list-style: none;
 }
 a{
-  // text-decoration: none;
   color: #3c3c3c;
 }
 h1{
   color: #797979;
+}
+button{
+  height: 40px;
+  width: 200px;
+  border-radius: 3px;
+  background-color: #fff;
+
+}
+button a{
+  text-decoration: none;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    black;
@@ -42,6 +51,21 @@ h1{
     width: 60%; /* Could be more or less, depending on screen size */
     text-align: center;
 }
+.login p{
+  margin: 25px auto 2px auto;
+}
+#nav li{
+  display: inline-block;
+  text-align: center;
+}
+.dash{
+  font-size: 200%;
+  margin-bottom: 100px;
+}
+.logo{
+  width: 200px;
+  margin: 0 auto 100px auto;
+}
 .form-inputs{
   margin: 20px 0;
 }
@@ -55,5 +79,17 @@ h1{
 }
 .actions input{
   width: 200px;
-  margin-bottom: 10px;
+  margin: 15px auto;
+}
+#progress-bar{
+  width: 70%;
+  height: 20px;
+  border: 1px solid #888;
+  margin: 0px auto 20px auto;
+  border-radius: 10px;
+}
+.inner-progress-bar{
+  background: #999;
+  height: 20px;
+  border-radius: 12px;
 }
