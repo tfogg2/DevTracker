@@ -20,6 +20,10 @@ button a{
 p{
   margin: 0;
 }
+#notice{
+
+  text-align: center;
+}
 // table {
 //     counter-reset: rowNumber;
 //     tex
@@ -74,9 +78,6 @@ p{
   display: inline-block;
   text-align: center;
 }
-.share{
-  margin: 15px auto;
-}
 .dash{
   // font-size: 200%;
   margin: 130px auto;
@@ -120,10 +121,7 @@ p{
 .dash-mid{
   width: 60%
 }
-.dash-title, .dash-share{
-  width: 20%;
 
-}
 #step_description{
   width: 414px;
   min-height: 40px;
@@ -132,10 +130,9 @@ p{
 .create-step button{
   margin: 20px auto;
 }
-#steps{
+#steps, #projects{
   width: 75%;
   margin: 20px auto;
-  border: .5px ;
 }
 .step{
   text-align: left;
@@ -144,6 +141,20 @@ p{
   margin: 15px 0 0 0;
   min-height: 45px;
   border-bottom: .5px solid #cfcfcf;
+}
+.project{
+  width: 100%;
+  margin: 15px 0 0 0;
+  min-height: 25px;
+  border-bottom: .5px solid #cfcfcf;
+}
+.progress-bar{
+  width: 60%;
+  float: left;
+}
+.project-title, .share{
+  width: 20%;
+  float: left;
 }
 .title{
   float:left;
