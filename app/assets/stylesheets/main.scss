@@ -74,6 +74,9 @@ p{
   display: inline-block;
   text-align: center;
 }
+.share{
+  margin: 15px auto;
+}
 .dash{
   // font-size: 200%;
   margin: 130px auto;
@@ -99,10 +102,10 @@ p{
 }
 
 #progress-bar{
-  width: 70%;
+  width: 60%;
   height: 15px;
   border: 1px solid #888;
-  margin: 20px auto 20px auto;
+  margin: 40px auto 40px auto;
   border-radius: 10px;
 }
 .inner-progress-bar{
@@ -126,9 +129,9 @@ p{
   min-height: 40px;
   font-size: 90%;
 }
-// .step-btn{
-//   margin: 20px auto;
-// }
+.create-step button{
+  margin: 20px auto;
+}
 #steps{
   width: 75%;
   margin: 20px auto;
