@@ -1,29 +1,36 @@
 p#notice = notice
 
 div id="project-show"
-  h1 = @project.name
-  h3  = @project.description
-  p = link_to "Share Project", root_path
-  p Progress:
+  div id="project-title"
+    h1 = @project.name
+    h3  = @project.description
+    p = link_to "Share Project", root_path
+    p Progress:
   div id="progress-bar"
     div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
 
 
-  div id="steps"
-    /button = link_to "Add Step", '#', class: "create-step modal-btn", data: {'project-id': @project.id}
-    = link_to '#', class:"create-step", data: {'project-id': @project.id} do
-      button class="modal-btn" Add Step
-    end
+div id="steps"
+  -if @project.steps.any?
+    - @project.steps.each do |s|
+      div class="step"
+        div class="title"
+          p = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
+            span
+              = s.title + ' (Approx '
+            span
+              = s.hours.to_s + ' hours):'
+        div class="status"
+          span = status_label(s)
+        div class="description"
+          div class="break"
+          span = s.description
+  end
+  /button = link_to "Add Step", '#', class: "create-step modal-btn", data: {'project-id': @project.id}
+div class="step-btn" = link_to '#', class:"create-step", data: {'project-id': @project.id} do
+  button class="modal-btn" Add Step
+end
     /create table
-    -if @project.steps.any?
-    ol
-      h3 Steps
-      - @project.steps.each do |s|
-        ul
-          li = link_to s.title, edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id }
-          li = s.hours
-          li = status_label(s)
-
 
 
 = link_to 'Edit', edit_project_path(@project)

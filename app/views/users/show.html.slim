@@ -10,13 +10,25 @@ div class="projects"
   div class="projects-header"
     h4 Projects
   div class="projects-body"
-    - @user.projects.each do |project|
-      li = link_to project.name, project_path(project)
-      -if project.steps.any?
-        ul
-          h4 Steps
-          - project.steps.each do |step|
-            li = step.title
+    table class="dash"
+      thead
+        tr
+          th
+          th
+          th
+
+      tbody
+        - @user.projects.each do |project|
+          tr
+            td = link_to project.name, project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': @user.id}
+            td class="dash-mid"
+            td class="dash-share" Share
+        end
+      /-if project.steps.any?
+      /  ul
+        /  h4 Steps
+        /  - project.steps.each do |step|
+        /    li = step.title
     = link_to '#', data: @user.id do
       button class="modal-btn create-project" Create Project
     end

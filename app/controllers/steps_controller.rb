@@ -13,6 +13,10 @@ class StepsController < ApplicationController
   # GET /steps/1.json
   def show
   end
+  def status_label
+    #status_label = ['not_started', 'in_progress', 'completed']
+    status_label = ['Not Started', 'In Progress', 'Completed']
+  end
 
   # GET /steps/new
   def new
@@ -77,6 +81,6 @@ class StepsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def step_params
-      params.require(:step).permit(:title, :project_id, :hours, :status)
+      params.require(:step).permit(:title, :project_id, :hours, :status, :description)
     end
 end

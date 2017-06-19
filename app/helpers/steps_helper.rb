@@ -4,7 +4,8 @@ module StepsHelper
     label = "Not Started"
     if step.status == 'completed'
       label = "Completed"
-    else step.status== 'in_progress'
+    end
+    if step.status == 'in_progress'
       label = "In Progress"
     end
     label

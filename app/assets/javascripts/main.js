@@ -40,15 +40,23 @@ $(document).ready(function(){
 		// var modal = document.getElementById('modal');
 	});
 
-	var step = document.getElementsByClassName('step-title')
-	console.log(step)
+	var step = document.getElementsByClassName('step-title');
+	console.log(step);
 	$(step).on('click', function(){
 		var project_id = $(this).data('project-id');
-		var step_id = $(this).data('step-id')
+		var step_id = $(this).data('step-id');
 		$.getScript('/projects/'+project_id+'/steps/'+step_id+'/edit');
 
 		return false;
 	});
+
+		var user_id = $('.dash-title').data('user-id');
+		var project_id = $('.dash-title').data('project-id');
+		console.log(user_id);
+		console.log(project_id);
+		$.getScript('/users/' + user_id + '/projects/' + project_id + '/shared/bar');
+
+
 
 
 

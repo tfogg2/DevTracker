@@ -17,6 +17,22 @@ button{
 button a{
   text-decoration: none;
 }
+p{
+  margin: 0;
+}
+// table {
+//     counter-reset: rowNumber;
+//     tex
+// }
+//
+// table tr {
+//     counter-increment: rowNumber;
+// }
+// table tr td:first-child::before {
+//     content: counter(rowNumber);
+//     min-width: 1em;
+//     margin-right: 0.5em;
+// }
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    black;
      opacity: .5;
@@ -45,7 +61,7 @@ button a{
 #modal-holder {
     background-color: #fefefe;
     left: 100px;
-    margin: 15% 15% 0 25%; /* 15% from the top and centered */
+    margin: 15% auto 0 auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
@@ -59,12 +75,12 @@ button a{
   text-align: center;
 }
 .dash{
-  font-size: 200%;
-  margin-bottom: 100px;
+  // font-size: 200%;
+  margin: 130px auto;
 }
 .logo{
   width: 200px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 60px auto;
 }
 .form-inputs{
   margin: 20px 0;
@@ -81,15 +97,66 @@ button a{
   width: 200px;
   margin: 15px auto;
 }
+
 #progress-bar{
   width: 70%;
-  height: 20px;
+  height: 15px;
   border: 1px solid #888;
-  margin: 0px auto 20px auto;
+  margin: 20px auto 20px auto;
   border-radius: 10px;
 }
 .inner-progress-bar{
   background: #999;
+  height: 15px;
+  border-radius: 6px;
+}
+.dash{
+  width: 80%;
+  margin:40px auto;
+}
+.dash-mid{
+  width: 60%
+}
+.dash-title, .dash-share{
+  width: 20%;
+
+}
+#step_description{
+  width: 414px;
+  min-height: 40px;
+  font-size: 90%;
+}
+// .step-btn{
+//   margin: 20px auto;
+// }
+#steps{
+  width: 75%;
+  margin: 20px auto;
+  border: .5px ;
+}
+.step{
+  text-align: left;
+  width: 100%;
+  float:left;
+  margin: 15px 0 0 0;
+  height: 45px;
+  border-bottom: .5px solid #cfcfcf;
+}
+.title{
+  float:left;
+  margin:0px auto;
   height: 20px;
-  border-radius: 12px;
+}
+.description{
+  opacity: .6;
+  // float: left;
+  //
+  // margin: 10px auto;
+  // width: 70%;
+}
+.break{
+  height: 22px;
+}
+.status{
+  float:right;
 }
