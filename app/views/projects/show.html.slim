@@ -15,13 +15,15 @@ div id="steps"
     - @project.steps.each do |s|
       div class="step"
         div class="title"
-          p = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
             span
               = s.title + ' (Approx '
             span
               = s.hours.to_s + ' hours):'
+
         div class="status"
-          span = status_label(s)
+          span = status_label(s) + '    '
+          = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
+            span Edit
         div class="description"
           div class="break"
           span = s.description

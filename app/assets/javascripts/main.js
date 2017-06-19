@@ -49,12 +49,12 @@ $(document).ready(function(){
 
 		return false;
 	});
-
-		var user_id = $('.dash-title').data('user-id');
-		var project_id = $('.dash-title').data('project-id');
-		console.log(user_id);
-		console.log(project_id);
-		$.getScript('/users/' + user_id + '/projects/' + project_id + '/shared/bar');
+		//
+		// var user_id = $('.dash-title').data('user-id');
+		// var project_id = $('.dash-title').data('project-id');
+		// console.log(user_id);
+		// console.log(project_id);
+		// $.getScript('/users/' + user_id + '/projects/' + project_id + '/shared/bar');
 
 
 

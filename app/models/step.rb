@@ -1,7 +1,8 @@
 class Step < ApplicationRecord
   belongs_to :project
   before_create :set_status
-  STATUSES = ['Not Started', 'In Progress', 'Completed']
+  #STATUSES = ['Not Started', 'In Progress', 'Completed']
+  STATUSES = ['not_started', 'in_progress', 'completed']
 
   validates :status, inclusion: {in: STATUSES}
 

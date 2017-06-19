@@ -142,7 +142,7 @@ p{
   width: 100%;
   float:left;
   margin: 15px 0 0 0;
-  height: 45px;
+  min-height: 45px;
   border-bottom: .5px solid #cfcfcf;
 }
 .title{
@@ -151,7 +151,7 @@ p{
   height: 20px;
 }
 .description{
-  opacity: .6;
+  opacity: .4;
   // float: left;
   //
   // margin: 10px auto;

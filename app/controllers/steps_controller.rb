@@ -14,8 +14,8 @@ class StepsController < ApplicationController
   def show
   end
   def status_label
-    #status_label = ['not_started', 'in_progress', 'completed']
-    status_label = ['Not Started', 'In Progress', 'Completed']
+    status_label = ['not_started', 'in_progress', 'completed']
+    #status_label = ['Not Started', 'In Progress', 'Completed']
   end
 
   # GET /steps/new
