@@ -21,12 +21,12 @@ div id="steps"
               = s.hours.to_s + ' hours):'
 
         div class="status"
-          span = status_label(s) + '    '
-          = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
-            span Edit
+          span = status_label(s) + ' '
         div class="description"
           div class="break"
           span = s.description
+          div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
+            span Edit
   end
   /button = link_to "Add Step", '#', class: "create-step modal-btn", data: {'project-id': @project.id}
 = link_to '#', class:"create-step", data: {'project-id': @project.id} do
