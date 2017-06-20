@@ -10,20 +10,22 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    
+    if !current_user
+      redirect_to root_path
+    end
   end
 
   # GET /projects/new
 
   def new
-    @project = Project.new
+    @project = current_user.projects.new
     # respond_modal_with @project
     # render :"steps/new"
   end
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find_by(share_token: params[:share_token])
     @step = @project.steps.new
   end
 
@@ -72,12 +74,13 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      # @project = Project.find(params[:id])
+      @project = current_user.projects.find_by(share_token: params[:share_token])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       # params.fetch(:project, {})
-      params.require(:project).permit(:client, :user_id, :hours, :name)
+      params.require(:project).permit(:client, :user_id, :hours, :name, :share_token)
     end
 end
