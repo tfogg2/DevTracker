@@ -33,7 +33,8 @@ $(document).ready(function(){
 	});
 	$('.create-step').on('click', function(){
 		var project_id = $(this).data('project-id');
-		$.getScript('/projects/'+project_id+'/steps/new');
+		var share_token = $(this).data('project-share-token');
+		$.getScript('/projects/'+share_token+'/steps/new');
 		// $('#modal').show();
 		// Do this at the end so it doesn't actually click the link!
 		return false;
@@ -44,8 +45,9 @@ $(document).ready(function(){
 	console.log(step);
 	$(step).on('click', function(){
 		var project_id = $(this).data('project-id');
+		var share_token = $(this).data('project-share-token');
 		var step_id = $(this).data('step-id');
-		$.getScript('/projects/'+project_id+'/steps/'+step_id+'/edit');
+		$.getScript('/projects/'+share_token+'/steps/'+step_id+'/edit');
 
 		return false;
 	});

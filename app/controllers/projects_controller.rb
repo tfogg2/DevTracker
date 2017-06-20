@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    # current_user.projects was nil
+    @project = Project.find(params[:id])
     if !current_user
       redirect_to root_path
     end
@@ -25,7 +27,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = current_user.projects.find_by(share_token: params[:share_token])
+    @project = current_user.projects.find(params[:id])
     @step = @project.steps.new
   end
 
@@ -38,7 +40,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @user, notice: 'Project was successfully created.' }
+        format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -75,7 +77,7 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       # @project = Project.find(params[:id])
-      @project = current_user.projects.find_by(share_token: params[:share_token])
+      @project = current_user.projects.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

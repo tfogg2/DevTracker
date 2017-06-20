@@ -20,6 +20,7 @@ class StepsController < ApplicationController
 
   # GET /steps/new
   def new
+    # @project = current_user.projects.find_by(share_token: params[:share_token])
     @step = @project.steps.new
   end
 

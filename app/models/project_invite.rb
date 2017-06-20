@@ -1,0 +1,2 @@
+class ProjectInvite < ApplicationRecord
+end

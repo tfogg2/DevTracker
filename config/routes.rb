@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'home#home'
   resources :users
-  resources :projects, param: :share_token do
+  resources :projects do
     resources :steps
   end
 

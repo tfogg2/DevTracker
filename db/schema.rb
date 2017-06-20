@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620191713) do
+ActiveRecord::Schema.define(version: 20170620224140) do
+
+  create_table "project_invites", force: :cascade do |t|
+    t.string "share_token"
+    t.string "email", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170620191713) do
     t.string "name"
     t.string "description"
     t.string "share_token"
+    t.index ["share_token"], name: "index_projects_on_share_token"
   end
 
   create_table "steps", force: :cascade do |t|
