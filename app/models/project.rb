@@ -14,8 +14,8 @@ class Project < ApplicationRecord
 	end
 
 	def set_name
-		if ! name
-			self.name = "Project Name"
+		if name.blank?
+			self.name = "Ex. Project Name"
 		end
 	end
 

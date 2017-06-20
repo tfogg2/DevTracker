@@ -116,6 +116,7 @@ p{
   border: 1px solid #888;
   margin: 0 auto;
   float:left;
+  min-width: 285px;
 }
 .inner-progress-bar{
   background: #999;
@@ -140,7 +141,8 @@ p{
 }
 .create-project {
   width: 20%;
-  margin: 10px 40%;
+  margin: 10px auto;
+  min-width: 145px;
 }
 #steps, #projects{
   width: 75%;
@@ -160,6 +162,7 @@ p{
   min-height: 30px;
   border-bottom: .5px solid #cfcfcf;
   padding-top: 5px;
+  min-width: 660px;
 }
 .progress-bar{
   width: 60%;
@@ -168,10 +171,12 @@ p{
 .project-title{
   width: 27%;
   float: left;
+  min-width: 170px;
 }
 .share{
   width: 27%;
   float:right;
+  min-width: 170px;
 }
 .title{
   float:left;
