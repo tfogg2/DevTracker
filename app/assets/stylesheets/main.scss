@@ -109,6 +109,14 @@ p{
   margin: 40px auto 40px auto;
   border-radius: 10px;
 }
+#progress-bar-mini{
+  width: 45%;
+  border-radius: 10px;
+  height: 15px;
+  border: 1px solid #888;
+  margin: 0 auto;
+  float:left;
+}
 .inner-progress-bar{
   background: #999;
   height: 15px;
@@ -130,6 +138,10 @@ p{
 .create-step button{
   margin: 20px auto;
 }
+.create-project {
+  width: 20%;
+  margin: 10px 40%;
+}
 #steps, #projects{
   width: 75%;
   margin: 20px auto;
@@ -145,16 +157,21 @@ p{
 .project{
   width: 100%;
   margin: 15px 0 0 0;
-  min-height: 25px;
+  min-height: 30px;
   border-bottom: .5px solid #cfcfcf;
+  padding-top: 5px;
 }
 .progress-bar{
   width: 60%;
   float: left;
 }
-.project-title, .share{
-  width: 20%;
+.project-title{
+  width: 27%;
   float: left;
+}
+.share{
+  width: 27%;
+  float:right;
 }
 .title{
   float:left;

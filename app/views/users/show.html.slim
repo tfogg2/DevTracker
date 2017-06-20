@@ -6,16 +6,11 @@ p#notice = notice
 /    li = link_to 'Edit', edit_user_path(@user)
 
 
-div id="projects"
+div class="projects"
   div class="projects-header"
     h4 Projects
   - @user.projects.each do |project|
-    div class="project"
-      div.project-title
-        span
-          = link_to project.name, project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': @user.id}
-      div.progress-bar Progress Bar
-      div.share Share
+    = render('projects/project_list', {project: project, steps: project.steps})
   end
 
 = link_to '#', data: @user.id do

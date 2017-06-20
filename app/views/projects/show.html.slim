@@ -4,7 +4,7 @@ div id="project-show"
   div id="project-title"
     h1 = @project.name
     h3  = @project.description
-    p.share = link_to "Share Project", root_path
+    p.share-project = link_to "Share Project", root_path
   /p Progress:
   div id="progress-bar"
     - if @project.steps.any?
