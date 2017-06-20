@@ -10,32 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617230246) do
-
-  create_table "delayed_jobs", force: :cascade do |t|
-    t.integer "priority", default: 0, null: false
-    t.integer "attempts", default: 0, null: false
-    t.text "handler", null: false
-    t.text "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string "locked_by"
-    t.string "queue"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
-  end
+ActiveRecord::Schema.define(version: 20170620191713) do
 
   create_table "projects", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "client"
     t.integer "hours"
-    t.integer "user_id"
     t.string "name"
     t.string "description"
-    t.index ["user_id"], name: "index_projects_on_user_id"
+    t.string "share_token"
   end
 
   create_table "steps", force: :cascade do |t|
@@ -47,6 +31,13 @@ ActiveRecord::Schema.define(version: 20170617230246) do
     t.string "status"
     t.string "description"
     t.index ["project_id"], name: "index_steps_on_project_id"
+  end
+
+  create_table "user_projects", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,6 +54,8 @@ ActiveRecord::Schema.define(version: 20170617230246) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.boolean "developer_role", default: true
+    t.boolean "client_role", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

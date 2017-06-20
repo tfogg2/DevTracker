@@ -1,0 +1,19 @@
+h1 Listing user_projects
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @user_projects.each do |user_project|
+      tr
+        td = link_to 'Show', user_project
+        td = link_to 'Edit', edit_user_project_path(user_project)
+        td = link_to 'Destroy', user_project, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New User project', new_user_project_path
