@@ -1,8 +1,10 @@
 class ProjectInvitesController < ApplicationController
   before_action :set_project, except: [:join]
 
+
   def new
     @invite = @project.project_invites.new
+
   end
 
   def show
@@ -11,13 +13,14 @@ class ProjectInvitesController < ApplicationController
   end
 
   def join
+    #session[:join_project_id] = @project.id
     redirect_to new_user_registration_path if !current_user
-
   end
 
   def create
     # @project = current_user.projects.find(params[:project_id])
     @invite = @project.project_invites.new(invite_params)
+    session[:join_project_id] = @project.id
 
     respond_to do |format|
       if @invite.save
@@ -32,8 +35,8 @@ class ProjectInvitesController < ApplicationController
   end
 
   def set_project
-    redirect_to new_user_registration_path if !current_user
     @project = current_user.projects.find(params[:project_id] || params[:id])
+
   end
 
   def invite_params

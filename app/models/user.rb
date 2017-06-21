@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :user_projects, dependent: :destroy
   has_many :projects, through: :user_projects, dependent: :destroy
+  
 
   # These helper methods will help us determine what type of user
   # this is for a specific project (ex. current_user.user_type_for(@project))
