@@ -2,6 +2,7 @@ class Project < ApplicationRecord
 	has_many :user_projects, dependent: :destroy
 	has_many :users, through: :user_projects, dependent: :destroy
 	has_many :steps, dependent: :destroy
+	has_many :project_invites
 
 	validates :name, presence: true
 
@@ -12,4 +13,6 @@ class Project < ApplicationRecord
 	def total_hours
 		steps.sum(&:hours)
 	end
+
+
 end

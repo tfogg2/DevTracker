@@ -1,0 +1,3 @@
+console.log('Woooah you hit the modal!');
+
+$("#modal-holder").html("<%= j render('project_invites/join', {project: @project, user: current_user, project_invite: @project_invite}) %>");

@@ -50,6 +50,16 @@ $(document).ready(function(){
 		return false;
 	});
 
+	var share = document.getElementsByClassName('share-project');
+	$(share).on('click', function(){
+		var project_id = $(this).data('project-id');
+		var user_id = $(this).data('user-id');
+		$.getScript('/projects/'+project_id+'/project_invites/new');
+		return false;
+
+	});
+
+
 
 
 

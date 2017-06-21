@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621014059) do
+ActiveRecord::Schema.define(version: 20170621190616) do
 
   create_table "project_invites", force: :cascade do |t|
     t.string "share_token"
-    t.string "email", null: false
-    t.integer "user_id"
+    t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "project_id"
   end
 
   create_table "projects", force: :cascade do |t|
