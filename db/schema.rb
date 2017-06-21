@@ -14,7 +14,8 @@ ActiveRecord::Schema.define(version: 20170621190616) do
 
   create_table "project_invites", force: :cascade do |t|
     t.string "share_token"
-    t.string "email", default: "", null: false
+    t.string "email", null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_id"

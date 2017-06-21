@@ -3,14 +3,17 @@ p#notice = notice
 div id="project-show"
   div id="project-title"
     h1 = @project.name
-    h3  = @project.description
-    = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
-      button.modal-btn Share
+    h3 = @project.description
+    
+    - if current_user.developer_for?(@project)
+      = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
+        button.modal-btn Share
   /p Progress:
   div id="progress-bar"
     - if @project.steps.any?
       div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
 
+div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
 div id="steps"
   -if @project.steps.any?
