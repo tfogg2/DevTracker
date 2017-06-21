@@ -1,0 +1,179 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Include:
+  - "**/*.gemspec"
+  - "**/*.podspec"
+  - "**/*.jbuilder"
+  - "**/*.rake"
+  - "**/*.opal"
+  - "**/Gemfile"
+  - "**/Rakefile"
+  - "**/Capfile"
+  - "**/Guardfile"
+  - "**/Podfile"
+  - "**/Thorfile"
+  - "**/Vagrantfile"
+  - "**/Berksfile"
+  - "**/Cheffile"
+  - "**/Vagabondfile"
+  Exclude:
+  - "vendor/**/*"
+  - "db/schema.rb"
+  DisplayCopNames: true
+  StyleGuideCopsOnly: false
+
+Lint/EndAlignment:
+  Description: Align ends correctly.
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+  SupportedStyles:
+  - keyword
+  - variable
+Lint/HandleExceptions:
+  Description: Don't suppress exception.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions
+  Enabled: false
+
+Metrics/ClassLength:
+  Description: Avoid classes longer than 100 lines of code.
+  Enabled: false
+  CountComments: false
+  Max: 100
+Metrics/LineLength:
+  Description: Limit lines to 80 characters.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
+  Enabled: false
+  Max: 160
+  AllowURI: true
+  URISchemes:
+  - http
+  - https
+Metrics/MethodLength:
+  Description: Avoid methods longer than 10 lines of code.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
+  Enabled: false
+  CountComments: false
+  Max: 10
+Metrics/AbcSize:
+  Description: A calculated magnitude based on number of assignments, branches, and
+    conditions.
+  Enabled: false
+  Max: 30
+Metrics/CyclomaticComplexity:
+  Description: A complexity metric that is strongly correlated to the number of test
+    cases needed to validate a method.
+  Enabled: false
+  Max: 6
+
+Layout/Tab:
+  Description: No hard tabs.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
+  Enabled: false
+Layout/IndentationWidth:
+  Description: Use 2 spaces for indentation.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
+  Enabled: false
+  Width: 2
+Layout/IndentHash:
+  Description: Checks the indentation of the first key in a hash literal.
+  Enabled: false
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+  - special_inside_parentheses
+  - consistent
+Layout/IndentArray:
+  Description: Checks the indentation of the first element in an array literal.
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Description: Checks style of children classes and modules.
+  Enabled: false
+  EnforcedStyle: nested
+  SupportedStyles:
+  - nested
+  - compact
+Layout/AccessModifierIndentation:
+  Description: Check indentation of private/protected visibility modifiers.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#indent-public-private-protected
+  Enabled: false
+  EnforcedStyle: indent
+  SupportedStyles:
+  - outdent
+  - indent
+Style/EachWithObject:
+  Description: Prefer `each_with_object` over `inject` or `reduce`.
+  Enabled: false
+Layout/DotPosition:
+  Description: Checks the position of the dot in multi-line method calls.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains
+  Enabled: true
+  EnforcedStyle: trailing
+  SupportedStyles:
+  - leading
+  - trailing
+Layout/CaseIndentation:
+  Description: Indentation of when in a case/when/[else/]end.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#indent-when-to-case
+  Enabled: true
+  EnforcedStyle: end
+  SupportedStyles:
+  - case
+  - end
+  IndentOneStep: false
+Style/Next:
+  Description: Use `next` to skip iteration instead of a condition at the end.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals
+  Enabled: false
+  EnforcedStyle: skip_modifier_ifs
+  MinBodyLength: 3
+  SupportedStyles:
+  - skip_modifier_ifs
+  - always
+Style/RegexpLiteral:
+  Description: Use %r for regular expressions matching more than `MaxSlashes` '/'
+    characters. Use %r only for regular expressions matching more than `MaxSlashes`
+    '/' character.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-r
+  Enabled: false
+Style/Semicolon:
+  Description: Don't use semicolons to terminate expressions.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-semicolon
+  Enabled: true
+  AllowAsExpressionSeparator: true
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/MultilineOperationIndentation:
+  Description: Checks indentation of binary operations that span more than one line.
+  Enabled: false
+  EnforcedStyle: aligned
+  SupportedStyles:
+  - aligned
+  - indented
+Style/NumericLiterals:
+  MinDigits: 100
+  Enabled: false
+Style/StringLiterals:
+  Description: Checks if uses of quotes match the configured preference.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-string-literals
+  Enabled: true
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+  - single_quotes
+  - double_quotes
+Style/Documentation:
+  Enabled: false
+Style/CollectionMethods:
+  Description: 'Preferred collection methods.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#map-find-select-reduce-size'
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/SingleLineBlockParams:
+  Enabled: false
+Layout/FirstParameterIndentation:
+  Enabled: false
+Metrics/ModuleLength:
+  Max: 250
+Metrics/BlockLength:
+  Enabled: false

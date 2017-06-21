@@ -1,23 +1,18 @@
 class Step < ApplicationRecord
   belongs_to :project
   before_create :set_status, :set_hours
-  #STATUSES = ['Not Started', 'In Progress', 'Completed']
-  STATUSES = ['not_started', 'in_progress', 'completed']
 
-  validates :status, inclusion: {in: STATUSES}
-
+  validates :status, inclusion: { in: statuses }
 
   def set_status
-    if ! status
-      self.status = "not_started"
-    end
-	end
-
-  def set_hours
-    if ! hours
-      self.hours = 0
-    end
+    self.status = 'not_started' if status.blank?
   end
 
+  def set_hours
+    self.hours = 0 if hours.empty?
+  end
 
+  def self.statuses
+    %w(not_started in_progress completed)
+  end
 end
