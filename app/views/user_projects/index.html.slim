@@ -8,7 +8,7 @@ table
       th
 
   tbody
-    - @user_projects.each do |user_project|
+    - current_user_projects.each do |user_project|
       tr
         td = link_to 'Show', user_project
         td = link_to 'Edit', edit_user_project_path(user_project)

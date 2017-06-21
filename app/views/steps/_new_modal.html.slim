@@ -5,6 +5,6 @@
   .form-inputs = f.input :project_id, as: :hidden
   .form-inputs = f.input :hours, placeholder: "Estimated Hours", label: false, required: true
   .form-inputs = f.input :description, placeholder: "Description", label: false, as: :text, class: "description"
-  .form-inputs = f.input :status, placeholder: "Status ", collection: status_label, include_blank: false
+  .form-inputs = f.input :status, placeholder: "Status ", collection: Step.statuses.map {|st| [status_label(st), st] }, include_blank: false
 
   .form-actions = f.button :submit

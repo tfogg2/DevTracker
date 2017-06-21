@@ -1,5 +1,5 @@
 div class="project"
-  = link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': @user.id} do
+  = link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id} do
     div.project-title
       span = project.name
 

@@ -26,12 +26,12 @@ div id="steps"
         div class="description"
           div class="break"
           span = s.description
-          div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id, 'project-share-token': @project.share_token } do
+          div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
             span Edit
     end
   end
   /button = link_to "Add Step", '#', class: "create-step modal-btn", data: {'project-id': @project.id}
-= link_to '#', class:"create-step", data: {'project-id': @project.id,  'project-share-token': @project.share_token} do
+= link_to '#', class:"create-step", data: {'project-id': @project.id } do
   button class="modal-btn" Add Step
 end
     /create table

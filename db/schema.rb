@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620224140) do
+ActiveRecord::Schema.define(version: 20170621014059) do
 
   create_table "project_invites", force: :cascade do |t|
     t.string "share_token"
-    t.string "email", default: "", null: false
+    t.string "email", null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,12 +23,8 @@ ActiveRecord::Schema.define(version: 20170620224140) do
   create_table "projects", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "client"
-    t.integer "hours"
     t.string "name"
     t.string "description"
-    t.string "share_token"
-    t.index ["share_token"], name: "index_projects_on_share_token"
   end
 
   create_table "steps", force: :cascade do |t|
@@ -46,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170620224140) do
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_type"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,8 +60,6 @@ ActiveRecord::Schema.define(version: 20170620224140) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.boolean "developer_role", default: true
-    t.boolean "client_role", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

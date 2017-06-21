@@ -21,6 +21,13 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+
+        # HACK! TODO: Fix this, why is this needed........
+        @project.user_projects.create(
+          user: current_user,
+          user_type: 'developer'
+        )
+
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else

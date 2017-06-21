@@ -1,13 +1,9 @@
 module StepsHelper
 
-  def status_label(step)
+  def status_label(status)
     label = "Not Started"
-    if step.status == 'completed'
-      label = "Completed"
-    end
-    if step.status == 'in_progress'
-      label = "In Progress"
-    end
+    label = "Completed" if status == 'completed'
+    label = "In Progress" if status == 'in_progress'
     label
   end
 end

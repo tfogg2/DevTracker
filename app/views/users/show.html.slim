@@ -1,18 +1,18 @@
 p#notice = notice
 /ul
-/  li = @user.name
-/  li = @user.email
-/  -if @user.email === current_user.email
-/    li = link_to 'Edit', edit_user_path(@user)
+/  li = current_user.name
+/  li = current_user.email
+/  -if current_user.email === current_user.email
+/    li = link_to 'Edit', edit_user_path(current_user)
 
 
 div class="projects"
   div class="projects-header"
     h4 Projects
-  - @user.projects.each do |project|
+  - current_user.projects.each do |project|
     = render('projects/project_list', {project: project, steps: project.steps})
   end
 
-= link_to '#', data: @user.id do
+= link_to '#', data: current_user.id do
   button class="modal-btn create-project" Create Project
 end

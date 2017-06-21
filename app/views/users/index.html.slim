@@ -8,7 +8,7 @@ table
       th
 
   tbody
-    - @users.each do |user|
+    - current_users.each do |user|
       tr
         td = link_to 'Show', user
         td = link_to 'Edit', edit_user_path(user)
