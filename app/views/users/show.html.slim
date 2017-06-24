@@ -8,11 +8,11 @@ p#notice = notice
 
 div class="projects"
   div class="projects-header"
-    h4 Projects
+    h1 Project Dashboard
   - current_user.projects.each do |project|
     = render('projects/project_list', {project: project, steps: project.steps})
   end
 
-= link_to '#', data: current_user.id do
-  button class="modal-btn create-project" Create Project
-end
+  = link_to '#', data: current_user.id do
+    button class="modal-btn create-project" Create Project
+  end

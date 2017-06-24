@@ -1,3 +1,4 @@
+/* GENERAL */
 ul{
   list-style: none;
 }
@@ -20,23 +21,18 @@ button a{
 p{
   margin: 0;
 }
+body{
+  margin: 0;
+  // background: url('form-background');
+}
 #notice{
 
   text-align: center;
 }
-// table {
-//     counter-reset: rowNumber;
-//     tex
-// }
-//
-// table tr {
-//     counter-increment: rowNumber;
-// }
-// table tr td:first-child::before {
-//     content: counter(rowNumber);
-//     min-width: 1em;
-//     margin-right: 0.5em;
-// }
+#nav li{
+  display: inline-block;
+  text-align: center;
+}
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    black;
      opacity: .5;
@@ -45,10 +41,128 @@ p{
   float: right;
 }
 #content{
-  width: 75%;
+  padding: 20px 0;
   margin: 0 auto;
   text-align: center;
+  width: 75%;
 }
+.logo{
+  width: 200px;
+  margin: 0 auto 60px auto;
+}
+#footer{
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+}
+.love-vermont{
+  margin: 0 auto;
+  width: 30%;
+  border-top: 1px solid #E0E0E0;
+}
+.love-vermont img{
+  margin: 20px 20%;
+}
+.home{
+
+}
+/* GENERAL */
+
+
+
+/* FORM */
+.form{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background: url('form-background.png');
+}
+.form-content{
+  width: 40%;
+  height: 360px;
+}
+.form-content{
+  width: 40%;
+  height: 360px;
+  background: #fff;
+  padding-top: 20px;
+  margin: 12.5% auto;
+  border-radius: 10px;
+}
+.form-content h1{
+  color: #5FA7E7;
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 240%;
+  margin: 15px 0;
+}
+.form-content-project{
+  width: 50%;
+  height: 250px;
+}
+.form-bottom{
+  background: #F5F5F5;
+  border-top: 1px solid #E0E0E0;
+  width: 100%;
+  height: 70px;
+  border-radius:0 0 10px 10px;
+}
+.form-bottom p a{
+  color: #5FA7E7;
+}
+.form-bottom a{
+  color: #868686;
+}
+.form-bottom p{
+  margin-top: 10px;
+  color: #868686;
+  margin-bottom: 4px;
+  font-weight: 100;
+}
+.input input{
+  width: 80%;
+  border-radius: 5px;
+  border: .2px solid #e0e0e0;
+}
+.form-inputs{
+  margin: 30px 0 0 0;
+}
+.form-inputs input{
+  margin: 10px 0;
+  height: 25px;
+  padding: 5px;
+  font-size: 90%;
+  // border-radius: 10px;
+}
+.form-actions input{
+  width: 82%;
+  height: 40px;
+  color: white;
+  font-size: 90%;
+  border: none;
+  margin: 15px auto;
+  background: url('form-btn.png') no-repeat;
+  background-repeat: none;
+  border-radius: 5px;
+}
+.form-actions{
+  margin-bottom: 25px;
+}
+.login p{
+  margin: 25px auto 2px auto;
+}
+/* FORM */
+
+
+
+/* MODAL */
 #modal{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -71,37 +185,10 @@ p{
     width: 60%; /* Could be more or less, depending on screen size */
     text-align: center;
 }
-.login p{
-  margin: 25px auto 2px auto;
-}
-#nav li{
-  display: inline-block;
-  text-align: center;
-}
-.dash{
-  // font-size: 200%;
-  margin: 130px auto;
-}
-.logo{
-  width: 200px;
-  margin: 0 auto 60px auto;
-}
-.form-inputs{
-  margin: 20px 0;
-}
-.form-inputs input{
-  margin: 10px 0;
-  width: 400px;
-  height: 25px;
-  padding: 5px;
-  font-size: 90%;
-  // border-radius: 10px;
-}
-.actions input{
-  width: 200px;
-  margin: 15px auto;
-}
+/* MODAL */
 
+
+/* PROJECT */
 #progress-bar{
   width: 60%;
   height: 15px;
@@ -130,9 +217,6 @@ p{
 .dash-mid{
   width: 60%
 }
-.form-actions{
-  margin-bottom: 25px;
-}
 #step_description{
   width: 414px;
   min-height: 40px;
@@ -158,6 +242,12 @@ p{
   min-height: 45px;
   border-bottom: .5px solid #cfcfcf;
 }
+.projects-header {
+  text-align: left;
+  padding-left: 10%;
+  height: 100px;
+  background: #F9F9F9;
+}
 .project{
   width: 100%;
   margin: 15px 0 0 0;
@@ -165,6 +255,7 @@ p{
   border-bottom: .5px solid #cfcfcf;
   padding-top: 5px;
   min-width: 660px;
+  text-align: center;
 }
 .progress-bar{
   width: 60%;
@@ -187,10 +278,6 @@ p{
 }
 .description{
   opacity: .4;
-  // float: left;
-  //
-  // margin: 10px auto;
-  // width: 70%;
 }
 .edit-step{
   float: right;
@@ -201,3 +288,4 @@ p{
 .status{
   float:right;
 }
+/* PROJECT */

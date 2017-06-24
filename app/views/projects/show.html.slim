@@ -4,7 +4,7 @@ div id="project-show"
   div id="project-title"
     h1 = @project.name
     h3 = @project.description
-    
+
     - if current_user.developer_for?(@project)
       = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
         button.modal-btn Share
@@ -26,7 +26,7 @@ div id="steps"
               = s.hours.to_s + ' hours):'
 
         div class="status"
-          span = status_label(s) + ' '
+          span = status_label(s.status) + ' '
         div class="description"
           div class="break"
           span = s.description
