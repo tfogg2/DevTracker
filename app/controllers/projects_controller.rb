@@ -61,12 +61,12 @@ class ProjectsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_project
-    
+
     @project = current_user.projects.find(params[:project_id] || params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def project_params
-    params.require(:project).permit(:hours, :name)
+    params.require(:project).permit(:hours, :name, :description)
   end
 end

@@ -2,12 +2,13 @@ p#notice = notice
 
 div id="project-show"
   div id="project-title"
-    h1 = @project.name
-    h3 = @project.description
+    h1.project-name = @project.name
+    p.description.project-description = @project.description
 
     - if current_user.developer_for?(@project)
       = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
-        button.modal-btn Share
+        .share-show
+          button.modal-btn Share
   /p Progress:
   div id="progress-bar"
     - if @project.steps.any?
@@ -15,11 +16,14 @@ div id="project-show"
 
 div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
-div id="steps"
+div id="steps" class="projects"
   -if @project.steps.any?
-    - @project.steps.each do |s|
+    - @project.steps.each_with_index do |s, i|
       div class="step"
         div class="title"
+            span
+              span = i+1
+              span.dot .
             span
               = s.title + ' (Approx '
             span
@@ -34,10 +38,10 @@ div id="steps"
             span Edit
     end
   end
-  /button = link_to "Add Step", '#', class: "create-step modal-btn", data: {'project-id': @project.id}
-= link_to '#', class:"create-step", data: {'project-id': @project.id } do
-  button class="modal-btn" Add Step
-end
+- if current_user.developer_for?(@project)
+  = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+    button class="modal-btn" + Add Step
+  end
     /create table
 
 

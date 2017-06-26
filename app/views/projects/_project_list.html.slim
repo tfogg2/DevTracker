@@ -1,14 +1,16 @@
 
 
 .project
-  = link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id} do
-    .project-title
-      span = project.name
+  /= link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id} do
+  .project-title
+    span = link_to project.name, project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id}
 
+  = link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id} do
     #progress-bar-mini
       - if project.steps.any?
         .inner-progress-bar style='width: #{(project.completed_hours.to_f/project.total_hours.to_f)*100}%'
 
   - if current_user.developer_for?(project)
     .share
-      span Share
+      = link_to '#', data: {'project-id': project.id, 'user-id': current_user.id }, class: "share-project" do
+        button.modal-btn Share
