@@ -59,6 +59,14 @@ $(document).ready(function(){
 
 	});
 
+	var edit_project = document.getElementsByClassName('edit-project');
+	$(edit_project).on('click', function(){
+		var project_id = $(this).data('project-id');
+		// var step_id = $(this).data('step-id');
+		$.getScript('/projects/'+project_id+'/edit');
+
+		return false;
+	});
 
 
 

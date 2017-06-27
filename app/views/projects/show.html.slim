@@ -2,22 +2,24 @@ p#notice = notice
 
 div id="project-show"
   div id="project-title"
-    h1.project-name = @project.name
+    h1.project-name = link_to @project.name, '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
     p.description.project-description = @project.description
 
     - if current_user.developer_for?(@project)
-      = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
-        .share-show
-          button.modal-btn Share
-  /p Progress:
-  div id="progress-bar"
-    - if @project.steps.any?
-      div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
+      .share-project = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
+        span.modal-btn Share
+      span
+    /  span = link_to "Edit", '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
+  - if @project.steps.any?
+    p.progress Progress:
+    div id="progress-bar"
+
+        div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
 
 div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
-div id="steps" class="projects"
-  -if @project.steps.any?
+-if @project.steps.any?
+  div id="steps" class="projects"
     - @project.steps.each_with_index do |s, i|
       div class="step"
         div class="title"
@@ -31,13 +33,16 @@ div id="steps" class="projects"
 
         div class="status"
           span = status_label(s.status) + ' '
-        div class="description"
+        div class="description inner"
           div class="break"
           span = s.description
           div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
             span Edit
     end
   end
+- else
+  h1.begin-text Add steps to your project
+    p
 - if current_user.developer_for?(@project)
   = link_to '#', class:"create-step", data: {'project-id': @project.id } do
     button class="modal-btn" + Add Step

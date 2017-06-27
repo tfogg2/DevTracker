@@ -4,13 +4,15 @@ p#notice = notice
 /  li = current_user.email
 /  -if current_user.email === current_user.email
 /    li = link_to 'Edit', edit_user_path(current_user)
-
-div class="projects-header"
-  h1 Project Dashboard
-div class="projects"
-  - current_user.projects.each do |project|
-    = render('projects/project_list', {project: project, steps: project.steps})
-  end
+- if current_user.projects.any?
+  div class="projects-header"
+    h1 Project Dashboard
+  div class="projects"
+    - current_user.projects.each do |project|
+      = render('projects/project_list', {project: project, steps: project.steps})
+    end
+- else
+  div class="new-dash"
 
 .projects-bottom
   = link_to '#', data: current_user.id do

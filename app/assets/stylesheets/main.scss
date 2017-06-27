@@ -23,11 +23,16 @@ p{
 }
 body{
   margin: 0;
-  background: #efefef;
+  // background: #eaeaea;
 }
 #notice{
-
+  line-height: 2.5;
+  color: #4F8A10;
+  background-color: #DFF2BF;
   text-align: center;
+}
+#notice p{
+
 }
 #nav li{
   display: inline-block;
@@ -39,36 +44,47 @@ body{
 }
 #nav{
   float: right;
-  margin: 35px 0px 0 0;
+  margin: 40px auto 0 auto;
+  opacity: .8;
 }
 #content{
-  margin: 0 auto;
+  margin:  -20px auto 25px auto;
   text-align: center;
   height: 100%;
+  min-height: 550px;
+  background: #fff;
+  // background: url('dash-box.png') no-repeat;
   // width: 75%;
 }
 #top-bar{
-  color: rgba(255,255,255,0.75);
+  color: white;
   min-width: 520px;
-  height:60px;
-  padding: 0 40px;
-  background: #24292e;
+  height:65px;
+  padding: 0 10%;
+  //background: #fff;
+  // background: #24292e;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   line-height: 1.5;
-  // background: url('top-bar.png');
+  margin-bottom: 20px;
+  border-bottom: .5px solid #ccc;
+  background: url('top-bar.png');
 }
 #top-bar a{
-  color: rgba(255,255,255,0.75);
+  color: white;
   text-decoration: none;
-  opacity: .6;
+  font-weight: 100;
 }
 .logo{
   float:left;
+  font-size: 225%;
   width: 200px;
-  margin: 10px auto 0 auto;
-  background: white;
-  opacity: .3;
+  margin: 9px auto;
+  // background: white;
+  // opacity: .3;
+  // position: absolute;
+  // left:0;
+  // top:0;
 }
 #footer{
   height: 50px;
@@ -88,7 +104,7 @@ body{
   margin: 20px 20%;
 }
 .home{
-
+  min-height: 400px;
 }
 select{
   background: url('select-box.png') no-repeat;
@@ -98,6 +114,9 @@ select{
 }
 .dot{
   margin-right: 10px;
+}
+.temp-info{
+  display: none;
 }
 /* GENERAL */
 
@@ -120,11 +139,13 @@ select{
 }
 .form-content{
   width: 40%;
-  height: 360px;
+  height: 315px;
   background: #fff;
-  padding-top: 20px;
-  margin: 12.5% auto;
+  padding-top: 10px;
+  margin: 10% auto;
   border-radius: 10px;
+  font-size: 90%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .form-content h1{
   color: #5FA7E7;
@@ -160,23 +181,24 @@ select{
   width: 70%;
   border-radius: 5px;
   border: .2px solid #e0e0e0;
+  margin-top: 15px;
 }
 .form-inputs{
-  margin: 15px 0;
+  margin: 0px 0;
 }
 .form-inputs input{
   height: 25px;
   padding: 5px;
-  font-size: 90%;
+  font-size: 100%;
   // border-radius: 10px;
 }
 .form-actions input{
-  width: 70%;
+  width: 73%;
   height: 40px;
   color: white;
-  font-size: 90%;
+  font-size: 100%;
   border: none;
-  margin: 10px auto;
+  margin: 25px auto;
   background: url('form-btn.png') no-repeat;
   background-repeat: none;
   border-radius: 5px;
@@ -226,11 +248,17 @@ select{
 
 
 /* PROJECT */
+#project-show{
+  height: 200px;
+  padding: 20px 0;
+
+}
 #progress-bar{
+  background: #fff;
   width: 60%;
   height: 15px;
   border: .5px solid #ccc;
-  margin: 40px auto 40px auto;
+  margin: 4px auto 40px auto;
   border-radius: 10px;
 }
 #progress-bar-mini{
@@ -247,8 +275,32 @@ select{
   height: 15px;
   border-radius: 6px;
 }
+.progress{
+  margin-top: 20px;
+  opacity: .6;
+}
+.begin-text{
+  width: 50%;
+  margin: 40px auto 15px auto;
+  opacity: 1;
+  color: black;
+  font-size: 54px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+}
+.begin-text p{
+  font-weight: 300;
+  font-size: 26px;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+}
 .dash{
-  width: 80%;
+  color: black;
+  font-size: 50px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  width: 60%;
   margin:100px auto;
 }
 .dash-mid{
@@ -283,8 +335,8 @@ select{
   color: #66AFE8;
 }
 #steps{
-  width: 95%;
-  margin: 20px auto;
+  // width: 95%;
+  margin: 80px auto 10px auto;
 }
 .step{
   text-align: left;
@@ -295,10 +347,9 @@ select{
   border-bottom: .5px solid #cfcfcf;
 }
 .projects-header {
-  text-align: left;
-  padding-left: 8%;
+  // text-align: left;
+  // padding-left: 8%;
   height: 100px;
-  background: #efefef;
   padding-top: 1px;
 }
 .projects-header h1{
@@ -306,14 +357,21 @@ select{
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 240%;
 }
-.project-name{
-  margin-bottom: 5px;
-
+.project-name a{
+  font-size: 54px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 
 .projects{
+  width: 80%;
+  margin: 0 auto;
   background: white;
   padding: 0 40px;
+  min-height: 150px;
   max-height: 350px;
   border-top: .5px solid #cfcfcf;
   box-shadow: inset 0 1px 5px 0px #292929;
@@ -333,6 +391,24 @@ select{
   width: 60%;
   float: left;
 }
+#project-title{
+  // text-align: left;
+  // padding-left: 10%;
+  // background: url('project-title-bar.png') no-repeat;
+  // background: #65727D;
+  height: 150px;
+  width: 40%;
+  margin: 0 auto;
+}
+#project-title h1{
+  font-size: 54px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
 .project-title{
   width: 27%;
   float: left;
@@ -353,6 +429,13 @@ select{
   min-width: 170px;
 
 }
+.share-project a{
+  color: #4A91E2;
+  text-decoration: none;
+}
+.share-project a:hover{
+  text-decoration: underline;
+}
 .share button:hover{
   color: #4A91E2;
   background: url('share-btn.png') no-repeat;
@@ -370,7 +453,7 @@ select{
 .share-show{
   width: 100px;
   height: 33px;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
 .share-show button{
   background: url('share-btn.png') no-repeat;
@@ -386,10 +469,18 @@ select{
   height: 20px;
 }
 .project-description{
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .description{
+  font-weight: 300;
+  font-size: 20px;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
   opacity: .4;
+  margin-bottom: 20px;
+}
+.inner{
+  font-size: 95%;
+  margin-left: 20px;
 }
 .edit-step{
   float: right;
@@ -401,7 +492,6 @@ select{
   float:right;
 }
 .projects-bottom{
-  background: #efefef;
   padding: 25px 0;
 }
 /* PROJECT */
