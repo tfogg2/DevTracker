@@ -97,14 +97,16 @@ body{
 }
 .love-vermont{
   margin: 0 auto;
-  width: 30%;
+  width: 25%;
   border-top: 1px solid #E0E0E0;
 }
 .love-vermont img{
   margin: 20px 20%;
 }
 .home{
+  padding: 150px 0;
   min-height: 400px;
+  // background: url('home-background.png') no-repeat;
 }
 select{
   background: url('select-box.png') no-repeat;
@@ -117,6 +119,13 @@ select{
 }
 .temp-info{
   display: none;
+}
+.start-btn{
+  background: url('form-btn.png') no-repeat;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
 }
 /* GENERAL */
 
@@ -208,6 +217,10 @@ select{
 }
 .login p{
   margin: 25px auto 2px auto;
+}
+.login a{
+  color: #4990E2;
+  text-decoration: none;
 }
 /* FORM */
 
@@ -301,7 +314,7 @@ select{
   -webkit-font-smoothing: antialiased;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
   width: 60%;
-  margin:100px auto;
+  margin:0px auto 100px auto;
 }
 .dash-mid{
   width: 60%
