@@ -40,9 +40,8 @@ $(document).ready(function(){
 		// var modal = document.getElementById('modal');
 	});
 
-	var step = document.getElementsByClassName('step-title');
-	console.log(step);
-	$(step).on('click', function(){
+	var step_title = document.getElementsByClassName('step-title');
+	$(step_title).on('click', function(){
 		var project_id = $(this).data('project-id');
 		var step_id = $(this).data('step-id');
 		$.getScript('/projects/'+project_id+'/steps/'+step_id+'/edit');
@@ -68,6 +67,21 @@ $(document).ready(function(){
 		return false;
 	});
 
+	var project = document.getElementsByClassName('step');
+	$(project).on('click', function(){
+		// var title = document.getElementsByClassName('dash-title');
+		var project_id = $(this).children(1).data('project-id');
+		// var step_id = $(this).data('step-id');
+		window.location.href="/projects/"+project_id
+
+	});
+	$(project).mouseenter(function(){
+		$(this).addClass("hover-white");
+		$(this).mouseleave(function(){
+			$(this).removeClass("hover-white");
+		});
+
+	});
 
 
 

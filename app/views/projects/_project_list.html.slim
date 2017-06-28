@@ -1,7 +1,7 @@
 
 
-.project
-  /= link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id} do
+.step
+  = link_to project_path(project), data: {'project-id': project.id, 'user-id': current_user.id} do
   .project-title
     span = link_to project.name, project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id}
 
@@ -14,4 +14,3 @@
     .share
       = link_to '#', data: {'project-id': project.id, 'user-id': current_user.id }, class: "share-project" do
         button.modal-btn Share
-      

@@ -11,7 +11,7 @@ div id="project-show"
       span
     /  span = link_to "Edit", '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
   - if @project.steps.any?
-    p.progress Progress:
+    / p.progress Progress:
     div id="progress-bar"
 
         div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
@@ -19,27 +19,28 @@ div id="project-show"
 div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
 -if @project.steps.any?
-  div id="steps" class="projects"
-    - @project.steps.each_with_index do |s, i|
-      div class="step"
-        div class="title"
-            span
-              span = i+1
-              span.dot .
-            span
-              = s.title + ' (Approx '
-            span
-              = s.hours.to_s + ' hours):'
+  div class="projects"
+    #steps
+      - @project.steps.each_with_index do |s, i|
+        div class="step"
+          div class="title"
+              span
+                span = i+1
+                span.dot .
+              span
+                = s.title + ' (Approx '
+              span
+                = s.hours.to_s + ' hours):'
 
-        div class="status"
-          span = status_label(s.status) + ' '
-        div class="description inner"
-          div class="break"
-          span = s.description
-          div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
-            span Edit
+          div class="status"
+            span = status_label(s.status) + ' '
+          div class="description inner"
+            div class="break"
+            span = s.description
+            div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
+              span Edit
+      end
     end
-  end
 - else
   h1.begin-text Add steps to your project
     p
