@@ -67,7 +67,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	var project = document.getElementsByClassName('step');
+	var project = document.getElementsByClassName('project');
 	$(project).on('click', function(){
 		// var title = document.getElementsByClassName('dash-title');
 		var project_id = $(this).children(1).data('project-id');
@@ -82,8 +82,23 @@ $(document).ready(function(){
 		});
 
 	});
+	var step = document.getElementsByClassName('step');
+	$(step).mouseenter(function(){
+		$(this).addClass("hover-white");
+		$(this).mouseleave(function(){
+			$(this).removeClass("hover-white");
+		});
 
+	});
+	$(step).on('click',function(){
+		var edit = document.getElementById('edit-steps');
+		// var title = document.getElementsByClassName('dash-title');
+		var project_id = $(edit).data('project-id');
+		var step_id = $(edit).data('step-id');
+		$.getScript('/projects/'+project_id+'/steps/'+step_id+'/edit');
 
+		return false;
+	});
 
 
 });

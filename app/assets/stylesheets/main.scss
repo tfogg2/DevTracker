@@ -128,9 +128,18 @@ select{
   font-size: 14px;
 }
 .hover-white.step{
-  background-color: #deefff;
-  opacity: .8;
-  box-shadow: none;
+  // background-color: #deefff;
+  // box-shadow: none;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.hover-white.project{
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 /* GENERAL */
 
@@ -250,7 +259,7 @@ select{
     background-color: #fefefe;
     border-radius: 10px;
     left: 100px;
-    margin: 12.5% auto 0 auto; /* 15% from the top and centered */
+    margin: 8% auto 0 auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
@@ -287,7 +296,7 @@ select{
   border-radius: 20px;
   height: 20px;
   box-shadow: .2px .2px 1px 0px #7a7a7a;
-  margin: 0 auto;
+  margin: 12px auto;
   float:left;
   min-width: 285px;
   background: white;
@@ -299,12 +308,12 @@ select{
 }
 
 .begin-text{
-  width: 50%;
-  margin: 40px auto 15px auto;
-  opacity: 1;
+  width: 40%;
+  margin: 0px auto 25px auto;
+  opacity: .5;
   color: black;
   font-size: 54px;
-  font-weight: 300;
+  font-weight: 100;
   -webkit-font-smoothing: antialiased;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 }
@@ -355,34 +364,62 @@ select{
 }
 #steps{
   height: auto;
-  width: 100%;
+  width: 90%;
   overflow: auto;
   padding: 10px 0px;
-  margin: 0 auto;
+  margin: 40px auto;
+  background: white;
+  box-shadow: 1px 2px 4px 0 #7a7a7a;
+
+
   // background: #fbfbfb;
 
 }
 .step{
   text-align: left;
-  width: 95%;
+  width: 90%;
   background: #fff;
   margin: 15px auto 0 auto;
-  height: 80px;
-  border-radius: 3px;
-  box-shadow: .5px 1px 2px 0px #7a7a7a;
+  height: 60px;
+  border-bottom: 1px solid #dcdcdc;
+
+  // box-shadow: 1px 2px 4px 0px #7a7a7a;
   padding: 10px 15px 0 15px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+}
+.step-content{
+  height: 70px;
+  padding-top: 25px;
+  width: 100%;
+
 }
 .projects-header {
   // text-align: left;
   // padding-left: 8%;
-  background: url('dash-box.png') no-repeat;
-  height: 100px;
-  padding-top: 1px;
+  // background: url('dash-box.png') no-repeat;
+  width: 40%;
+  min-width: 372px;
+  margin: 0 auto;
+  height: 200px;
+  padding: 20px 0;
 }
 .projects-header h1{
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 240%;
+  font-size: 300%;
+  color: black;
+  margin-bottom: 15px;
+}
+.projects-header p{
+  font-weight: 300;
+  font-size: 20px;
+  opacity: .7;
+  width: 70%;
+  margin: 0 auto;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 }
 .project-name{
   margin: 0 auto;
@@ -397,25 +434,36 @@ select{
 }
 
 .projects{
-  width: 95%;
-  background: white;
+  width: 100%;
+  background: #e3e3e3;
   min-height: 150px;
-  max-height: 250px;
-  // border-top: .5px solid #cfcfcf;
+
+  border-top: .5px solid #cfcfcf;
+  border-bottom: .5px solid #cfcfcf;
   // box-shadow: 1px 1px 3px 0px #7a7a7a;
   // box-shadow: inset .5px .5px 1.5px 0px #7a7a7a;
-  overflow: scroll;
+
   margin: 0px auto 10px auto;
   // min-height: 400px;
 }
+.projects.p-dash {
+  max-height: 400px;
+  overflow: scroll;
+}
 .project{
   text-align: left;
-  width: 95%;
-  background: #f7f7f7;
+  width: 90%;
+  min-width: 680px;
+  background: #fff;
   margin: 15px auto 0 auto;
-  height: 70px;
-  box-shadow: .5px .5px 1px .5px #7a7a7a;
-  padding: 10px 15px 0 15px;
+  height: 100px;
+  border-radius: 3px;
+  box-shadow: 1px 2px 4px 0px #7a7a7a;
+  padding: 10px 25px 0 25px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
 }
 .progress-bar{
   width: 60%;
@@ -446,13 +494,17 @@ select{
   text-align: left;
 }
 .project-title a{
-  color: #4A91E2;
+  color: #000;
+  // font-size: 150%;
+  font-weight: 200;
+  font-size: 22px;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
   // color: #0366d6;
   text-decoration: none;
 }
-.project-title a:hover{
-  text-decoration: underline;
-}
+// .project-title a:hover{
+//   text-decoration: underline;
+// }
 .share{
   width: 27%;
   float:right;
@@ -471,11 +523,10 @@ select{
   background: url('share-btn.png') no-repeat;
 }
 .share button{
-  margin: -8px auto;
-  background: url('share-btn-white.png') no-repeat;
+  background: url('share-btn-large.png') no-repeat;
   border: none;
-  width: 88px;
-  height: 29px;
+  width: 121px;
+  height: 40px;
   color: #5a5a5a;
   font-size: 90%;
   float: right;
@@ -488,18 +539,26 @@ select{
 .share-show button{
   background: url('share-btn.png') no-repeat;
   border: none;
-  width: 89px;
-  height: 29px;
+  width: 121px;
+  height: 40px;
   color: #4990E2;
   font-size: 90%;
 }
 .title{
   float:left;
-  margin:0px auto;
+  margin: 0px auto 0 auto;
   height: 20px;
+  font-weight: 200;
+  font-size: 20px;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 }
 .project-description{
-  margin-bottom: 5px;
+  opacity: .4;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 .description{
   font-weight: 300;
@@ -510,16 +569,20 @@ select{
 }
 .inner{
   font-size: 95%;
-  margin-left: 20px;
+  margin-left: 27px;
 }
 .edit-step{
   float: right;
 }
 .break{
-  height: 22px;
+  height: 25px;
 }
 .status{
   float:right;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 }
 .projects-bottom{
   padding: 25px 0;

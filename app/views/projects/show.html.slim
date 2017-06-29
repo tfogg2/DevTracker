@@ -22,7 +22,7 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
   div class="projects"
     #steps
       - @project.steps.each_with_index do |s, i|
-        div class="step"
+        div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id } do
           div class="title"
               span
                 span = i+1
@@ -37,13 +37,13 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
           div class="description inner"
             div class="break"
             span = s.description
-            div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
-              span Edit
+            /div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
+            /  span Edit
       end
     end
 - else
-  h1.begin-text Add steps to your project
-    p
+  -if current_user.developer_for?(@project)
+    h3.begin-text Begin by adding steps to your project
 - if current_user.developer_for?(@project)
   = link_to '#', class:"create-step", data: {'project-id': @project.id } do
     button class="modal-btn" + Add Step
