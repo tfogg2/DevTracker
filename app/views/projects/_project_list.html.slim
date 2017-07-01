@@ -12,7 +12,7 @@
         - if project.steps.any?
           .inner-progress-bar style='width: #{(project.completed_hours.to_f/project.total_hours.to_f)*100}%'
 
-    - if current_user.developer_for?(project)
-      .share
-        = link_to '#', data: {'project-id': project.id, 'user-id': current_user.id }, class: "share-project" do
-          button.modal-btn Share
+  - if current_user.developer_for?(project)
+    .share
+      = link_to '#', data: {'project-id': project.id, 'user-id': current_user.id }, class: "share-project" do
+        button.modal-btn Share

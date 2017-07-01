@@ -100,6 +100,16 @@ $(document).ready(function(){
 		return false;
 	});
 
+	// $.ajax({
+	// 	url: '/users/sign_up',
+	// 	success: function(data){
+	// 		var home_signup = document.getElementsByClassName('home-signup');
+	// 		$(home_signup).append(data);
+	// 		return false;
+	// 	}
+	//
+	// });
+
 
 });
 // $('.modal-btn').on('click', function(){

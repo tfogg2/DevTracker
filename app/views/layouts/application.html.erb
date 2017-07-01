@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevTrack</title>
+    <title>Freelancer Dashboard</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -11,19 +11,21 @@
     <div id="modal">
       <div id="modal-holder"></div>
     </div>
-    <div id="top-bar">
-      <h1 class="logo"><%= link_to "Free Dash", root_path %></h1>
-      <ul id="nav">
-        <%- if user_signed_in? %>
-           <li><%= link_to "Dashboard", user_path(current_user) %>   |</li>
-           <!-- <li><%# link_to current_user.email, user_path(current_user) %>   |</li> -->
-           <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
-        <%- else %>
-           <li><%= link_to "Login", new_user_session_path %>   |</li>
-           <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <%- end %>
-      </ul>
-    </div>
+    <% unless current_page?(root_path) %>
+      <div id="top-bar">
+        <h1 class="logo"><%= link_to "Free Dash", root_path %></h1>
+        <ul id="nav">
+          <%- if user_signed_in? %>
+             <li><%= link_to "Dashboard", user_path(current_user) %>   |</li>
+             <!-- <li><%# link_to current_user.email, user_path(current_user) %>   |</li> -->
+             <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
+          <%- else %>
+             <li><%= link_to "Login", new_user_session_path %>   |</li>
+             <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <%- end %>
+        </ul>
+      </div>
+    <% end %>
     <div id="content">
       <%= yield %>
     </div>

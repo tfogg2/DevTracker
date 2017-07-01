@@ -15,7 +15,10 @@ div id="project-show"
     div id="progress-bar"
 
         div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
-
+  - if current_user.developer_for?(@project)
+    = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+      button class="modal-btn" + Add Step
+    end
 div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
 -if @project.steps.any?
@@ -31,9 +34,12 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
                 = s.title + ' (Approx '
               span
                 = s.hours.to_s + ' hours):'
-
-          div class="status"
-            span = status_label(s.status) + ' '
+          - if s.status == 'completed'
+            div class="status completed"
+              span = status_label(s.status) + ' '
+          - else
+            div class="status"
+              span = status_label(s.status) + ' '
           div class="description inner"
             div class="break"
             span = s.description
@@ -43,11 +49,8 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
     end
 - else
   -if current_user.developer_for?(@project)
-    h3.begin-text Begin by adding steps to your project
-- if current_user.developer_for?(@project)
-  = link_to '#', class:"create-step", data: {'project-id': @project.id } do
-    button class="modal-btn" + Add Step
-  end
+    /h3.begin-text Begin by adding steps to your project
+
     /create table
 
 

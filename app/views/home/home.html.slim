@@ -1,17 +1,36 @@
-.home
 
-  h1 class="dash" A simple dashboard for your freelance projects
-  - if user_signed_in?
-    = link_to new_project_path do
-      button class="start-btn" Start your first project
-    end
-  -else
-     = link_to new_user_registration_path do
-       button class="start-btn" Start your first project
-     end
-  div class="login"
-    p Already started?
-    = link_to "Login", new_user_session_path
+#home
+  #home-nav
+    h1 = link_to "Free Dash", root_path
+    ul
+      - if user_signed_in?
+        li = link_to "Dashboard", user_path(current_user)
+        li = link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete
+      -else
+        li = link_to "Login", new_user_session_path
+        li = link_to "Sign up", new_user_registration_path
+  #home-content
+    .home-signup
+      = render '/devise/registrations/home'
+    .dash
+      h1 Built for freelance developers
+      p.home-message Freedash lets you create, manage and share your freelance projects from one simple dashboard.
+#home-bottom
+
+
+
+
+/  - if user_signed_in?
+/    = link_to new_project_path do
+/      button class="start-btn" Start your first project
+/    end
+/  -else
+/     = link_to new_user_registration_path do
+/       button class="start-btn" Start your first project
+/     end
+/  div class="login"
+/    p Already started?
+/    = link_to "Login", new_user_session_path
 
 
   /ul class="nav"

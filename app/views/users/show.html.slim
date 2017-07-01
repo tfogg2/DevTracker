@@ -8,15 +8,18 @@ p#notice = notice
 div class="projects-header"
   h1 Project Dashboard
   p Create, manage and share your freelance projects from the Dash
+  = link_to '#', data: current_user.id do
+    button class="modal-btn create-project" + Add Project
 - if current_user.projects.any?
   div class="projects p-dash"
-    - current_user.projects.each do |project|
-      = render('projects/project_list', {project: project, steps: project.steps})
-    end
+    .project-row
+      - current_user.projects.each do |project|
+        = render('projects/project_list', {project: project, steps: project.steps})
+      end
 - else
   .new-dash
 
-.projects-bottom
-  = link_to '#', data: current_user.id do
-    button class="modal-btn create-project" + Add Project
-  end
+/.projects-bottom
+/  = link_to '#', data: current_user.id do
+/    button class="modal-btn create-project" + Add Project
+/  end
