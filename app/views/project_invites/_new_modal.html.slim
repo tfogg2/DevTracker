@@ -1,6 +1,6 @@
 #share-modal
   h1 Share this link to add clients
-  .share-link
+  .share-div
     = link_to join_project_url(t: @invite.share_token), join_project_url(t: @invite.share_token), id: 'link-to-share'
 
-    button.clipboard-btn data-clipboard-action="copy" data-clipboard-target="#link-to-share" 
+    button.clipboard-btn data-clipboard-action="copy" data-clipboard-target="#link-to-share"

@@ -285,13 +285,23 @@ textarea{
   font-weight: 200;
   font-size: 240%;
 }
-.share-link{
+.share-div{
   height: 26px;
   padding-top: 10px;
   border-radius: 5px;
   box-shadow: inset 1px 1px 3px 0 #8a8a8a;
   margin: 0 auto;
-  width: 75%;
+  width: 65%;
+}
+.share-div a{
+  text-decoration: none;
+}
+.clipboard-btn{
+  float: right;
+  border: none;
+  width: 38px;
+  margin-top: -10px;
+  background: url('clip.png') no-repeat;
 }
 /* MODAL */
 
