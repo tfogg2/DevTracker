@@ -91,7 +91,8 @@ $(document).ready(function(){
 
 	});
 	$(step).on('click',function(){
-		var edit = document.getElementById('edit-steps');
+		var edit = $(this).children(1);
+		// var edit = document.getElementById('edit-steps');
 		// var title = document.getElementsByClassName('dash-title');
 		var project_id = $(edit).data('project-id');
 		var step_id = $(edit).data('step-id');
@@ -99,6 +100,9 @@ $(document).ready(function(){
 
 		return false;
 	});
+
+	var clipboard = new Clipboard('.clipboard-btn');
+  console.log(clipboard);
 
 	// $.ajax({
 	// 	url: '/users/sign_up',
