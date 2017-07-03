@@ -39,6 +39,25 @@ body{
 #notice p{
 
 }
+.error-top{
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  font-family: Open Sans,open-sans,sans-serif;
+  color: #D8000C;
+  // background-color: #FFBABA;
+}
+.error{
+  color: #D8000C;
+  padding: 5px;
+}
+#error_explanation h2{
+  -webkit-font-smoothing: antialiased;
+  font-family: Open Sans,open-sans,sans-serif;
+  font-weight: 300;
+}
+#error_explanation ul{
+  padding-left: 0;
+}
 #nav li{
   display: inline-block;
   text-align: center;
@@ -85,7 +104,7 @@ body{
   float:left;
   font-size: 225%;
   width: 200px;
-  margin: 14px auto;
+  margin: 15px auto;
   // background: white;
   // opacity: .3;
   // position: absolute;
@@ -151,7 +170,7 @@ select{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
-  top: 0;
+  top: 64px;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -163,7 +182,7 @@ select{
 }
 .form-content{
   width: 40%;
-  height: 315px;
+  height: 335px;
   background: #fff;
   padding-top: 10px;
   margin: 10% auto;
@@ -181,9 +200,22 @@ select{
   // font-size: 240%;
   margin: 15px 0;
 }
-.form-content-project{
+#form-content-project{
   width: 50%;
   height: 250px;
+  margin: 0 auto;
+}
+#form-content-project .form-inputs input{
+  width: 600px;
+  margin: 10px auto;
+}
+#form-content-project .form-inputs textarea{
+  width: 600px;
+  margin: 10px auto;
+}
+#form-content-project .actions input{
+  width: 300px;
+  margin: 20px auto;
 }
 .form-bottom{
   background: #F5F5F5;
@@ -226,7 +258,7 @@ textarea{
   // border-radius: 10px;
 }
 .form-actions input{
-  width: 25%;
+  width: 50%;
   height: 40px;
   color: white;
   font-size: 100%;
