@@ -360,7 +360,7 @@ textarea{
   box-sizing: border-box
 }
 #home-nav{
-  width: 80%;
+  width: 85%;
   top:0;
   height: 60px;
   background: transparent;
@@ -379,7 +379,7 @@ textarea{
   -webkit-font-smoothing: antialiased;
 }
 #home-nav ul{
-  width: 175px;
+  min-width: 136px;
   float: right;
   text-align: left;
   display: inline-block;
