@@ -79,6 +79,7 @@ body{
   color: white;
   text-decoration: none;
   font-weight: 100;
+  margin-right: 15px;
 }
 .logo{
   float:left;
@@ -308,8 +309,8 @@ textarea{
 
 /* PROJECT */
 #project-show{
-  height: 300px;
-  padding: 20px 0 50px 0;
+  height: 350px;
+  padding: 20px 0;
 
 }
 #progress-bar{
@@ -318,7 +319,7 @@ textarea{
   height: 15px;
   border: none;
   // border: .5px solid #ccc;
-  margin: 40px auto 25px auto;
+  margin: 40px auto;
   border-radius: 20px;
   box-shadow: .5px .5px 1.5px 0px #7a7a7a;
 }
@@ -611,13 +612,13 @@ textarea{
 #project-title{
   height: 150px;
   width: 40%;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   padding-top: 40px;
 }
 #project-title h1{
   font-size: 54px;
   font-weight: 300;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   text-decoration: none;
 }
 
