@@ -104,6 +104,11 @@ $(document).ready(function(){
 	var clipboard = new Clipboard('.clipboard-btn');
   console.log(clipboard);
 
+
+
+
+
+
 	// $.ajax({
 	// 	url: '/users/sign_up',
 	// 	success: function(data){
