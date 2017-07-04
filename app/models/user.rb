@@ -4,7 +4,14 @@ class User < ApplicationRecord
 
   has_many :user_projects, dependent: :destroy
   has_many :projects, through: :user_projects, dependent: :destroy
+  validates :username,
+  :presence => true,
+  :uniqueness => {
+    :case_sensitive => false
+  }
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
+  attr_accessor :login
   # These helper methods will help us determine what type of user
   # this is for a specific project (ex. current_user.user_type_for(@project))
   def user_type_for?(project = nil)
