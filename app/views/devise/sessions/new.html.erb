@@ -1,5 +1,9 @@
 <div class="form">
+
   <div class="form-content">
+    <%- flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <%- end -%> 
     <h1>Log in</h1>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

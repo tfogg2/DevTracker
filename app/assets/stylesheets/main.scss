@@ -46,6 +46,10 @@ body{
   opacity: .9;
   // background-color: #FFBABA;
 }
+#flash_alert{
+  // background: #FFBABA;
+  color: #D8000C;
+}
 .error{
   color: #D8000C;
   padding: 5px;
@@ -167,7 +171,7 @@ select{
 
 /* FORM */
 .form{
-  position: fixed; /* Stay in place */
+  position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 64px;
@@ -382,6 +386,10 @@ textarea{
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
 }
+
+
+/* HOME */
+
 #home{
   background: url('home-background.png') no-repeat;
   background-size: cover;
@@ -429,9 +437,6 @@ textarea{
   margin: 10px auto;
   text-align: left;
 }
-.required{
-
-}
 .home-inputs input{
   margin-bottom: 25px;
   margin-top: 5px;
@@ -460,20 +465,6 @@ textarea{
 .home-inputs abbr{
   display: none;
 }
-.dash{
-  margin:10px 0 10px 12%;
-  width: 460px;
-}
-.dash h1{
-  text-align: left;
-  color: white;
-  font-size: 72px;
-  font-weight: 300;
-
-  width: 400px;
-  margin: 10px;
-  line-height: 1;
-}
 .home-message{
   font-size: 26px;
   width: 450px;
@@ -492,6 +483,135 @@ textarea{
   margin-right: 12%;
   background: #FAFBFC;
   border-radius: 5px;
+}
+#home-bottom{
+  padding: 20px 10%;
+  min-width: 800px;
+}
+#home-bottom h1{
+  font-weight: 300;
+  font-size: 54px;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  margin-bottom: 10px;
+}
+#home-bottom h2{
+
+  font-weight: 300;
+  font-size: 22px;
+  font-family: Open Sans,open-sans,sans-serif;
+  margin: 8px 0;
+}
+#home-bottom p{
+  font-weight: 300;
+  font-size: 16px;
+  font-family: Open Sans,open-sans,sans-serif;
+  margin: 8px 0;
+}
+#home-bottom a{
+  font-weight: 300;
+  font-size: 16px;
+  font-family: Open Sans,open-sans,sans-serif;
+}
+#home-bottom .value-one p{
+  width: 75%;
+  margin: 30px auto;
+  font-size: 20px;
+  color: #586069;
+}
+.value-one{
+  width: 80%;
+  margin: 75px auto 0 auto;
+}
+.satisfaction{
+  background: url('satisfaction.png') no-repeat;
+  height: 30px;
+  width: 165px;
+  margin: 0 auto;
+
+}
+.value-two{
+  height: 90px;
+  text-align: left;
+  margin: 150px 0;
+
+}
+#home-bottom .value-two p{
+  width: 40%;
+}
+.organization{
+  background: url('completion.png') no-repeat;
+  width: 90px;
+  height: 76px;
+  float: right;
+  margin-top: -80px;
+  margin-right: 45%;
+}
+.value-three{
+  text-align: center;
+  margin: 0px auto 150px auto;
+}
+.progression{
+  background: url('progression.png') no-repeat;
+  height: 25px;
+  width: 485px;
+  margin: 40px auto;
+}
+.value-four{
+  text-align: left;
+  margin-bottom: 150px;
+  padding-left: 55%;
+
+}
+.value-four a{
+  color: #4990E2;
+}
+
+#home-bottom .value-four p{
+  width: 445px;
+}
+.start{
+  width: 250px;
+  height: 50px;
+  margin: 100px auto;
+
+}
+.start a{
+  color: white;
+  font-size: 16px;
+}
+.start button{
+  background: url('start-btn.png') no-repeat;
+  border: none;
+  width: 250px;
+  height: 50px;
+  border-radius: 5px;
+
+}
+
+
+/* HOME */
+
+
+
+
+
+
+
+
+
+.dash{
+  margin:10px 0 10px 12%;
+  width: 460px;
+}
+.dash h1{
+  text-align: left;
+  color: white;
+  font-size: 72px;
+  font-weight: 300;
+
+  width: 400px;
+  margin: 10px;
+  line-height: 1;
 }
 .dash-mid{
   width: 60%
