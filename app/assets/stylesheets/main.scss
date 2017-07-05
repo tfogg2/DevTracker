@@ -103,7 +103,6 @@ body{
 #top-bar a{
   color: white;
   text-decoration: none;
-  font-weight: 100;
   margin-right: 15px;
 }
 .logo{
@@ -184,7 +183,7 @@ select{
 }
 .form-content{
   width: 40%;
-  height: 385px;
+  height: 365px;
   background: #fff;
   padding-top: 10px;
   margin: 10% auto;
@@ -842,6 +841,9 @@ textarea{
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+}
+.project-description.box span{
+  font-size: 14px;
 }
 .description{
   font-weight: 300;

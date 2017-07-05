@@ -5,7 +5,7 @@
   .step-content
     .project-title
       span = link_to project.name, project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id}
-      .project-description
+      .project-description.box
         span = project.description
     = link_to project_path(project), class: "dash-title", data: {'project-id': project.id, 'user-id': current_user.id} do
       #progress-bar-mini
