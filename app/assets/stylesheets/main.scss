@@ -412,7 +412,6 @@ textarea{
   float: left;
   text-decoration: none;
   color: white;
-  font-weight: 200;
   -webkit-font-smoothing: antialiased;
 }
 #home-nav ul{
@@ -483,7 +482,7 @@ textarea{
   float: right;
   margin-right: 12%;
   background: #FAFBFC;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 #home-bottom{
   padding: 20px 10%;
@@ -622,7 +621,7 @@ textarea{
   font-size: 90%;
 }
 .create-step button{
-  margin: 0px auto;
+  margin: 10px auto;
   background: url('form-btn.png') no-repeat;
   border: none;
   border-radius: 5px;
