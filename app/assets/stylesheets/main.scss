@@ -387,8 +387,24 @@ textarea{
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
 }
+.delete{
+  float:right;
+  opacity: .5;
+  margin-top: -15px;
+  margin-right: -10px;
 
+}
+.delete a{
+  text-decoration: none;
+}
+.delete-step{
+  text-align: center;
 
+}
+.delete-step a{
+  color:#000;
+  opacity: .8;
+}
 /* HOME */
 
 #home{
