@@ -53,8 +53,9 @@ body{
   color: #D8000C;
 }
 .error{
+  float: right;
   color: #D8000C;
-  padding: 5px;
+  padding: 0px 70px;
 }
 #error_explanation h2{
   -webkit-font-smoothing: antialiased;
