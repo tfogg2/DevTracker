@@ -26,6 +26,8 @@ p{
 }
 body{
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Open Sans,open-sans,sans-serif;
   // background: #eaeaea;
 }
 #notice{
