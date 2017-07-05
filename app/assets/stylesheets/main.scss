@@ -603,6 +603,17 @@ textarea{
   border-radius: 5px;
 
 }
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 1s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.8s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateX(0); }
+}
 
 
 /* HOME */
