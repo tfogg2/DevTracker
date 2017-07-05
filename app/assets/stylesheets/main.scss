@@ -270,6 +270,17 @@ textarea{
   background-repeat: none;
   border-radius: 5px;
 }
+.actions input{
+  width: 50%;
+  height: 40px;
+  color: white;
+  font-size: 100%;
+  border: none;
+  margin: 40px auto;
+  background: url('form-btn.png') no-repeat;
+  background-repeat: none;
+  border-radius: 5px;
+}
 .form-actions{
   margin-bottom: 25px;
 }
