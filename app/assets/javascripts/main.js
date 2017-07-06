@@ -57,6 +57,14 @@ $(document).ready(function(){
 		return false;
 
 	});
+	var share_dash = document.getElementsByClassName('share-dash');
+	$(share_dash).on('click', function(){
+		var project_id = $(this).data('project-id');
+		var user_id = $(this).data('user-id');
+		$.getScript('/projects/'+project_id+'/project_invites/new');
+		return false;
+
+	});
 
 	var edit_project = document.getElementsByClassName('edit-project');
 	$(edit_project).on('click', function(){

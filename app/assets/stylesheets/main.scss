@@ -16,6 +16,7 @@ button{
   width: 200px;
   border-radius: 3px;
   background-color: #fff;
+  cursor: pointer;
 
 }
 button a{
@@ -75,11 +76,20 @@ body{
 }
 #nav{
   float: right;
-  margin: 40px auto 0 auto;
-  opacity: .8;
+  margin: 0px auto;
+}
+#nav a{
+  font-size: 11px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .85px;
+  opacity: .5;
+}
+#nav a:hover{
+  color: white;
 }
 #content{
-  margin:  0px auto 25px auto;
+  margin:  -1px auto 25px auto;
   text-align: center;
   height: 100%;
   min-height: 550px;
@@ -91,31 +101,39 @@ body{
   color: white;
   min-width: 520px;
   height:65px;
-  padding: 0 10%;
+  padding: 20px 5% 0 5%;
   //background: #fff;
-  background: #24292e;
+  background: #1F2433;
   // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 0px;
   border-bottom: .5px solid #ccc;
+
   //background: url('top-bar.png');
 }
 #top-bar a{
-  color: white;
+
   text-decoration: none;
   margin-right: 15px;
+
+}
+#top-bar a:hover{
+  color: #white;
 }
 .logo{
   float:left;
-  font-size: 225%;
+  font-size: 20px;
   width: 200px;
-  margin: 15px auto;
+  margin: 0px auto;
   // background: white;
   // opacity: .3;
   // position: absolute;
   // left:0;
   // top:0;
+}
+.logo a{
+  color: white;
 }
 #footer{
   height: 50px;
@@ -354,8 +372,7 @@ textarea{
 
 /* PROJECT */
 #project-show{
-  height: 350px;
-  padding: 20px 0;
+  height: 200px;
 
 }
 #progress-bar{
@@ -364,7 +381,7 @@ textarea{
   height: 15px;
   border: none;
   // border: .5px solid #ccc;
-  margin: 40px auto;
+  margin: 10px auto;
   border-radius: 20px;
   box-shadow: .5px .5px 1.5px 0px #7a7a7a;
 }
@@ -404,9 +421,13 @@ textarea{
   opacity: .5;
   margin-top: -15px;
   margin-right: -10px;
-
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e6e6e6;
 }
 .delete a{
+  color: #6b6b6b;
   text-decoration: none;
 }
 .delete-step{
@@ -416,6 +437,9 @@ textarea{
 .delete-step a{
   color:#000;
   opacity: .8;
+}
+.progress{
+  font-size: 14px;
 }
 /* HOME */
 
@@ -659,25 +683,31 @@ textarea{
   min-height: 40px;
   font-size: 90%;
 }
-.create-step button{
-  margin: 10px auto;
-  background: url('form-btn.png') no-repeat;
+.add-step{
+  width: 52px;
+  height: 52px;
+  margin-top: 4px;
+  display: block;
+  border-radius: 50%;
+  background: url('add-btn.svg') no-repeat;
   border: none;
-  border-radius: 5px;
-  color: white;
-  width: 15%;
-  min-width: 100px;
-  font-size: 100%;
+  right: 0;
+  position: absolute;
+  margin-right: 5%;
+  outline:none;
 }
 .create-project {
-  width: 32%;
-  margin: 36px auto;
-  min-width: 145px;
-  background: url('form-btn.png') no-repeat;
+  width: 52px;
+  height: 52px;
+  margin: 15px auto;
+  display: block;
+  border-radius: 50%;
+  background: url('add-btn.svg') no-repeat;
   border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 90%;
+  right: 0;
+  position: absolute;
+  margin-right: 5%;
+  outline:none;
 }
 .projects-bottom button:hover{
   text-decoration: underline;
@@ -687,12 +717,12 @@ textarea{
 }
 #steps{
   height: auto;
-  width: 90%;
   overflow: auto;
   padding: 10px 0px;
   margin: 40px auto;
   background: white;
   box-shadow: 1px 2px 4px 0 #7a7a7a;
+  max-height: 500px;
 }
 .step{
   text-align: left;
@@ -717,24 +747,20 @@ textarea{
   margin: 0 auto
 }
 .projects-header {
-  // text-align: left;
-  // padding-left: 8%;
-  // background: url('dash-box.png') no-repeat;
-  width: 40%;
+  text-align: left;
+  background: #1F2433;
+  width: 90%;
   min-width: 372px;
-  margin: 0 auto 50px auto;
-  height: 200px;
-  padding: 20px 0;
+  margin: 0px auto 50px auto;
+  height: 100px;
+  padding: 20px 5%;
 }
 .projects-header h1{
-  font: 300 300% "Open Sans",open-sans,sans-serif;
-  // font-weight: 200;
-  // font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  // font-size: 300%;
-  color: black;
-  margin-bottom: 25px;
+  font: 300 32px "Open Sans",open-sans,sans-serif;
+  color: white;
 }
 .projects-header p{
+  display: none;
   font-weight: 300;
   font-size: 20px;
   opacity: .7;
@@ -755,17 +781,12 @@ textarea{
 }
 
 .projects{
-  width: 100%;
-  background: #e1e1e1;
+  width: 90%;
+  padding: 0 5%;
+  background: #fff;
   min-height: 150px;
-
-  border-top: .5px solid #cfcfcf;
-  border-bottom: .5px solid #cfcfcf;
-  // box-shadow: 1px 1px 3px 0px #7a7a7a;
-  // box-shadow: inset .5px .5px 1.5px 0px #7a7a7a;
-
   margin: 0px auto 0px auto;
-  // min-height: 400px;
+
 }
 .projects.p-dash {
   max-height: 500px;
@@ -773,17 +794,16 @@ textarea{
   margin-bottom: 100px;
 }
 .project-row{
-  width: 1025px;
-
+  width: 1080px;
   margin: 0 auto;
 }
 .project{
   text-align: center;
-  width: 280px;
+  width: 330px;
   float: left;
-  background: #fff;
-  margin: 20px 3%;
-  height: 225px;
+  background: #F9F9FB;
+  margin: 20px 30px 20px 0;
+  height: 250px;
   border-radius: 4px;
   box-shadow: 1px 2px 4px 0px #7a7a7a;
   padding: 10px 0px 0 0px;
@@ -791,22 +811,27 @@ textarea{
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   -ms-transition: all .2s ease-in-out;
+  cursor: pointer;
 }
 .progress-bar{
   width: 60%;
   float: left;
 }
 #project-title{
-  height: 150px;
-  width: 40%;
+  text-align: left;
+  height: 100px;
+  width: 90%;
   margin: 0 auto 20px auto;
-  padding-top: 40px;
+  padding: 20px 5%;
+  background: #1f2433;
 }
-#project-title h1{
-  font-size: 54px;
+#project-title h1 a{
   font-weight: 300;
   margin-bottom: 20px;
   text-decoration: none;
+  height: 100px;
+  font: 300 32px "Open Sans",open-sans,sans-serif;
+  color: white;
 }
 
 .project-title{
@@ -821,9 +846,44 @@ textarea{
 }
 .share{
   width: 100%;
+  margin-top: 40px;
+  border-top: 1px solid #d8d8d8;
+  cursor: pointer;
+
+}
+.share-dash{
+  width: 100%;
   margin-top: 15px;
   border-top: 1px solid #d8d8d8;
-
+}
+.share .share-dash button{
+  // background: url('share-btn-large.png') no-repeat;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: none;
+  width: 100%;
+  height: 60px;
+  color: #5a5a5a;
+  font-size: 90%;
+  background: #fff;
+}
+.share-project{
+  width: 120px;
+  float: right;
+  margin-top: -90px;
+}
+.share-project button{
+  height: 32px;
+  font-size: 14px;
+  width: 120px;
+  border-radius: 33px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #11B683;
+  color: white;
 }
 .share-project a{
   color: #4A91E2;
@@ -845,7 +905,7 @@ textarea{
   border-top-right-radius: 0px;
   border: none;
   width: 100%;
-  height: 60px;
+  height: 61px;
   color: #5a5a5a;
   font-size: 90%;
   background: #f1f1f1;
@@ -873,7 +933,6 @@ textarea{
   font-family: Open Sans,open-sans,sans-serif;
 }
 .project-description{
-  opacity: .4;
   width: 100%;
   height: 35px;
   overflow: hidden;
@@ -885,12 +944,17 @@ textarea{
 }
 .description{
   font-weight: 300;
-  font-size: 20px;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
 }
 .description.project-description{
-  height: 50px;
+  font-size: 16px;
+  color: white;
+  opacity: .5;
+  height: 40px;
+  width: 60%;
+  margin: 5px 0;
 }
 .inner{
   font-size: 14px;

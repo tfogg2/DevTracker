@@ -9,7 +9,8 @@ div class="projects-header"
   h1 Project Dashboard
   p Create, manage and share your freelance projects from the Dash
   = link_to '#', data: current_user.id do
-    button class="modal-btn create-project" + Add Project
+    button class="modal-btn create-project"
+    /= image_tag('plus.svg')
 - if current_user.projects.any?
   div class="projects p-dash"
     .project-row

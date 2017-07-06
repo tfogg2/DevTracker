@@ -15,5 +15,5 @@
 
   - if current_user.developer_for?(project)
     .share
-      = link_to '#', data: {'project-id': project.id, 'user-id': current_user.id }, class: "share-project" do
+      = link_to '#', data: {'project-id': project.id, 'user-id': current_user.id }, class: "share-dash" do
         button.modal-btn Share
