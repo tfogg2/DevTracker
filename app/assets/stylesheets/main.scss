@@ -33,8 +33,10 @@ body{
 }
 #notice{
   line-height: 2.5;
-  color: #4F8A10;
-  background-color: #DFF2BF;
+  color: #faff67;
+  background: #11b683;
+  // color: #4F8A10;
+  // background-color: #DFF2BF;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
@@ -394,18 +396,19 @@ textarea{
   background: white;
 }
 .inner-progress-bar{
-  background: #5DA5E6;
+  background: #11B683;
+  // background: #5DA5E6;
   height: 15px;
   border-radius: 15px;
 }
 
 .begin-text{
   width: 40%;
-  margin: 0px auto 25px auto;
-  opacity: .5;
+  margin: 100px auto 25px auto;
+  opacity: .9;
   color: black;
-  font-size: 54px;
-  font-weight: 100;
+  font-size: 26px;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
@@ -689,7 +692,7 @@ textarea{
   margin-top: 4px;
   display: block;
   border-radius: 50%;
-  background: url('add-btn.svg') no-repeat;
+  background: url('add-button.svg') no-repeat;
   border: none;
   right: 0;
   position: absolute;
@@ -702,7 +705,7 @@ textarea{
   margin: 15px auto;
   display: block;
   border-radius: 50%;
-  background: url('add-btn.svg') no-repeat;
+  background: url('add-button.svg') no-repeat;
   border: none;
   right: 0;
   position: absolute;
