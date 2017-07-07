@@ -47,10 +47,3 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
 - else
   -if current_user.developer_for?(@project)
     h3.begin-text Begin by adding steps to your project
-
-    /create table
-
-
-/= link_to 'Edit', edit_project_path(@project)
-/'  |
-/= link_to 'Back', projects_path
