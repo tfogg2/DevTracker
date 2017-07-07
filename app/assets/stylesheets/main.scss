@@ -831,7 +831,8 @@ textarea{
 
 .project-title{
   min-width: 170px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
+  height: 60px;
 }
 .project-title a{
   margin-right: 0px;
@@ -897,7 +898,7 @@ textarea{
   opacity: .4;
   width: 65%;
   margin: 0 auto;
-  min-height: 25px;
+  height: 36px;
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
