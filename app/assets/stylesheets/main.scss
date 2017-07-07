@@ -174,10 +174,14 @@ select{
   background: #3a3a3a;
   color: white;
 }
+.hover-white .step-content .project-title a{
+  margin-right: -10px;
+}
 .hover-white .step-content a{
   color: white;
 }
 .hover-white .step-content .delete{
+  display: block;
   background: white;
   color: #a7a7a7;
 }
@@ -419,12 +423,13 @@ textarea{
   font-family: Open Sans,open-sans,sans-serif;
 }
 .delete{
+  display: none;
   float:right;
   margin-top: -15px;
   margin-right: -10px;
   width: 20px;
   height: 20px;
-  border: 1px solid #a7a7a7;
+  // border: 1px solid #a7a7a7;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -832,7 +837,7 @@ textarea{
   margin-bottom: 40px;
 }
 .project-title a{
-  margin-right: -10px;
+  margin-right: 0px;
   color: #000;
   -webkit-font-smoothing: antialiased;
   font:200 22px Open Sans,open-sans,sans-serif;

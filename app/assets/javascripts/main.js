@@ -77,6 +77,7 @@ $(document).ready(function(){
 	});
 	$(project).mouseenter(function(){
 		$(this).addClass("hover-white");
+		$(project).children('.delete').show();
 		$(this).mouseleave(function(){
 			$(this).removeClass("hover-white");
 		});
