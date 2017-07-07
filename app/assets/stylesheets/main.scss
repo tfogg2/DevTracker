@@ -17,7 +17,6 @@ button{
   border-radius: 3px;
   background-color: #fff;
   cursor: pointer;
-
 }
 button a{
   text-decoration: none;
@@ -33,10 +32,9 @@ body{
 }
 #notice{
   line-height: 2.5;
-  color: #faff67;
-  background: #11b683;
-  // color: #4F8A10;
-  // background-color: #DFF2BF;
+  margin-top: 1px;
+  color: #4F8A10;
+  background-color: #DFF2BF;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
@@ -78,20 +76,13 @@ body{
 }
 #nav{
   float: right;
-  margin: 0px auto;
-}
-#nav a{
-  font-size: 11px;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: .85px;
-  opacity: .5;
+  margin: 28px auto 0 auto;
 }
 #nav a:hover{
-  color: white;
+  opacity: .6;
 }
 #content{
-  margin:  -1px auto 25px auto;
+  margin:  0px auto 25px auto;
   text-align: center;
   height: 100%;
   min-height: 550px;
@@ -100,42 +91,34 @@ body{
   // width: 75%;
 }
 #top-bar{
-  color: white;
+  color: black;
   min-width: 520px;
-  height:65px;
-  padding: 20px 5% 0 5%;
+  height: 50px;
+  padding: 0 5%;
   //background: #fff;
-  background: #1F2433;
+  background: #fff;
   // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   line-height: 1.5;
-  margin-bottom: -5px;
+  margin-bottom: 0px;
   border-bottom: .5px solid #ccc;
-
   //background: url('top-bar.png');
 }
 #top-bar a{
-
+  color: black;
   text-decoration: none;
   margin-right: 15px;
-
-}
-#top-bar a:hover{
-  color: #white;
 }
 .logo{
   float:left;
-  font-size: 20px;
+  font-size: 24px;
   width: 200px;
-  margin: 0px auto;
+  margin: 12px 20px;
   // background: white;
   // opacity: .3;
   // position: absolute;
   // left:0;
   // top:0;
-}
-.logo a{
-  color: white;
 }
 #footer{
   height: 50px;
@@ -182,19 +165,29 @@ select{
   transform: scale(1.05);
 }
 .hover-white.project{
-  background: #464646;
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
   -o-transform: scale(1.05);
   transform: scale(1.05);
 }
-.hover-white #project-bar-mini{
-  box-shadow: none;
+.hover-white .step-content{
+  background: #3a3a3a;
+  color: white;
 }
-#share_arrow .color-arrow{
-  background: #11B683;
+.hover-white .step-content .project-title a{
+  margin-right: -10px;
 }
-
+.hover-white .step-content a{
+  color: white;
+}
+.hover-white .step-content .delete{
+  display: block;
+  background: white;
+  color: #a7a7a7;
+}
+.hover-white .step-content .delete a{
+  color: #a7a7a7;
+}
 /* GENERAL */
 
 
@@ -204,7 +197,7 @@ select{
   position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
-  top: 64px;
+  top: 50px;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -382,8 +375,8 @@ textarea{
 
 /* PROJECT */
 #project-show{
-  height: 200px;
-
+  min-height: 300px;
+  padding-bottom: 50px;
 }
 #progress-bar{
   background: #fff;
@@ -391,7 +384,7 @@ textarea{
   height: 15px;
   border: none;
   // border: .5px solid #ccc;
-  margin: 10px auto;
+  margin: 0px auto 50px auto;
   border-radius: 20px;
   box-shadow: .5px .5px 1.5px 0px #7a7a7a;
 }
@@ -404,15 +397,17 @@ textarea{
   background: white;
 }
 .inner-progress-bar{
-  background: #11B683;
-  // background: #5DA5E6;
+  background: #5DA5E6;
   height: 15px;
   border-radius: 15px;
 }
-
+.progress{
+  padding-bottom: 2px;
+  opacity: .9;
+}
 .begin-text{
   width: 40%;
-  margin: 100px auto 25px auto;
+  margin: 0px auto;
   opacity: .9;
   color: black;
   font-size: 26px;
@@ -427,26 +422,21 @@ textarea{
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
 }
-#share_arrow .share-dash{
-  border-top: none;
-  float: left;
-  width: 15px;
-  height: 12px;
-  margin-top: -12px;
-}
 .delete{
+  display: none;
   float:right;
-  opacity: .5;
   margin-top: -15px;
   margin-right: -10px;
   width: 20px;
   height: 20px;
+  // border: 1px solid #a7a7a7;
   border-radius: 50%;
-  background: #e6e6e6;
+  cursor: pointer;
 }
 .delete a{
-  color: #6b6b6b;
+  color: #a7a7a7;
   text-decoration: none;
+  cursor: pointer;
 }
 .delete-step{
   text-align: center;
@@ -456,9 +446,6 @@ textarea{
   color:#000;
   opacity: .8;
 }
-.progress{
-  font-size: 14px;
-}
 /* HOME */
 
 #home{
@@ -467,12 +454,11 @@ textarea{
   box-sizing: border-box
 }
 #home-nav{
-  width: 85%;
+  width: 90%;
   top:0;
   height: 60px;
   background: transparent;
-  padding: 20px 0;
-  margin: 0 auto;
+  padding: 10px 5%;
   min-width: 500px;
 }
 #home-nav h1{
@@ -701,31 +687,25 @@ textarea{
   min-height: 40px;
   font-size: 90%;
 }
-.add-step{
-  width: 52px;
-  height: 52px;
-  margin-top: 4px;
-  display: block;
-  border-radius: 50%;
-  background: url('add-button.svg') no-repeat;
+.create-step button{
+  margin: 0px auto 10px auto;
+  background: url('form-btn.png') no-repeat;
   border: none;
-  right: 0;
-  position: absolute;
-  margin-right: 5%;
-  outline:none;
+  border-radius: 5px;
+  color: white;
+  width: 15%;
+  min-width: 100px;
+  font-size: 100%;
 }
 .create-project {
-  width: 52px;
-  height: 52px;
-  margin: 15px auto;
-  display: block;
-  border-radius: 50%;
-  background: url('add-button.svg') no-repeat;
+  width: 32%;
+  margin: 30px auto 0 auto;
+  min-width: 145px;
+  background: url('form-btn.png') no-repeat;
   border: none;
-  right: 0;
-  position: absolute;
-  margin-right: 5%;
-  outline:none;
+  border-radius: 5px;
+  color: white;
+  font-size: 90%;
 }
 .projects-bottom button:hover{
   text-decoration: underline;
@@ -735,12 +715,12 @@ textarea{
 }
 #steps{
   height: auto;
+  width: 90%;
   overflow: auto;
   padding: 10px 0px;
   margin: 40px auto;
   background: white;
   box-shadow: 1px 2px 4px 0 #7a7a7a;
-  max-height: 500px;
 }
 .step{
   text-align: left;
@@ -760,29 +740,30 @@ textarea{
   opacity: .5;
 }
 .step-content{
-  padding: 10px 20px 24px 20px;
-  width: 85%;
-  margin: 0 auto
+  padding: 20px 5%;
+  height: 149px;
+  width: 90%;
+  margin: 0 auto;
 }
 .projects-header {
-  text-align: left;
-  background: #1F2433;
-  width: 90%;
+  width: 40%;
   min-width: 372px;
-  margin: 0px auto 50px auto;
-  height: 100px;
-  padding: 20px 5%;
+  margin:50px auto;
+  height: 195px;
 }
 .projects-header h1{
-  font: 300 32px "Open Sans",open-sans,sans-serif;
-  color: white;
+  font: 300 45px "Open Sans",open-sans,sans-serif;
+  color: black;
+  margin-bottom: 25px;
+  margin-top: 0px;
+  min-width: 380px;
 }
 .projects-header p{
-  display: none;
   font-weight: 300;
   font-size: 20px;
   opacity: .7;
   width: 70%;
+  min-width: 298px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
@@ -791,20 +772,24 @@ textarea{
   margin: 0 auto;
 }
 .project-name a{
-  font-size: 54px;
-  font-weight: 300;
+  font: 300 45px "Open Sans",open-sans,sans-serif;
   -webkit-font-smoothing: antialiased;
-  margin-bottom: 10px;
   text-decoration: none;
 }
 
 .projects{
   width: 90%;
   padding: 0 5%;
-  background: #fff;
+  background: #e1e1e1;
   min-height: 150px;
-  margin: 0px auto 0px auto;
 
+  border-top: .5px solid #cfcfcf;
+  border-bottom: .5px solid #cfcfcf;
+  // box-shadow: 1px 1px 3px 0px #7a7a7a;
+  // box-shadow: inset .5px .5px 1.5px 0px #7a7a7a;
+
+  margin: 0px auto 0px auto;
+  // min-height: 400px;
 }
 .projects.p-dash {
   max-height: 500px;
@@ -813,18 +798,18 @@ textarea{
 }
 .project-row{
   width: 1080px;
+  padding: 0 0 0 20px;
   margin: 0 auto;
 }
 .project{
   text-align: center;
   width: 330px;
   float: left;
-  background: #F9F9FB;
+  background: #fff;
   margin: 20px 30px 20px 0;
   height: 250px;
   border-radius: 4px;
   box-shadow: 1px 2px 4px 0px #7a7a7a;
-  padding: 10px 0px 0 0px;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
@@ -836,27 +821,23 @@ textarea{
   float: left;
 }
 #project-title{
-  text-align: left;
-  height: 100px;
-  width: 90%;
-  margin: 0 auto 20px auto;
-  padding: 20px 5%;
-  background: #1f2433;
+  min-height: 95px;
+  width: 70%;
+  margin: 50px auto 50px auto;
 }
-#project-title h1 a{
+#project-title h1{
+  font-size: 54px;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-decoration: none;
-  height: 100px;
-  font: 300 32px "Open Sans",open-sans,sans-serif;
-  color: white;
 }
 
 .project-title{
   min-width: 170px;
-  margin-bottom:27px;
+  margin-bottom: 40px;
 }
 .project-title a{
+  margin-right: 0px;
   color: #000;
   -webkit-font-smoothing: antialiased;
   font:200 22px Open Sans,open-sans,sans-serif;
@@ -864,44 +845,8 @@ textarea{
 }
 .share{
   width: 100%;
-  margin-top: 40px;
   border-top: 1px solid #d8d8d8;
-  cursor: pointer;
 
-}
-.share-dash{
-  width: 100%;
-  margin-top: 15px;
-  border-top: 1px solid #d8d8d8;
-}
-.share .share-dash button{
-  // background: url('share-btn-large.png') no-repeat;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border: none;
-  width: 100%;
-  height: 60px;
-  color: #5a5a5a;
-  font-size: 90%;
-  background: #fff;
-}
-.share-project{
-  width: 120px;
-  float: right;
-  margin-top: -90px;
-}
-.share-project button{
-  height: 32px;
-  font-size: 14px;
-  width: 120px;
-  border-radius: 33px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: #11B683;
-  color: white;
 }
 .share-project a{
   color: #4A91E2;
@@ -913,6 +858,7 @@ textarea{
 .share button:hover{
   color: #4A91E2;
   border: 1px solid #4a91e2;
+  background: #fff;
   // background: url('share-btn.png') no-repeat;
 }
 .share button{
@@ -923,7 +869,7 @@ textarea{
   border-top-right-radius: 0px;
   border: none;
   width: 100%;
-  height: 61px;
+  height: 60px;
   color: #5a5a5a;
   font-size: 90%;
   background: #f1f1f1;
@@ -951,8 +897,10 @@ textarea{
   font-family: Open Sans,open-sans,sans-serif;
 }
 .project-description{
-  width: 100%;
-  height: 35px;
+  opacity: .4;
+  width: 65%;
+  margin: 0 auto;
+  min-height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
@@ -962,17 +910,9 @@ textarea{
 }
 .description{
   font-weight: 300;
-  font-size: 16px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
-}
-.description.project-description{
-  font-size: 16px;
-  color: white;
-  opacity: .5;
-  height: 40px;
-  width: 60%;
-  margin: 5px 0;
 }
 .inner{
   font-size: 14px;

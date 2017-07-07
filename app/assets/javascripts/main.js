@@ -57,14 +57,6 @@ $(document).ready(function(){
 		return false;
 
 	});
-	var share_dash = document.getElementsByClassName('share-dash');
-	$(share_dash).on('click', function(){
-		var project_id = $(this).data('project-id');
-		var user_id = $(this).data('user-id');
-		$.getScript('/projects/'+project_id+'/project_invites/new');
-		return false;
-
-	});
 
 	var edit_project = document.getElementsByClassName('edit-project');
 	$(edit_project).on('click', function(){
@@ -74,6 +66,7 @@ $(document).ready(function(){
 
 		return false;
 	});
+
 	var project = document.getElementsByClassName('project');
 	$(project).on('click', function(){
 		// var title = document.getElementsByClassName('dash-title');
@@ -82,23 +75,11 @@ $(document).ready(function(){
 		window.location.href="/projects/"+project_id
 
 	});
-
-	$('#share_arrow').hide();
-	$('.delete').hide();
 	$(project).mouseenter(function(){
-		var share_arrow = $(this).find('#share_arrow');
-		$('#share_arrow').show();
-		$('.delete').show();
-		$('#share_arrow').on('hover', function(){
-			$(this).addClass('color-arrow');
-		});
 		$(this).addClass("hover-white");
-
+		$(project).children('.delete').show();
 		$(this).mouseleave(function(){
 			$(this).removeClass("hover-white");
-			$('#share_arrow').hide();
-			$('.delete').hide();
-
 		});
 
 	});
@@ -123,10 +104,6 @@ $(document).ready(function(){
 
 	var clipboard = new Clipboard('.clipboard-btn');
   console.log(clipboard);
-	var share_arrow = document.getElementById('share-arrow');
-	$('.project').on('hover', function(){
-		$(share_arrow).addClass('show');
-	});
 
 	(function($) {
 
@@ -189,23 +166,6 @@ $(document).ready(function(){
 
 });
 
-
-
-
-
-
-	// $.ajax({
-	// 	url: '/users/sign_up',
-	// 	success: function(data){
-	// 		var home_signup = document.getElementsByClassName('home-signup');
-	// 		$(home_signup).append(data);
-	// 		return false;
-	// 	}
-	//
-	// });
-
-
-});
 
 
 // $('.modal-btn').on('click', function(){
