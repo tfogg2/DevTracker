@@ -1,7 +1,7 @@
 
 #home
   #home-nav
-    h1 = link_to "FreeDash", root_path
+    h1.logo = link_to "FreeDash", root_path
     ul
       - if user_signed_in?
         li = link_to "Dashboard", user_path(current_user)
