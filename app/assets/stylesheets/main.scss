@@ -375,7 +375,7 @@ textarea{
 
 /* PROJECT */
 #project-show{
-  min-height: 300px;
+  min-height: 260px;
   padding-bottom: 50px;
 }
 #progress-bar{
@@ -384,7 +384,7 @@ textarea{
   height: 15px;
   border: none;
   // border: .5px solid #ccc;
-  margin: 0px auto 50px auto;
+  margin: 50px auto 0px auto;
   border-radius: 20px;
   box-shadow: .5px .5px 1.5px 0px #7a7a7a;
 }
@@ -688,7 +688,7 @@ textarea{
   font-size: 90%;
 }
 .create-step button{
-  margin: 0px auto 10px auto;
+  margin: 0px auto;
   background: url('form-btn.png') no-repeat;
   border: none;
   border-radius: 5px;
