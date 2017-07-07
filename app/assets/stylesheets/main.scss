@@ -113,7 +113,7 @@ body{
   float:left;
   font-size: 24px;
   width: 200px;
-  margin: 12px auto;
+  margin: 12px 20px;
   // background: white;
   // opacity: .3;
   // position: absolute;
@@ -424,8 +424,8 @@ textarea{
   margin-right: -10px;
   width: 20px;
   height: 20px;
+  border: 1px solid #a7a7a7;
   border-radius: 50%;
-  background: #e2e2e2;
   cursor: pointer;
 }
 .delete a{
@@ -735,9 +735,10 @@ textarea{
   opacity: .5;
 }
 .step-content{
-  padding: 20px 20px 15px 20px;
-  height: 129px;
-  width: 240px;
+  padding: 20px 5%;
+  height: 149px;
+  width: 90%;
+  margin: 0 auto;
 }
 .projects-header {
   width: 40%;
@@ -791,17 +792,17 @@ textarea{
   margin-bottom: 100px;
 }
 .project-row{
-  width: 1025px;
-
+  width: 1080px;
+  padding: 0 0 0 20px;
   margin: 0 auto;
 }
 .project{
   text-align: center;
-  width: 280px;
+  width: 330px;
   float: left;
   background: #fff;
-  margin: 20px 3%;
-  height: 225px;
+  margin: 20px 30px 20px 0;
+  height: 250px;
   border-radius: 4px;
   box-shadow: 1px 2px 4px 0px #7a7a7a;
   -webkit-transition: all .2s ease-in-out;
@@ -815,7 +816,7 @@ textarea{
   float: left;
 }
 #project-title{
-  min-height: 107px;
+  min-height: 95px;
   width: 70%;
   margin: 50px auto 50px auto;
 }
@@ -828,6 +829,7 @@ textarea{
 
 .project-title{
   min-width: 170px;
+  margin-bottom: 40px;
 }
 .project-title a{
   margin-right: -10px;
@@ -851,6 +853,7 @@ textarea{
 .share button:hover{
   color: #4A91E2;
   border: 1px solid #4a91e2;
+  background: #fff;
   // background: url('share-btn.png') no-repeat;
 }
 .share button{
@@ -890,8 +893,9 @@ textarea{
 }
 .project-description{
   opacity: .4;
-  width: 100%;
-  min-height: 35px;
+  width: 65%;
+  margin: 0 auto;
+  min-height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
