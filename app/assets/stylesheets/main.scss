@@ -898,13 +898,20 @@ textarea{
   opacity: .4;
   width: 65%;
   margin: 0 auto;
-  height: 36px;
+  min-height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
 }
 .project-description.box span{
   font-size: 14px;
+}
+.project-description.box{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 36px;
+  overflow: hidden;
 }
 .description{
   font-weight: 300;
