@@ -1,5 +1,4 @@
 .modal-content
-  = link_to '&times;'.html_safe, project_path(@project), class:"close"
   h1 Add Step
   = simple_form_for [@project, @step] do |f|
     = f.error_notification

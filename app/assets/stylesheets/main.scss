@@ -101,7 +101,7 @@ body{
   // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   line-height: 1.5;
-  margin-bottom: 0px;
+  margin-bottom: -2px;
   border-bottom: .5px solid #f1f1f1;
   //background: url('top-bar.png');
 }
@@ -186,6 +186,9 @@ body{
 }
 .hover-white .step-content .delete a{
   color: #a7a7a7;
+}
+.hover-white .share button{
+  outline: 0;
 }
 .hover-add .add-project-box{
   background: #5DA5E6;
@@ -280,6 +283,19 @@ textarea{
   height: 25px;
   padding: 5px;
 }
+#user_email{
+  width: 70%;
+}
+.home-inputs #user_email {
+  width: 96%;
+}
+#user_password{
+  width: 70%;
+}
+.home-inputs #user_password {
+  width: 96%;
+}
+
 .form-inputs{
   margin: 0px 0;
 }
@@ -425,7 +441,7 @@ a.close{
 }
 .begin-text{
   width: 40%;
-  margin: 50px auto;
+  margin: -50px auto 50px auto;
   opacity: .5;
   color: black;
   font-size: 26px;
@@ -527,7 +543,7 @@ a.close{
   font-family: Open Sans,open-sans,sans-serif;
 }
 .home-action{
-  width: 96%;
+  width: 327px;
   height: 40px;
 }
 .home-action input{
@@ -815,7 +831,7 @@ a.close{
   padding-top: 50px;
 }
 .project-row{
-  width: 1080px;
+  width: 1082px;
   padding: 0 0 0 20px;
   margin: 0 auto;
 }
@@ -836,7 +852,7 @@ a.close{
 }
 .add-project-box{
   text-align: center;
-  width: 328px;
+  width: 330px;
   float: left;
   background: #fff;
   margin: 20px 30px 20px 0;
