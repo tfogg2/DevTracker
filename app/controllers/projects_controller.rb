@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    set_meta_tags keywords: "projects, steps, freelance, clients, progress",
+    set_meta_tags keywords: "projects, freelance, developer, freelance developer, freelance projects",
                   description: "Add steps to your freelance projects and let your client track your progress."
   end
 
