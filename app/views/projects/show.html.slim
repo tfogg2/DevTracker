@@ -4,11 +4,6 @@ div id="project-show"
   div id="project-title"
     h1.project-name = link_to @project.name, '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
     p.description.project-description = @project.description
-
-  - if current_user.developer_for?(@project)
-    = link_to '#', class:"create-step", data: {'project-id': @project.id } do
-      button class="modal-btn" + Add Step
-    end
   - if @project.steps.any?
     /p.progress Progress:
     div id="progress-bar"
@@ -43,10 +38,19 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
             /div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
             /  span Edit
       end
+      - if current_user.developer_for?(@project)
+        .add-step-box
+          = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+            button class="modal-btn" + Add Step
+          end
     end
+
 - else
   -if current_user.developer_for?(@project)
     h3.begin-text Begin by adding steps to your project
+    = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+      button class="modal-btn" + Add Step
+    end
 
     /create table
 

@@ -17,7 +17,7 @@
         <h1 class="logo"><%= link_to "FreeDash", root_path %></h1>
         <ul id="nav">
           <%- if user_signed_in? %>
-             <li><%= link_to "Dashboard", user_path(current_user) %></li>
+             <!-- <li><%#link_to "Dashboard", user_path(current_user) %></li> -->
              <!-- <li><%# link_to current_user.email, user_path(current_user) %>   |</li> -->
              <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
           <%- else %>

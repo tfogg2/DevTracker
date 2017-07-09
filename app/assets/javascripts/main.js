@@ -81,8 +81,15 @@ $(document).ready(function(){
 		$(this).mouseleave(function(){
 			$(this).removeClass("hover-white");
 		});
-
 	});
+	var add_project = document.getElementsByClassName('add-project-link');
+	$(add_project).mouseenter(function(){
+		$(this).addClass("hover-add");
+		$(this).mouseleave(function(){
+			$(this).removeClass("hover-add");
+		});
+	});
+
 	var step = document.getElementsByClassName('step');
 	$(step).mouseenter(function(){
 		$(this).addClass("hover-white");
