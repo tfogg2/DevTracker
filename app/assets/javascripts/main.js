@@ -18,6 +18,7 @@ $(document).ready(function(){
 		 modal.style.display = "none";
 	});
 
+
 	// When the user clicks anywhere outside of the modal, close it
 	$(window).on('click', function(event) {
 		if (event.target == modal) {
@@ -175,6 +176,13 @@ $(document).ready(function(){
 
 
 
+	var notice = document.getElementById('notice');
+	$(notice).on('click', function(){
+		$(this).hide();
+	});
+	$(window).on('click', function(event) {
+		$(notice).hide();
+	});
 
 
 
