@@ -134,8 +134,12 @@ body{
   width: 25%;
   border-top: 1px solid #E0E0E0;
 }
-.love-vermont img{
-  margin: 20px 20%;
+.love-vermont p{
+  color: #aaabaa;
+  font-size: 14px;
+  padding-top: 15px;
+  width: 185px;
+  margin: 0 auto;
 }
 .dot{
   margin-right: 10px;
@@ -365,6 +369,18 @@ textarea{
 .share-div a{
   text-decoration: none;
 }
+a.close{
+  float: right;
+  text-decoration: none;
+  opacity: .4;
+  margin-top: -30px;
+  margin-right: -5px;
+}
+#share-modal a.close{
+  margin-top: -15px;
+  margin-right: -8px;
+
+}
 .clipboard-btn{
   float: right;
   border: none;
@@ -408,8 +424,8 @@ textarea{
 }
 .begin-text{
   width: 40%;
-  margin: 0px auto;
-  opacity: .9;
+  margin: 50px auto;
+  opacity: .5;
   color: black;
   font-size: 26px;
   font-weight: 300;
@@ -792,9 +808,10 @@ textarea{
   margin: 0px auto 0px auto;
 }
 .projects.p-dash {
-  max-height: 500px;
+  max-height: 600px;
   overflow: scroll;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  padding-top: 50px;
 }
 .project-row{
   width: 1080px;
@@ -962,9 +979,9 @@ textarea{
 .status{
   color: #9a9a9a;
   float:right;
+  opacity: .8;
   margin-top: 15px;
   font-size: 16px;
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
 }

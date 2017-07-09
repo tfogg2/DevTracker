@@ -1,4 +1,5 @@
 #share-modal
+  = link_to '&times;'.html_safe, user_path(current_user), class:"close"
   h1 Share this link to add clients
   .share-div
     = link_to join_project_url(t: @invite.share_token), join_project_url(t: @invite.share_token), id: 'link-to-share'

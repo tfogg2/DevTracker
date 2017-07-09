@@ -1,4 +1,5 @@
 .modal-content
+  = link_to '&times;'.html_safe, project_path(@project), class:"close"
   h1 Create Project
   = simple_form_for ([@project])  do |f|
     - if @project.errors.any?
