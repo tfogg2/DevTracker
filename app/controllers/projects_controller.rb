@@ -32,9 +32,9 @@ class ProjectsController < ApplicationController
           user: current_user,
           user_type: 'developer'
         )
-        # @project.conversations.create(
-        #   project_id: @project.id
-        # )
+        @project.conversations.create(
+          project_id: @project.id
+        )
 
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
