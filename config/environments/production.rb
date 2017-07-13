@@ -64,7 +64,7 @@ Rails.application.configure do
 
   #Cable
   #wss when https
-  config.action_cable.url = "wss://free-dash.herokuapp.com/cable"
+  config.action_cable.url = "ws://freedash.io/cable"
 
   config.action_cable.allowed_request_origins = ['https://free-dash.herokuapp.com', 'http://free-dash.herokuapp.com']
 
