@@ -64,14 +64,8 @@ Rails.application.configure do
 
   #Cable
   #wss when https
-  config.action_cable.url = "ws://freedash.io/cable"{
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $http_host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-Proto https;
-    proxy_redirect off;
-  }
-
+  config.action_cable.url = "ws://freedash.io/cable"
+  
   config.action_cable.allowed_request_origins = ['https://free-dash.herokuapp.com', 'http://freedash.io']
 
 
