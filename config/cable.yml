@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:cb4cc2c172b88dfd9f0e80ebefff7016@koi.redistogo.com:11992/
   channel_prefix: devTrack_production
