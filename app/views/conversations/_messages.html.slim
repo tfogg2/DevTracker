@@ -1,0 +1,9 @@
+-if @conversation.messages.any?
+  - @conversation.messages.each do |message|
+    - if message.user.name = current_user.name
+      .current_user = message.body
+    -else
+      = message.body
+    end
+  end
+end

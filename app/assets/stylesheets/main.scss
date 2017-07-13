@@ -30,6 +30,9 @@ body{
   font-family: Open Sans,open-sans,sans-serif;
   // background: #eaeaea;
 }
+.hidden {
+  display: none;
+}
 #notice{
   line-height: 2.5;
   margin-top: 1px;
@@ -1009,3 +1012,28 @@ a.close{
   padding: 25px 0;
 }
 /* PROJECT */
+
+#conversation{
+  margin: 50px auto 0 auto;
+  width: 50%;
+  text-align: left;
+}
+#conversation p{
+
+  border-radius: 4px;
+  padding: 5px 10px;
+  background: #f3f3f3;
+  // float: left;
+  // width: 65%;
+}
+#conversation .current_user {
+  background: #8ed4fd;
+  color: white;
+}
+#message{
+  margin: 8px 0;
+}
+.message_name{
+  font-size: 11px;
+  opacity: .5;
+}

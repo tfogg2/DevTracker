@@ -1,0 +1,15 @@
+h1 conversations
+
+= render partial: 'conversation_form', locals: {conversation: @conversation}
+
+
+div id="chatroom-errors"
+
+div
+  ul id="chatroom-index"
+- if @conversations.any?
+
+  = render @conversations
+- else
+
+end

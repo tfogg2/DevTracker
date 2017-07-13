@@ -3,6 +3,7 @@ class Project < ApplicationRecord
 	has_many :users, through: :user_projects, dependent: :destroy
 	has_many :steps, dependent: :destroy
 	has_many :project_invites
+	has_many :conversations, dependent: :destroy
 
 	validates :name, presence: true
 

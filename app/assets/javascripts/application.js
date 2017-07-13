@@ -12,6 +12,7 @@
 //
 //= require clipboard
 //= require jquery
-
+//= require_tree ./channels
+//= require turbolinks
 //= require rails-ujs
 //= require_tree .

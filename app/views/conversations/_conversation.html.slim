@@ -1,0 +1,11 @@
+
+
+- if conversation.messages.any?
+  = render partial: "messages/message", collection: conversation.messages
+  div class="panel-body hidden" id="messages" data-conversation-id= conversation.id
+
+-else
+
+end
+
+/= render partial: 'messages/message_form', locals: {message: conversation.messages, conversation: conversation}

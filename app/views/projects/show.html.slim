@@ -18,7 +18,7 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
   div class="projects"
     #steps
       - @project.steps.each_with_index do |s, i|
-        div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id } do
+        div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id} do
           div class="title"
               span
                 span = i+1
@@ -49,13 +49,24 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
 - else
   -if current_user.developer_for?(@project)
     h3.begin-text Begin by adding steps to your project
+
     = link_to '#', class:"create-step", data: {'project-id': @project.id } do
       button class="modal-btn" + Add Step
     end
 
-    /create table
+
+  - @conversations.each do |conversation|
+    #conversation
+      = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}
+    #new-message
+      = render 'messages/message_form', {project: @project, conversation: conversation, messages: conversation.messages}
 
 
-/= link_to 'Edit', edit_project_path(@project)
-/'  |
-/= link_to 'Back', projects_path
+
+
+
+    /= link_to 'Conversation', project_conversations_path(conversation), id:"conversation", data:{'project-id': @project.id, 'conversation-id': conversation.id}
+
+
+
+    / = render 'messages/message', {conversation: conversation, messages: conversation.messages}

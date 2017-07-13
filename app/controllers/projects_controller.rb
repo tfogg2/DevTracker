@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @conversations = @project.conversations.all
+    @message = Message.new
+
     set_meta_tags keywords: "projects, freelance, developer, freelance developer, freelance projects",
                   description: "Add steps to your freelance projects and let your client track your progress."
   end
@@ -29,6 +32,9 @@ class ProjectsController < ApplicationController
           user: current_user,
           user_type: 'developer'
         )
+        # @project.conversations.create(
+        #   project_id: @project.id
+        # )
 
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
