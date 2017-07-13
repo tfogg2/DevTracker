@@ -15,7 +15,7 @@ div id="project-show"
 div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
 -if @project.steps.any?
-  div class="projects"
+  div class="projects" data-turbolinks="false"
     #steps
       - @project.steps.each_with_index do |s, i|
         div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id} do
@@ -55,6 +55,7 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
     end
 
 
+#conversation-box
   - @conversations.each do |conversation|
     #conversation
       = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}

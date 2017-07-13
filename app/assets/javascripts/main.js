@@ -113,22 +113,8 @@ $(document).ready(function(){
 	var clipboard = new Clipboard('.clipboard-btn');
   console.log(clipboard);
 
-	var conversation = document.getElementById('conversation');
-	$(conversation).on('click', function(){
-		var project_id = $(this).data('project-id');
-		var conversation_id = $(this).data('conversation-id');
-		var conversation = document.getElementById('conversation');
-		$.ajax({
-				type: 'GET',
-				url: '/projects/'+project_id+'/conversations/'+conversation_id,
-				success: function(data){
-					var convo = document.getElementById("convo");
-		      $(conversation).html(data);
-				}
-			});
-
-		return false;
-	});
+	$("#conversation").scrollTop($('#conversation').prop("scrollHeight"))
+	// $("#conversation").animate({ scrolltop: $('#conversation').prop("scrollHeight")}, 1000);
 
 
 	(function($) {

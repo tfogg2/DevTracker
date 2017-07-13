@@ -2,7 +2,7 @@
 
 - if conversation.messages.any?
   = render partial: "messages/message", collection: conversation.messages
-  div class="panel-body hidden" id="messages" data-conversation-id= conversation.id
+  div class="panel-body hidden" id="messages" data-conversation-id= conversation.id data-user-name= current_user.name
 
 -else
 

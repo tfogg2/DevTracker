@@ -15,7 +15,7 @@
     </div>
     <% unless current_page?(root_path) %>
       <div id="top-bar">
-        <h1 class="logo"><%= link_to "FreeDash", root_path %></h1>
+        <h1 class="logo" data-turbolinks="false"><%= link_to "FreeDash", root_path %></h1>
         <ul id="nav">
           <%- if user_signed_in? %>
              <!-- <li><%#link_to "Dashboard", user_path(current_user) %></li> -->
