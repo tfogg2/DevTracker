@@ -64,9 +64,22 @@ Rails.application.configure do
 
   #Cable
   #wss when https
-  config.action_cable.url = "wss://free-dash.herokuapp.com/cable"
+  config.action_cable.url = "ws://freedash.io/cable"
 
   config.action_cable.allowed_request_origins = ['https://free-dash.herokuapp.com', 'http://freedash.io']
+
+  location /cable {
+    proxy_pass http://freedash.io;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_redirect off;
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
