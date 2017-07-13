@@ -65,8 +65,8 @@ Rails.application.configure do
   #Cable
   #wss when https
   config.action_cable.url = "ws://freedash.io/cable"
-  
-  config.action_cable.allowed_request_origins = ['https://free-dash.herokuapp.com', 'http://freedash.io']
+
+  config.action_cable.allowed_request_origins = ['http://freedash.io']
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
