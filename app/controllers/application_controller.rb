@@ -46,4 +46,14 @@ class ApplicationController < ActionController::Base
    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
+
+  def signed_user_id
+    @signed_user_id ||= crypt.encrypt_and_sign(current_user.id) if current_user
+  end
+
+  def crypt
+    @crypt ||= ActiveSupport::MessageEncryptor.new(
+      Rails.application.secrets.secret_key_base,
+    )
+  end
 end
