@@ -115,7 +115,7 @@ $(document).ready(function(){
 
 	var conversation = document.getElementById('conversation');
 
-	$("#conversation").scrollTop($(conversation).prop("scrollHeight"))
+	$("#conversation").scrollTop($(conversation).prop("scrollHeight"));
 	// $("#conversation").animate({ scrolltop: $('#conversation').prop("scrollHeight")}, 1000);
 
 
