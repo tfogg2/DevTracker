@@ -64,7 +64,7 @@ Rails.application.configure do
 
   #Cable
   #wss when https
-  config.middleware.use "ConversationActionCable", "freedash.io"
+  config.middleware.use ConversationActionCable, "freedash.io"
   config.web_socket_server_url = "ws://freedash.io/"
   config.action_cable.url = "ws://freedash.io/cable"
 
