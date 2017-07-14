@@ -1,11 +1,13 @@
 
+div data-turbolinks="true"
+  - if conversation.messages.any?
+    = render partial: "messages/message", collection: conversation.messages
+    div class="panel-body hidden" id="messages" data-conversation-id= conversation.id data-user-name= current_user.name
 
-- if conversation.messages.any?
-  = render partial: "messages/message", collection: conversation.messages
-  div class="panel-body hidden" id="messages" data-conversation-id= conversation.id data-user-name= current_user.name
+  -else
 
--else
+    h1.create_messages Start a conversation 
 
-end
+  end
 
 /= render partial: 'messages/message_form', locals: {message: conversation.messages, conversation: conversation}

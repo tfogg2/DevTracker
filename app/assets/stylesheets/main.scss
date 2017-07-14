@@ -879,9 +879,10 @@ a.close{
   text-align: center;
   width: 90%;
   background: #fff;
-  margin: 15px auto 0 auto;
-  height: 60px;
-  padding: 10px 15px 0 15px;
+  margin: 10px auto 0 auto;
+  height: 90px;
+  padding: 40px 15px 0 15px;
+  display: inline-block;
 }
 .progress-bar{
   width: 60%;
@@ -916,9 +917,12 @@ a.close{
   border-top: 1px solid #f1f1f1;
 
 }
-.share-project a{
-  color: #4A91E2;
+.share-project span{
+  // color: #4A91E2;
   text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  opacity: .5;
 }
 .share-project a:hover{
   text-decoration: underline;
@@ -1028,6 +1032,7 @@ a.close{
   width: 70%;
   text-align: left;
   max-height: 400px;
+  height: 400px;
   overflow: auto
 }
 #conversation .current_user {
@@ -1042,11 +1047,12 @@ a.close{
 }
 #new-message{
   width: 70%;
-  margin: 40px auto;
+  margin: 0px auto;
 }
 #message_body{
-  width: 100%;
+  width: 99%;
   margin-top: 10px;
+  padding-top: 15px;
 }
 #message{
   margin: 8px 0 0 0;
@@ -1073,4 +1079,8 @@ a.close{
 }
 .current_user .message_name{
   display: none;
+}
+.create_messages{
+  text-align: center;
+  margin: 170px auto 0 auto;
 }
