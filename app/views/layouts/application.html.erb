@@ -6,18 +6,8 @@
     <%= display_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <script type="text/javascript">
-      window.AppConfig = {
-        WEBSOCKET_HOST: "http://freedash.io",
-        WEBSOCKET_PATH: "<%= ActionCable.server.config.mount_path %>",
-      <% if user_signed_in? %>
-        WEBSOCKET_USER_ID_SECRET: "<%= signed_user_id %>",
-      <% end %>
-      }
-    </script>
     <%= javascript_include_tag 'application' %>
   </head>
-
 
   <body>
     <div id="modal" data-turbolinks="false">
