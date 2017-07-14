@@ -65,8 +65,8 @@ Rails.application.configure do
   #Cable
   #wss when https
   # config.middleware.use ConversationActionCable
-  config.web_socket_server_url = "ws://freedash.io/"
-  config.action_cable.url = "ws://freedash.io/cable"
+  config.web_socket_server_url = "wss://free-dash.herokuapp.com/"
+  config.action_cable.url = "wss://free-dash.herokuapp.com/cable"
 
   config.action_cable.allowed_request_origins = ['https://free-dash.herokuapp.com', 'http://freedash.io', 'https://freedash.io']
 
