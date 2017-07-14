@@ -217,7 +217,7 @@ body{
 }
 .form-content{
   width: 40%;
-  height: 365px;
+  height: 380px;
   background: #fff;
   padding-top: 10px;
   margin: 10% auto;
@@ -287,6 +287,9 @@ textarea{
   padding: 5px;
 }
 #user_email{
+  width: 70%;
+}
+#user_name{
   width: 70%;
 }
 .home-inputs #user_email {
