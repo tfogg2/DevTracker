@@ -11,23 +11,12 @@ module DevTrack
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    config.middleware.use Rack::ConversationActionCable
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    class ConversationActionCable
-      def initialize(app, options={})
-        @app = app
-      end
-
-      def call(env)
-        if Faye::WebSocket.websocket?(env)
-          ActionCable.server.call(env)
-        else
-          @app.call(env)
-        end
-      end
-    end
   end
 
 
