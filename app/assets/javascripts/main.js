@@ -113,7 +113,9 @@ $(document).ready(function(){
 	var clipboard = new Clipboard('.clipboard-btn');
   console.log(clipboard);
 
-	$("#conversation").scrollTop($('#conversation').prop("scrollHeight"))
+	var conversation = document.getElementById('conversation');
+
+	$("#conversation").scrollTop($(conversation).prop("scrollHeight"))
 	// $("#conversation").animate({ scrolltop: $('#conversation').prop("scrollHeight")}, 1000);
 
 
