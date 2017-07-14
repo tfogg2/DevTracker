@@ -19,7 +19,7 @@ module ApplicationCable
     private
 
     def user_id
-      signed_user_id = request.params.fetch(:user_id)
+      signed_user_id = request.params.fetch(user_id: current_user.id)
 
       crypt.decrypt_and_verify(signed_user_id)
     end
