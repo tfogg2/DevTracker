@@ -9,7 +9,8 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email" %>
+        <%= f.input :name, autofocus: true, placeholder: "Name" %>
+        <%= f.input :email, required: true, label: false, placeholder: "Email" %>
         <%= f.input :password, required: true, label: false, placeholder: "Password" %>
          <!-- hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), -->
       </div>
