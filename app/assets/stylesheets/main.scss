@@ -11,6 +11,10 @@ h1{
   font: 300 36px "Open Sans",open-sans,sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+h2{
+  font: 400 24px "Open Sans",open-sans,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 button{
   height: 40px;
   width: 200px;
@@ -881,7 +885,7 @@ a.close{
   background: #fff;
   margin: 10px auto 0 auto;
   height: 90px;
-  padding: 40px 15px 0 15px;
+  padding: 65px 15px 0 15px;
   display: inline-block;
 }
 .progress-bar{
@@ -917,14 +921,21 @@ a.close{
   border-top: 1px solid #f1f1f1;
 
 }
-.share-project span{
+.share-project span {
   // color: #4A91E2;
-  text-decoration: none;
+
   display: block;
-  margin-top: 10px;
   opacity: .5;
+  width: 50px;
+  margin: 10px auto 0 auto;
 }
-.share-project a:hover{
+.share-project{
+    text-decoration: none;
+    display: block;
+    width: 50px;
+    margin: 0 auto;
+}
+.share-project:hover{
   text-decoration: underline;
 }
 .share button:hover{
@@ -1023,9 +1034,9 @@ a.close{
 /* PROJECT */
 
 #conversation-box{
-  border-top: 1px solid #ECECE5;
-  margin: 100px 0;
-  height: 475px;
+  // border-top: 1px solid #d6d6d6;
+  margin: 50px 0;
+  height: 550px;
 }
 #conversation{
   margin: 0px auto 0 auto;
@@ -1033,7 +1044,8 @@ a.close{
   text-align: left;
   max-height: 400px;
   height: 400px;
-  overflow: auto
+  overflow: auto;
+  padding: 0 20px;
 }
 #conversation .current_user {
   margin-left: 29%;
@@ -1083,4 +1095,11 @@ a.close{
 .create_messages{
   text-align: center;
   margin: 170px auto 0 auto;
+}
+.conversation-header{
+  margin: 0 auto 1px auto;
+  padding: 30px 0;
+  background: #e6e6e6;
+  color: #757575;
+  box-shadow: 1px 1px 3px 0px #bbbbbb;
 }

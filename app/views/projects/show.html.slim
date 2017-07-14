@@ -58,6 +58,7 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
 
 
 #conversation-box
+  h2.conversation-header Messages
   - @conversations.each do |conversation|
     #conversation
       = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}
