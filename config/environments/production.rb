@@ -1,5 +1,4 @@
 Rails.application.configure do
-  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -65,7 +64,7 @@ Rails.application.configure do
 
   #Cable
   #wss when https
-  config.middleware.use ConversationActionCable
+  
   config.web_socket_server_url = "ws://freedash.io/"
   config.action_cable.url = "ws://freedash.io/cable"
 
