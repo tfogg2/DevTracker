@@ -1,10 +1,12 @@
-#show-conversation
+#conversation-box
+  h2.conversation-header = @project.name + ' Messages'
   - if @conversation.messages.any?
-    = render partial: "messages/message", collection: @conversation.messages
-    div class="panel-body hidden" id="messages"
+    #conversation
+      = render partial: "messages/message", collection: @conversation.messages
+      div class="panel-body hidden" id="messages"
 
   -else
 
   end
-
-  = render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}
+  #new-message
+    = render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}
