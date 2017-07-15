@@ -1,6 +1,7 @@
 App.messages = App.cable.subscriptions.create('MessagesChannel', {
   received: function(data) {
     $("#messages").removeClass('hidden');
+    $('.create_messages').addClass('hidden');
 
     var conversation_id = $("#messages").data('conversation-id');
     if (data.conversation_id == conversation_id){

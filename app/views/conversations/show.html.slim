@@ -12,14 +12,14 @@
       p.p-description = @project.description
     /- if @conversation.messages.any?
     #conversation
+      - if @conversation.messages.any?
+      -else
+        .create_messages
+          h1 Start a conversation
+      end
       = render partial: "messages/message", collection: @conversation.messages
       div class="panel-body hidden" id="messages" data-conversation-id= @conversation.id data-user-name= current_user.name
 
-    /  - if @conversation.messages.any?
-    /  -else
-      /  .create_messages
-      /    h1 Start a conversation
-    /  end
 
     #new-message
       = render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}
