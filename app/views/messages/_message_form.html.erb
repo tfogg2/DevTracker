@@ -3,5 +3,5 @@
   <%= f.text_area :body, data: {textarea: 'message'}, placeholder: "Write a message", label: false %>
   <%= f.hidden_field :conversation_id, value: conversation.id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit "send", style: "display: none", data: {send: 'message'}%>
+  <%= f.submit "Send", data: {send: 'message'}, class: "send-message"%>
 <% end %>

@@ -28,6 +28,7 @@ class ConversationsController < ApplicationController
     end
 
     def show
+      @projects = current_user.projects.all
       @conversation = @project.conversations.find_by(project_id: params[:project_id])
       @message = Message.new
     end

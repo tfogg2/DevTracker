@@ -32,6 +32,7 @@ body{
   margin: 0;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
+  background: #f1f1f1;
   // background: #eaeaea;
 }
 .hidden {
@@ -94,7 +95,7 @@ body{
   text-align: center;
   height: 100%;
   min-height: 550px;
-  background: #fff;
+  background: #f1f1f1 ;
   // background: url('dash-box.png') no-repeat;
   // width: 75%;
 }
@@ -834,7 +835,7 @@ a.close{
 
 .projects{
   min-height: 150px;
-  // border-bottom: .5px solid #f1f1f1;
+  // border: 1px solid #e0e0e0;
   margin: 0px auto 0px auto;
 }
 .projects.p-dash {
@@ -1038,16 +1039,20 @@ a.close{
 #conversation-box{
   // border-top: 1px solid #d6d6d6;
   height: 550px;
-  margin-bottom: 50px;
+  width: 98%;
+  margin: 10px auto 50px auto;
 }
 #conversation{
-  margin: 0px auto 0 auto;
-  width: 70%;
+  float: right;
+  width: 80%;
   text-align: left;
   max-height: 400px;
   height: 400px;
   overflow: auto;
-  padding: 0 20px;
+  padding: 0 1%;
+  background: #fff;
+  box-sizing: border-box;
+  border-right: 1px solid #e0e0e0;
 }
 #conversation .current_user {
   margin-left: 29%;
@@ -1060,13 +1065,21 @@ a.close{
   width: auto;
 }
 #new-message{
-  width: 70%;
+  width: 80%;
   margin: 0px auto;
+  float: right;
+  height: 80px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-left: none;
 }
 #message_body{
-  width: 99%;
-  margin-top: 10px;
+  width: 79.654%;
+  margin-top: 16px;
   padding-top: 15px;
+  border: 1px solid #e0e0e0;
+  // margin-right: 10%;
 }
 #message{
   margin: 8px 0 0 0;
@@ -1097,12 +1110,73 @@ a.close{
 .create_messages{
   text-align: center;
   margin: 170px auto 0 auto;
+  opacity: .5;
 }
 .conversation-header{
+  margin-left: 20%;
+  margin-bottom: 0;
+  padding: 15px 0;
+  height: 80px;
+  background: #fff;
+  box-sizing: border-box;
+  width: 80%;
+  border: 1px solid #e0e0e0;
   text-align: left;
-  margin: 0 auto 1px auto;
-  padding: 30px 15%;
-  background: #f1f1f1;
-  color: #757575;
-  box-shadow: 1px 1px 3px 0px #bbbbbb;
+  // box-shadow: 1px 1px 3px 0px #bbbbbb;
+}
+.conversation-header p{
+  margin-left: 25px;
+}
+.p-name{
+  color: #272727;
+  margin: 5px 0;
+  font-size: 16px;
+}
+.p-description{
+  color: #828282;
+  font-size: 12px;
+}
+#project-message-box{
+  width: 20%;
+  float: left;
+  height: 560px;
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+}
+#search-projects{
+  height: 80px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#project-list{
+  max-height: 479px;
+  overflow: scroll;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+#project-list a{
+  text-decoration: none;
+}
+.project-messages{
+  text-align: left;
+  height: 50px;
+  padding: 20px;
+  border-bottom: .5px solid #f1f1f1;
+}
+.send-message{
+  width: 100px;
+  height: 47px;
+  background: #E0E0E0;
+  float: right;
+  border: none;
+  margin: 16px 5% 0 -50px;
+  border-radius: 3px;
+  font-family: Gotham SSm,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 1.42857;
+  color: #a0a0a0;
 }

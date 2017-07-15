@@ -55,18 +55,17 @@ div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(
     = link_to '#', class:"create-step", data: {'project-id': @project.id } do
       button class="modal-btn" + Add Step
     end
-    p = link_to 'Conversation', project_conversation_path(@project, @conversation), id:"conversation", data:{'project-id': @project.id, 'conversation-id': @conversation.id}
 
 
 /#conversation-box
   /h2.conversation-header Messages
 - @conversations.each do |conversation|
   #conversation-link
-    p = link_to 'Conversation', project_conversation_path(@project, conversation), id:"conversation", data:{'project-id': @project.id, 'conversation-id': conversation.id}
-  /  #conversation
-  /    = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}
+    p = link_to 'Conversation', project_conversation_path(@project, conversation),  data:{'project-id': @project.id, 'conversation-id': conversation.id}
+    /#conversation
+    / = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}
   /  #new-message
-  /    = render 'messages/message_form', {project: @project, conversation: conversation, messages: conversation.messages}
+    /  = render 'messages/message_form', {project: @project, conversation: conversation, messages: conversation.messages}
 
 
 
