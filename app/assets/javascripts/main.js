@@ -117,7 +117,18 @@ $(document).ready(function(){
 
 	$("#conversation").scrollTop($(conversation).prop("scrollHeight"));
 	// $("#conversation").animate({ scrolltop: $('#conversation').prop("scrollHeight")}, 1000);
-
+	var project_id = $('.project-message-name').children('.id');
+	// $(project_id).on('click', function(){
+	// 	$(this).addClass('selected');
+	// });
+	// var p = $('.id').data('project-id');
+	// var p_a = $('.p-name').children('a');
+	// var p_id = $(p_a).data('project-id');
+	// console.log(p_id);
+	// console.log(p);
+	// if(p == p_id ){
+	// 	$('.id').addClass('selected');
+	// };
 
 	(function($) {
 

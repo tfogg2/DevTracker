@@ -93,7 +93,6 @@ body{
 #content{
   margin:  0px auto;
   text-align: center;
-  height: 100%;
   min-height: 550px;
   background: #f1f1f1 ;
   // background: url('dash-box.png') no-repeat;
@@ -1035,19 +1034,18 @@ a.close{
   padding: 25px 0;
 }
 /* PROJECT */
-
 #conversation-box{
   // border-top: 1px solid #d6d6d6;
-  height: 550px;
-  width: 98%;
-  margin: 10px auto 50px auto;
+  height: calc(100vh - 60px);
+
+  width: 99%;
+  margin: 10px auto 0px auto;
 }
 #conversation{
   float: right;
   width: 80%;
   text-align: left;
-  max-height: 400px;
-  height: 400px;
+  height: calc(100vh - 225px);
   overflow: auto;
   padding: 0 1%;
   background: #fff;
@@ -1082,7 +1080,7 @@ a.close{
   // margin-right: 10%;
 }
 #message{
-  margin: 8px 0 0 0;
+  margin: 0px 0 8px 0;
   display: block;
 
 }
@@ -1113,13 +1111,13 @@ a.close{
   opacity: .5;
 }
 .conversation-header{
-  margin-left: 20%;
+  margin-left: 19%;
   margin-bottom: 0;
   padding: 15px 0;
   height: 80px;
   background: #fff;
   box-sizing: border-box;
-  width: 80%;
+  width: 81%;
   border: 1px solid #e0e0e0;
   text-align: left;
   // box-shadow: 1px 1px 3px 0px #bbbbbb;
@@ -1139,7 +1137,6 @@ a.close{
 #project-message-box{
   width: 20%;
   float: left;
-  height: 560px;
   background: #fff;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
@@ -1152,10 +1149,10 @@ a.close{
   box-sizing: border-box;
 }
 #project-list{
-  max-height: 479px;
+  height: calc(100vh - 147px);
   overflow: scroll;
   background: white;
-  border-bottom: 1px solid #e0e0e0;
+  // border-bottom: 1px solid #e0e0e0;
   box-sizing: border-box;
 }
 #project-list a{
@@ -1163,7 +1160,7 @@ a.close{
 }
 .project-messages{
   text-align: left;
-  height: 50px;
+  height: 35px;
   padding: 20px;
   border-bottom: .5px solid #f1f1f1;
 }

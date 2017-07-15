@@ -1,24 +1,25 @@
-#conversation-box
-  #project-message-box
-    #search-projects
-    #project-list
-      - @projects.each do |project|
-        = link_to project_conversation_path(project, @conversation),  data:{'project-id': project.id, 'conversation-id': @conversation.id} do
-          .project-messages
-            p = project.name
-  .conversation-header
-    p.p-name = @project.name
-    p.p-description = @project.description
-  /- if @conversation.messages.any?
-  #conversation
-    = render partial: "messages/message", collection: @conversation.messages
-    div class="panel-body hidden" id="messages" data-conversation-id= @conversation.id data-user-name= current_user.name
+#fill
+  #conversation-box
+    #project-message-box
+      #search-projects
+      #project-list
+        - @projects.each do |project|
+          .project-message-name = link_to project_conversation_path(project, @conversation),  data:{'project-id': project.id, 'conversation-id': @conversation.id}, class:'id' do
+            .project-messages
+              p = project.name
+    .conversation-header
+      p.p-name = link_to @project.name, project_path(@project), data:{'project-id': @project.id}
+      p.p-description = @project.description
+    /- if @conversation.messages.any?
+    #conversation
+      = render partial: "messages/message", collection: @conversation.messages
+      div class="panel-body hidden" id="messages" data-conversation-id= @conversation.id data-user-name= current_user.name
 
-  /  - if @conversation.messages.any?
-  /  -else
-    /  .create_messages
-    /    h1 Start a conversation
-  /  end
+    /  - if @conversation.messages.any?
+    /  -else
+      /  .create_messages
+      /    h1 Start a conversation
+    /  end
 
-  #new-message
-    = render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}
+    #new-message
+      = render partial: 'messages/message_form', locals: {message: @message, conversation: @conversation}

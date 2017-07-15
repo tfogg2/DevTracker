@@ -31,6 +31,7 @@ class ConversationsController < ApplicationController
       @projects = current_user.projects.all
       @conversation = @project.conversations.find_by(project_id: params[:project_id])
       @message = Message.new
+      @skip_footer = true
     end
     #  redirect_to conversation_messages_path(@conversation)
     def set_project
