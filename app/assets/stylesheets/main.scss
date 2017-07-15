@@ -93,7 +93,7 @@ body{
 #content{
   margin:  0px auto;
   text-align: center;
-  min-height: 550px;
+  // min-height: 550px;
   background: #f1f1f1 ;
   // background: url('dash-box.png') no-repeat;
   // width: 75%;
@@ -1142,7 +1142,7 @@ a.close{
   border: 1px solid #e0e0e0;
 }
 #search-projects{
-  height: 80px;
+  height: 79px;
   padding: 15px 0;
   border-bottom: 1px solid #e0e0e0;
   margin: 0;
@@ -1170,7 +1170,7 @@ a.close{
   background: #E0E0E0;
   float: right;
   border: none;
-  margin: 16px 5% 0 -50px;
+  margin: 16px 4% 0 -20px;
   border-radius: 3px;
   font-family: Gotham SSm,Helvetica,Arial,sans-serif;
   font-size: 13px;
