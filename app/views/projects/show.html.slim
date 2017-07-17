@@ -10,58 +10,69 @@ div id="project-show"
     div id="progress-bar"
         div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
 
+    ul.project-nav
+      li = link_to "Share", '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project inner-share modal-btn"
+      span |
+      li = link_to "Chat",  project_conversation_path(@project, @conversation),  data:{'project-id': @project.id, 'conversation-id': @conversation.id}
+        /#conversation
   /  .share-project = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
   /    span.modal-btn Share
-div class='temp-info'= "This user is currently a: #{current_user.user_type_for?(@project)}"
 
--if @project.steps.any?
-  div class="projects" data-turbolinks="false"
-    #steps
-      - @project.steps.each_with_index do |s, i|
-        div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id} do
-          div class="title"
-              span
-                span = i+1
-                span.dot .
-              span
-                = s.title + ' (Approx '
-              span
-                = s.hours.to_s + ' hours):'
-          - if s.status == 'completed'
-            div class="status completed"
-              span = status_label(s.status) + ' '
-          - else
-            div class="status"
-              span = status_label(s.status) + ' '
-          div class="description inner"
-            div class="break"
-            span = s.description
-            /div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
-            /  span Edit
+
+  -if @project.steps.any?
+    div class="projects" data-turbolinks="false"
+      #steps
+        - @project.steps.each_with_index do |s, i|
+          div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id} do
+            div class="title"
+                span
+                  span = i+1
+                  span.dot .
+                span
+                  = s.title + ' (Approx '
+                span
+                  = s.hours.to_s + ' hours):'
+            - if s.status == 'completed'
+              div class="status completed"
+                span = status_label(s.status) + ' '
+            - else
+              div class="status"
+                span = status_label(s.status) + ' '
+            div class="description inner"
+              div class="break"
+              span = s.description
+              /div.edit-step = link_to edit_project_step_path(s), class: "step-title modal-btn", data: {'project-id': @project.id,'step-id': s.id } do
+              /  span Edit
+        end
+        = link_to '#', class:"add-project-link modal-btn create-step", data: {'project-id': @project.id } do
+          .add-step-box
+            .plus
+        end
+
+
+  - else
+    -if current_user.developer_for?(@project)
+      h3.begin-text Begin by adding steps to your project
+
+      = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+        button class="modal-btn" + Add Step
       end
-      - if current_user.developer_for?(@project)
-        .add-step-box
-          = link_to '#', class:"create-step", data: {'project-id': @project.id } do
-            button class="modal-btn" + Add Step
-          end
-          share-project = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project inner-share" do
-            span.modal-btn Share
-    end
-
-- else
-  -if current_user.developer_for?(@project)
-    h3.begin-text Begin by adding steps to your project
-
-    = link_to '#', class:"create-step", data: {'project-id': @project.id } do
-      button class="modal-btn" + Add Step
-    end
 
 
-/#conversation-box
-  /h2.conversation-header Messages
-- @conversations.each do |conversation|
-  #conversation-link
-    p = link_to 'Conversation', project_conversation_path(@project, conversation),  data:{'project-id': @project.id, 'conversation-id': conversation.id}
+/- if current_user.developer_for?(@project) && @project.steps.any?
+/  .add-step-box
+  /  = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+  /    button class="modal-btn" + Add Step
+  /  end
+/    share-project = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project inner-share" do
+/      span.modal-btn Share
+/    end
+
+  /#conversation-box
+    /h2.conversation-header Messages
+  / @conversations.each do |conversation|
+  /  #conversation-link
+  /    p = link_to 'Conversation', project_conversation_path(@project, conversation),  data:{'project-id': @project.id, 'conversation-id': conversation.id}
     /#conversation
     / = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}
   /  #new-message

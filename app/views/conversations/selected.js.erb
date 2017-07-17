@@ -1,0 +1,7 @@
+
+var p_a = $('.p-name').children('a');
+var p_id = $(p_a).data('project-id');
+var project_id = $('.id').data('project-id');
+if (p_id == project_id){
+  $('.project-message-name').addClass('selected')
+}

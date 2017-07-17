@@ -8,7 +8,7 @@
             .project-messages
               p = project.name
     .conversation-header
-      p.p-name = link_to @project.name, project_path(@project), data:{'project-id': @project.id}
+      p.p-name = link_to @project.name, project_path(@project), data:{'project-id': @project.id, 'conversation-id': @conversation.id}
       p.p-description = @project.description
     /- if @conversation.messages.any?
     #conversation

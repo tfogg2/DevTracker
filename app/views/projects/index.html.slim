@@ -10,10 +10,14 @@ table
   tbody
     - @projects.each do |project|
       tr
-        td = link_to 'Show', project
-        td = link_to 'Edit', edit_project_path(project)
-        td = link_to 'Destroy', project, data: { confirm: 'Are you sure?' }, method: :delete
+        td = project.name
+/        td = link_to 'Show', project
+/        td = link_to 'Edit', edit_project_path(project)
+/        td = link_to 'Destroy', project, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
+/br
+= form_tag(search_projects_path , :method => :get) do |f|
+    = text_field_tag :search, params[:search], :autofocus => true, placeholder: "Search"
+end
 
-= link_to 'New project', new_project_path
+/= link_to 'New project', new_project_path

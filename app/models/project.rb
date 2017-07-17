@@ -15,5 +15,12 @@ class Project < ApplicationRecord
 		steps.sum(&:hours)
 	end
 
+	def self.search(search)
+		if search
+			where('projects.name LIKE ?', "%#{:search}%").order('created_at DESC')
+		else
+			order('created_at DESC')
+		end
+	end
 
 end

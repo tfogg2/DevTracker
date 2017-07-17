@@ -2,12 +2,25 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = current_user.projects.all
+    # @projects = current_user.projects.all
+    @projects = current_user.projects.search(params[:search])
+
+  end
+
+  def search
+    if params[:search]
+      @projects = current_user.projects.search(params[:search]).order("created_at DESC")
+    else
+      @projects = current_user.projects.all.order("created_at DESC")
+    end
   end
 
   def show
     @conversations = @project.conversations.all
     @message = Message.new
+    # @project = current_user.projects.first
+    @conversation = @project.conversations.first
+    # @skip_footer = true
 
     set_meta_tags keywords: "projects, freelance, developer, freelance developer, freelance projects",
                   description: "Add steps to your freelance projects and let your client track your progress."
@@ -75,6 +88,6 @@ class ProjectsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def project_params
-    params.require(:project).permit(:hours, :name, :description)
+    params.require(:project).permit(:hours, :name, :description, :search)
   end
 end

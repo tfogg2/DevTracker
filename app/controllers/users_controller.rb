@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
+    @project = current_user.projects.first
+    @conversation = @project.conversations.first
     set_meta_tags keywords: "freelancer, dashboard, projects, share",
                   description: "Create, manage and share your freelance projects from the Dash"
   end

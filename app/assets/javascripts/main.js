@@ -118,12 +118,24 @@ $(document).ready(function(){
 	$("#conversation").scrollTop($(conversation).prop("scrollHeight"));
 	// $("#conversation").animate({ scrolltop: $('#conversation').prop("scrollHeight")}, 1000);
 	var project_id = $('.project-message-name').children('.id');
-	// $(project_id).on('click', function(){
-	// 	$(this).addClass('selected');
-	// });
-	// var p = $('.id').data('project-id');
-	// var p_a = $('.p-name').children('a');
-	// var p_id = $(p_a).data('project-id');
+
+	$(project_id).on('click', function(){
+		var p = $('.id').data('project-id');
+		var conversation_id = $('.id').data('conversation-id');
+		$.getScript('/projects/'+ p + '/conversations/'+ conversation_id +  '/selected');
+		// $.ajax({
+		// 	url: '/projects/'+ p + '/conversations/'+ conversation_id +  '/selected',
+		// 	dataType: 'script',
+		// 	success: function(data){
+		// 		alert('success');
+		// 	}
+		// });
+	});
+	var p = $('.id').data('project-id');
+	$(function() {
+  	$('id a[href^="/' + location.pathname.split("/")[2] + '"]').addClass('selected');
+	});
+
 	// console.log(p_id);
 	// console.log(p);
 	// if(p == p_id ){

@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   root to: 'home#home'
   resources :users
   resources :projects do
+    collection do
+      get :search
+    end
     resources :project_invites
-    resources :conversations
+    resources :conversations do
+      get :selected, to: 'conversations#selected'
+    end
     resources :steps
-
   end
   resources :messages
 
