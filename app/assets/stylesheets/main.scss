@@ -433,7 +433,12 @@ a.close{
   // height: calc(80vh - 50px);
   margin: 1% auto 0 auto;
   background: white;
+}
+.project-top{
   padding-top: 40px;
+  padding-bottom: 40px;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
 }
 #progress-bar{
   background: #fff;
@@ -913,6 +918,7 @@ a.close{
   display: block;
   padding-left: 0px;
   opacity: .8;
+  margin-bottom: 0;
 }
 .project-nav li{
   display: inline-block;
@@ -1132,7 +1138,8 @@ a.close{
   border-left: none;
 }
 #message_body{
-  width: 79.654%;
+  width: 70%;
+  max-width: 1000px;
   margin-top: 16px;
   padding-top: 15px;
   border: 1px solid #e0e0e0;

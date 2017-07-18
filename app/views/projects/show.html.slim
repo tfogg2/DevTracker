@@ -2,18 +2,19 @@ p#notice = notice
   = link_to '&times;'.html_safe, project_path(@project), class:"close"
 
 div id="project-show"
-  div id="project-title"
-    h1.project-name = link_to @project.name, '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
-    p.description.project-description = @project.description
-  - if @project.steps.any?
-    /p.progress Progress:
-    div id="progress-bar"
-        div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
+  .project-top
+    div id="project-title"
+      h1.project-name = link_to @project.name, '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
+      p.description.project-description = @project.description
+    - if @project.steps.any?
+      /p.progress Progress:
+      div id="progress-bar"
+          div class="inner-progress-bar" style='width: #{(@project.completed_hours.to_f/@project.total_hours.to_f)*100}%'
 
-    ul.project-nav
-      li = link_to "Share", '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project inner-share modal-btn"
-      span |
-      li = link_to "Chat",  project_conversation_path(@project, @conversation),  data:{'project-id': @project.id, 'conversation-id': @conversation.id}
+      ul.project-nav
+        li = link_to "Share", '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project inner-share modal-btn"
+        span |
+        li = link_to "Chat",  project_conversation_path(@project, @conversation),  data:{'project-id': @project.id, 'conversation-id': @conversation.id}
         /#conversation
   /  .share-project = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project" do
   /    span.modal-btn Share
@@ -57,7 +58,7 @@ div id="project-show"
       = link_to '#', class:"create-step", data: {'project-id': @project.id } do
         button class="modal-btn" + Add Step
       end
-      
+
 
 
 /- if current_user.developer_for?(@project) && @project.steps.any?
