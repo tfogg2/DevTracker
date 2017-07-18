@@ -57,6 +57,7 @@ div id="project-show"
       = link_to '#', class:"create-step", data: {'project-id': @project.id } do
         button class="modal-btn" + Add Step
       end
+      
 
 
 /- if current_user.developer_for?(@project) && @project.steps.any?
