@@ -18,5 +18,12 @@
     <p>
       <span class="message_body"><%= message.body %></span>
     </p>
+    <%- if message.image.present? %>
+      <!-- <span class="download-img"><%= link_to "Download", message.image.url(:original, false) %></span> -->
+      <%= link_to '#', class: "modal-btn image", data:{'message-id': message.id} do %>
+        <span class="user_message_img"><%= image_tag message.image %></span>
+      <% end %>
+
+    <% end %>
   </div>
 <% end %>
