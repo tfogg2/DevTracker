@@ -1,0 +1,6 @@
+- for project in @projects
+  .project-message-name = link_to project_conversation_path(project, @conversation),  data:{'project-id': project.id, 'conversation-id': @conversation.id}, class:'id' do
+    .project-messages
+      p.p-name = project.name
+      p.p-description = project.description
+end

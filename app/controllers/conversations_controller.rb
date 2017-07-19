@@ -28,7 +28,8 @@ class ConversationsController < ApplicationController
     end
 
     def show
-      @projects = current_user.projects.all
+      # @projects = current_user.projects.all
+      @projects = current_user.projects.search(params[:search])
       @conversation = @project.conversations.find_by(project_id: params[:project_id])
       @message = Message.new
       @skip_footer = true

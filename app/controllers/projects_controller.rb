@@ -1,19 +1,24 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  # helper_method :sort_column, :sort_direction
 
   def index
     # @projects = current_user.projects.all
-    @projects = current_user.projects.search(params[:search])
-
+    @projects = current_user.projects.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
+    # @project = current_user.projects.first
+    # @conversation = @project.conversations.first
   end
 
-  def search
-    if params[:search]
-      @projects = current_user.projects.search(params[:search]).order("created_at DESC")
-    else
-      @projects = current_user.projects.all.order("created_at DESC")
-    end
-  end
+  # def search
+  #   if params[:search]
+  #     # @projects = current_user.projects.where("name LIKE ?", search)
+  #     @projects = current_user.projects.search(params[:search]).order("created_at DESC")
+  #   else
+  #     @projects = current_user.projects.all.order("created_at DESC")
+  #   end
+  #   @project = current_user.projects.first
+  #   @conversation = @project.conversations.first
+  # end
 
   def show
     @conversations = @project.conversations.all
@@ -80,6 +85,14 @@ class ProjectsController < ApplicationController
 
   private
 
+  # def sort_column
+  #   current_user.projects.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  # end
+  #
+  # def sort_direction
+  #   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  # end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_project
 
@@ -88,6 +101,6 @@ class ProjectsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def project_params
-    params.require(:project).permit(:hours, :name, :description, :search)
+    params.require(:project).permit(:hours, :name, :description)
   end
 end

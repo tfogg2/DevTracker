@@ -7,6 +7,8 @@ class Project < ApplicationRecord
 
 	validates :name, presence: true
 
+
+
 	def completed_hours
 		steps.where(status: 'completed').sum(&:hours)
 	end
@@ -17,9 +19,9 @@ class Project < ApplicationRecord
 
 	def self.search(search)
 		if search
-			where('projects.name LIKE ?', "%#{:search}%").order('created_at DESC')
+			where('name iLIKE ?', "%#{search}%").order("name ASC")
 		else
-			order('created_at DESC')
+			all
 		end
 	end
 

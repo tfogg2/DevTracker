@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   root to: 'home#home'
   resources :users
   resources :projects do
-    collection do
-      get :search
-    end
+    # collection do
+    #   # get :search
+    #   # match '/search', to: "projects#search", via: "post"
+    # end
     resources :project_invites
     resources :conversations do
       get :selected, to: 'conversations#selected'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
     resources :steps
   end
   resources :messages
+
+  get '/search', to: 'projects#search'
 
   get "/join", to: 'project_invites#join', as: 'join_project'
 

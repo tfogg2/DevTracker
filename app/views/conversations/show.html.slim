@@ -2,11 +2,14 @@
   #conversation-box
     #project-message-box
       #search-projects
+        = render 'projects/search'
+      #modal-dialog
+        #search-modal
+          
       #project-list
-        - @projects.each do |project|
-          .project-message-name = link_to project_conversation_path(project, @conversation),  data:{'project-id': project.id, 'conversation-id': @conversation.id}, class:'id' do
-            .project-messages
-              p = project.name
+
+        /.project-message-name = link_to project_conversation_path(project, @conversation),  data:{'project-id': project.id, 'conversation-id': @conversation.id}, class:'id' do
+        = render 'project_list'
     .conversation-header
       p.p-name = link_to @project.name, project_path(@project), data:{'project-id': @project.id, 'conversation-id': @conversation.id}
       p.p-description = @project.description

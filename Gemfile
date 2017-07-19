@@ -18,6 +18,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem "slim-rails"
+
+gem "paperclip", "~> 5.0.0"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -29,6 +31,8 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 
 gem 'simple_form'
+
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'clipboard-rails'
 

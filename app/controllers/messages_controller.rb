@@ -8,18 +8,19 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast 'messages',
         message: message.body,
         user: current_user.name,
-        conversation_id: message.conversation_id
+        conversation_id: message.conversation_id,
+        image: message.image
       head :ok
     end
   end
 
   def show
-
+    @message = Message.find(params[:id])
   end
 
 
   private
    def message_params
-    params.require(:message).permit(:body, :user_id, :conversation_id )
+    params.require(:message).permit(:body, :user_id, :conversation_id, :image)
    end
 end

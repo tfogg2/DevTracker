@@ -48,6 +48,18 @@ body{
   font-family: Open Sans,open-sans,sans-serif;
   cursor: pointer;
 }
+#notifications{
+  display: none;
+  height: 30px;
+  line-height: 2.5;
+  margin-top: 1px;
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  font-family: Open Sans,open-sans,sans-serif;
+  cursor: pointer;
+}
 #notice p{
 
 }
@@ -103,6 +115,7 @@ body{
   min-width: 520px;
   height: 50px;
   padding: 0 5%;
+  box-shadow: 0 1px 6px rgba(57,73,76,.35);
   //background: #fff;
   background: #66b5e4;
   // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -222,7 +235,7 @@ body{
   width: 100%; /* Full width */
   height: 100vh; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background: url('form-background.png') no-repeat;
+  background: url('form-background.png') repeat-x;
 }
 .form-content{
   width: 40%;
@@ -370,6 +383,16 @@ textarea{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
+#modal-dialog{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+}
 /* Modal Content/Box */
 #modal-holder {
     background-color: #fefefe;
@@ -386,6 +409,13 @@ textarea{
   font-weight: 200;
   font-size: 240%;
   margin: 15px 0;
+}
+.image-content{
+  margin-top: 6%;
+  // height: 90vh
+}
+.modal-image{
+  width:100%;
 }
 #share-modal h1{
   margin-top: 0px;
@@ -886,7 +916,7 @@ a.close{
   margin: 0px auto 0px auto;
 }
 .projects.p-dash {
-  max-height: calc(100vh - 126px);
+  // max-height: calc(100vh - 126px);
   overflow: auto;
   padding-top: 10px;
   margin-top: 1%;
@@ -1098,14 +1128,14 @@ a.close{
 /* PROJECT */
 #conversation-box{
   // border-top: 1px solid #d6d6d6;
-  height: calc(100vh - 60px);
-
-  width: 99%;
-  margin: 10px auto 0px auto;
+  height: calc(100vh - 70px);
+  min-width: 950px;
+  width: calc(100vw - 20px);
+  margin: 10px;
 }
 #conversation{
   float: right;
-  width: 80%;
+  width: 75%;
   text-align: left;
   height: calc(100vh - 225px);
   overflow: auto;
@@ -1128,7 +1158,7 @@ a.close{
   width: auto;
 }
 #new-message{
-  width: 80%;
+  width: 75%;
   margin: 0px auto;
   float: right;
   height: 80px;
@@ -1138,12 +1168,43 @@ a.close{
   border-left: none;
 }
 #message_body{
-  width: 70%;
+  width: 82%;
   max-width: 1000px;
   margin-top: 16px;
   padding-top: 15px;
   border: 1px solid #e0e0e0;
+  padding-left: 10px;
   // margin-right: 10%;
+}
+#message_image{
+  background: url('paperclip.svg') no-repeat;
+  width: 13px;
+  position: absolute;
+  height: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-top: 18px;
+  outline: 0;
+  opacity: 0.5;
+  margin-top: -32px;
+  margin-left: -30px;
+  background: url(paperclip.svg) no-repeat;
+  box-sizing: border-box;
+  border: none;
+}
+.message_image{
+  display: inline-block;
+}
+.message_img{
+  height: auto;
+  width: 40%;
+}
+.message_img img{
+  height: auto;
+  width: 70%;
+  margin-left: 30%;
+  margin-top: 8px;
 }
 #message{
   margin: 0px 0 8px 0;
@@ -1177,16 +1238,17 @@ a.close{
   opacity: .5;
 }
 .conversation-header{
-  margin-left: 19%;
+  margin-left: 24%;
   margin-bottom: 0;
   padding: 15px 0;
+  padding-left: 1%;
+  border-left: none;
   height: 80px;
   background: #fff;
   box-sizing: border-box;
-  width: 81%;
+  width: 76%;
   border: 1px solid #e0e0e0;
   text-align: left;
-  // box-shadow: 1px 1px 3px 0px #bbbbbb;
 }
 .conversation-header p{
   margin-left: 25px;
@@ -1196,12 +1258,15 @@ a.close{
   margin: 5px 0;
   font-size: 16px;
 }
+.p-name a{
+  text-decoration: none;
+}
 .p-description{
   color: #828282;
   font-size: 12px;
 }
 #project-message-box{
-  width: 20%;
+  width: 25%;
   float: left;
   background: #fff;
   box-sizing: border-box;
@@ -1210,12 +1275,95 @@ a.close{
 #search-projects{
   height: 79px;
   padding: 15px 0;
-  border-bottom: 1px solid #e0e0e0;
   margin: 0;
+  border-bottom: 1px solid #e0e0e0;
   box-sizing: border-box;
 }
+.id{
+  text-decoration: none;
+}
+.id:hover .p-name{
+  text-decoration: underline;
+  color: #66b5e4;
+}
+.id:hover .project-messages{
+  background: #f5f5f5;
+}
+.clear{
+  display: none;
+  top: 88px;
+  left: 17%;
+  opacity: .5;
+  float: right;
+  position: absolute;
+  cursor: pointer;
+}
+#projects_search{
+  width: 80%;
+  min-width: 226px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.no-projects{
+  text-align: left;
+  height: 35px;
+  padding: 20px;
+}
+.no-project-box{
+  text-align: left;
+  padding-left: 10px;
+  height: 35px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+  padding-top: 8px;
+}
+.no-project-box span{
+  font-size: 13px;
+  opacity: 0.6;
+  font-weight: 300;
+}
+#search{
+  font-size: 14px;
+  width: 80%;
+  height: 37px;
+  padding: 0px 10px;
+  border: none;
+  float: right;
+  outline: 0;
+  background: none;
+}
+.search-icon{
+  float:left;
+  margin: 12px 0 0 10px;
+}
+#projects_search.focus{
+  box-shadow: inset 0px 0 5px rgba(0,0,0,.3);
+  border: 1px solid #66b5e4;
+  outline: 0;
+}
+#search-modal{
+  position: absolute;
+  top: 133px;
+  /* max-height: 200px; */
+  margin-left: 11px;
+  overflow: auto;
+  height: auto;
+  width: 24.68%;
+  box-sizing: border-box;
+  /* border: 1px solid #e0e0e0; */
+  border-left: none;
+  background: white;
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+.border-bottom{
+  border-bottom: 1px solid #e0e0e0;
+}
 #project-list{
-  height: calc(100vh - 147px);
+  height: calc(100vh - 146px);
   overflow: scroll;
   background: white;
   // border-bottom: 1px solid #e0e0e0;
@@ -1237,10 +1385,14 @@ a.close{
   background: #E0E0E0;
   float: right;
   border: none;
-  margin: 16px 4% 0 -20px;
+  margin: 16px 0%;
   border-radius: 3px;
   font-family: Gotham SSm,Helvetica,Arial,sans-serif;
   font-size: 13px;
   line-height: 1.42857;
   color: #a0a0a0;
+}
+#new_message{
+  width: 95%;
+  margin: 0 auto;
 }

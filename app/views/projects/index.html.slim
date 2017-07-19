@@ -1,23 +1,35 @@
 h1 Listing Projects
 
-table
-  thead
-    tr
-      th
-      th
-      th
+/= form_tag projects_path, :method => :get, :id => "projects_search" do |f|
+/    = text_field_tag :search, params[:search], :autofocus => true, placeholder: "Search"
 
-  tbody
-    - @projects.each do |project|
+/end
+
+= render 'search'
+
+
+#projects
+
+#before-search
+  table
+    thead
       tr
-        td = project.name
-/        td = link_to 'Show', project
-/        td = link_to 'Edit', edit_project_path(project)
-/        td = link_to 'Destroy', project, data: { confirm: 'Are you sure?' }, method: :delete
+        th Name
+        th
+        th
 
-/br
-= form_tag(search_projects_path , :method => :get) do |f|
-    = text_field_tag :search, params[:search], :autofocus => true, placeholder: "Search"
-end
+    tbody
+
+
+      - for project in @projects
+        tr
+          td = project.name
+  /        td = link_to 'Show', project
+  /        td = link_to 'Edit', edit_project_path(project)
+  /        td = link_to 'Destroy', project, data: { confirm: 'Are you sure?' }, method: :delete
+      end
+= will_paginate @projects
+
+
 
 /= link_to 'New project', new_project_path

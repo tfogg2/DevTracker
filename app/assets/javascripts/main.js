@@ -25,12 +25,20 @@ $(document).ready(function(){
 			modal.style.display = "none";
 		}
 	});
+
+
+
 	$('.create-project').on('click', function(){
 		$.getScript('/projects/new');
 		// $('#modal').show();
 		// Do this at the end so it doesn't actually click the link!
 		return false;
 		// var modal = document.getElementById('modal');
+	});
+	$('.image').on('click', function(){
+		var message_id = $(this).data('message-id');
+		$.getScript('/messages/'+ message_id );
+		return false;
 	});
 	$('.create-step').on('click', function(){
 		var project_id = $(this).data('project-id');
@@ -134,6 +142,38 @@ $(document).ready(function(){
 	var p = $('.id').data('project-id');
 	$(function() {
   	$('id a[href^="/' + location.pathname.split("/")[2] + '"]').addClass('selected');
+	});
+
+	$(function() {
+	  $(".pagination a").delegate("click", "a", function() {
+	    $.getScript(this.href);
+	    return false;
+	  });
+	  $("#projects_search input").keyup(function() {
+			$('#modal-dialog').show();
+	    $.get($("#projects_search").attr("action"), $('#projects_search').serialize(), null, "script");
+			var modal = document.getElementById('modal-dialog');
+			$('#projects_search').addClass('border-bottom');
+			$(window).on('click', function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+					$('#search').val(" ");
+					$('#projects_search').removeClass('border-bottom');
+				}
+			});
+
+			$('.clear').on('click', function(){
+				$('#search').val(" ");
+			});
+			// $.getScript('/search');
+	    return false;
+	  });
+		$("#projects_search").submit(function(){
+			return false;
+		});
+	});
+	$("#projects_search input").on('focus', function(){
+		$('#projects_search').addClass('focus')
 	});
 
 	// console.log(p_id);
