@@ -176,6 +176,7 @@ $(document).ready(function(){
 		$('#projects_search').addClass('focus')
 	});
 
+	
 	// console.log(p_id);
 	// console.log(p);
 	// if(p == p_id ){

@@ -1,10 +1,11 @@
-span.close.clear &times; 
+span.close.clear &times;
 - if @projects.any?
   - for project in @projects
     - project.conversations.each do |conversation|
       .project-message-name = link_to project_conversation_path(project, conversation),  data:{'project-id': project.id, 'conversation-id': conversation.id}, class:'id' do
         .project-messages
-          p = project.name
+          p.p-name = project.name
+          p.p-description = project.description
       end
     end
   end

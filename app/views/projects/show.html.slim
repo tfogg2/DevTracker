@@ -46,18 +46,20 @@ div id="project-show"
               /  span Edit
         end
         = link_to '#', class:"add-project-link modal-btn create-step", data: {'project-id': @project.id } do
-          .add-step-box.slide
+          .add-step-box
             .plus
         end
 
 
   - else
     -if current_user.developer_for?(@project)
-      h3.begin-text Begin by adding steps to your project
+      .begin
 
-      = link_to '#', class:"create-step", data: {'project-id': @project.id } do
-        button class="modal-btn" + Add Step
-      end
+        h3.begin-text Begin by adding steps to your project
+
+        = link_to '#', class:"create-step", data: {'project-id': @project.id } do
+          button class="modal-btn" + Add Step
+        end
 
 
 

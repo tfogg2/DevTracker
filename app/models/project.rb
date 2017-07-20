@@ -19,7 +19,7 @@ class Project < ApplicationRecord
 
 	def self.search(search)
 		if search
-			where('name iLIKE ?', "%#{search}%").order("name ASC")
+			where('name iLIKE ? OR description iLIKE ?', "%#{search}%", "%#{search}%").order("name ASC")
 		else
 			all
 		end
