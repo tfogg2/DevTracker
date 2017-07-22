@@ -11,12 +11,14 @@ class MessagesController < ApplicationController
         conversation_id: message.conversation_id,
         image: message.image
       head :ok
+      NotificationRelayJob.perform_now(message)
     end
   end
 
   def show
     @message = Message.find(params[:id])
   end
+
 
 
   private

@@ -177,6 +177,8 @@ $(document).ready(function(){
 	});
 
 	
+
+
 	// console.log(p_id);
 	// console.log(p);
 	// if(p == p_id ){

@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
 
+  validates :email, uniqueness: true, presence: true
+  validates_presence_of :name
+
   # These helper methods will help us determine what type of user
   # this is for a specific project (ex. current_user.user_type_for(@project))
   def user_type_for?(project = nil)
