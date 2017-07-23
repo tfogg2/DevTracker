@@ -19,7 +19,7 @@ class Message < ActiveRecord::Base
      message = self
      conversation_id = self.conversation_id
      @conversation = Conversation.find(conversation_id)
-     recipient_id = @conversation.users
+     recipient_id = @conversation.users && @conversation.users.where.not(id: user)
    end
 
    def action

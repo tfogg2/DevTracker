@@ -17,7 +17,7 @@ p#notice = notice
         = render('projects/project_list', {project: project, steps: project.steps})
       end
       = link_to '#', data: current_user.id, class:"add-project-link" do
-        .add-project-box.modal-btn.create-project.slide
+        .add-project-box.modal-btn.create-project
           .plus
 
   .new-dash
