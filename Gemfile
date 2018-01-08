@@ -32,6 +32,8 @@ gem 'simple_form'
 
 gem 'clipboard-rails'
 
+gem 'meta-tags'
+
 gem "react-rails"
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

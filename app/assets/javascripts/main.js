@@ -18,6 +18,7 @@ $(document).ready(function(){
 		 modal.style.display = "none";
 	});
 
+
 	// When the user clicks anywhere outside of the modal, close it
 	$(window).on('click', function(event) {
 		if (event.target == modal) {
@@ -81,8 +82,15 @@ $(document).ready(function(){
 		$(this).mouseleave(function(){
 			$(this).removeClass("hover-white");
 		});
-
 	});
+	var add_project = document.getElementsByClassName('add-project-link');
+	$(add_project).mouseenter(function(){
+		$(this).addClass("hover-add");
+		$(this).mouseleave(function(){
+			$(this).removeClass("hover-add");
+		});
+	});
+
 	var step = document.getElementsByClassName('step');
 	$(step).mouseenter(function(){
 		$(this).addClass("hover-white");
@@ -168,6 +176,33 @@ $(document).ready(function(){
 
 
 
+<<<<<<< HEAD
+=======
+	var notice = document.getElementById('notice');
+	$(notice).on('click', function(){
+		$(this).hide();
+	});
+	$(window).on('click', function(event) {
+		$(notice).hide();
+	});
+
+
+
+	// $.ajax({
+	// 	url: '/users/sign_up',
+	// 	success: function(data){
+	// 		var home_signup = document.getElementsByClassName('home-signup');
+	// 		$(home_signup).append(data);
+	// 		return false;
+	// 	}
+	//
+	// });
+
+
+});
+
+
+>>>>>>> 183d6080855404449f52c2245507bbf305bca575
 // $('.modal-btn').on('click', function(){
 //   var data = $(this).data.val();
 //   $.ajax({
