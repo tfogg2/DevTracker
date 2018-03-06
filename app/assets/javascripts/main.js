@@ -175,9 +175,6 @@ $(document).ready(function(){
 });
 
 
-
-<<<<<<< HEAD
-=======
 	var notice = document.getElementById('notice');
 	$(notice).on('click', function(){
 		$(this).hide();
@@ -202,7 +199,6 @@ $(document).ready(function(){
 });
 
 
->>>>>>> 183d6080855404449f52c2245507bbf305bca575
 // $('.modal-btn').on('click', function(){
 //   var data = $(this).data.val();
 //   $.ajax({

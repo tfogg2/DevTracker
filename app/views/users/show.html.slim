@@ -4,16 +4,8 @@ p#notice = notice
 /  li = current_user.email
 /  -if current_user.email === current_user.email
 /    li = link_to 'Edit', edit_user_path(current_user)
-<<<<<<< HEAD
 
-div class="projects-header"
-  h1 Project Dashboard
-  p Create, manage and share your freelance projects from the Dash
-  = link_to '#', data: current_user.id do
-    button class="modal-btn create-project"
-    /= image_tag('plus.svg')
-- if current_user.projects.any?
-=======
+
 - if !current_user.projects.any?
   div class="projects-header"
     h1 Project Dashboard
@@ -21,14 +13,13 @@ div class="projects-header"
     = link_to '#', data: current_user.id do
       button class="modal-btn create-project" + Add Project
 - else
->>>>>>> 183d6080855404449f52c2245507bbf305bca575
   div class="projects p-dash"
     .project-row
       - current_user.projects.each do |project|
         = render('projects/project_list', {project: project, steps: project.steps})
       end
       = link_to '#', data: current_user.id, class:"add-project-link" do
-        .add-project-box.modal-btn.create-project 
+        .add-project-box.modal-btn.create-project
           .plus
 
   .new-dash

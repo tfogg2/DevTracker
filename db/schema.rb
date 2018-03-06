@@ -10,10 +10,87 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704203253) do
+ActiveRecord::Schema.define(version: 20170718222949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.string "handle"
+    t.string "shopify_collection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "collection_id"
+  end
+
+  create_table "collections", id: :serial, force: :cascade do |t|
+    t.string "shop_id"
+    t.string "title"
+    t.string "shopify_collection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "project_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "recipient_id"
+    t.string "action"
+    t.string "notifiable_type"
+    t.integer "notifiable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "product_tags", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_tags_on_product_id"
+    t.index ["tag_id"], name: "index_product_tags_on_tag_id"
+  end
+
+  create_table "product_types", id: :serial, force: :cascade do |t|
+    t.integer "category_id"
+    t.string "title"
+    t.string "handle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_product_types_on_category_id"
+  end
+
+  create_table "products", id: :serial, force: :cascade do |t|
+    t.integer "product_type_id"
+    t.integer "category_id"
+    t.string "shopify_product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
+  end
 
   create_table "project_invites", force: :cascade do |t|
     t.string "share_token"
@@ -31,6 +108,14 @@ ActiveRecord::Schema.define(version: 20170704203253) do
     t.string "description"
   end
 
+  create_table "shops", id: :serial, force: :cascade do |t|
+    t.string "shopify_domain", null: false
+    t.string "shopify_token", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
+  end
+
   create_table "steps", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,6 +125,15 @@ ActiveRecord::Schema.define(version: 20170704203253) do
     t.string "status"
     t.string "description"
     t.index ["project_id"], name: "index_steps_on_project_id"
+  end
+
+  create_table "tags", id: :serial, force: :cascade do |t|
+    t.integer "product_type_id"
+    t.string "title"
+    t.string "handle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_type_id"], name: "index_tags_on_product_type_id"
   end
 
   create_table "user_projects", force: :cascade do |t|
@@ -68,5 +162,12 @@ ActiveRecord::Schema.define(version: 20170704203253) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notifications", "users"
+  add_foreign_key "product_tags", "products"
+  add_foreign_key "product_tags", "tags"
+  add_foreign_key "product_types", "categories"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "product_types"
   add_foreign_key "steps", "projects"
+  add_foreign_key "tags", "product_types"
 end
