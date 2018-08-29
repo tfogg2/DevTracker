@@ -4,21 +4,21 @@
     <title>Freelancer Dashboard</title>
     <%= csrf_meta_tags %>
     <%= display_meta_tags %>
+    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <div id="modal">
+    <div id="modal" data-turbolinks="false">
       <div id="modal-holder"></div>
     </div>
     <% unless current_page?(root_path) %>
       <div id="top-bar">
-        <h1 class="logo"><%= link_to "FreeDash", root_path %></h1>
+        <h1 class="logo" data-turbolinks="false"><%= link_to "FreeDash", root_path %></h1>
         <ul id="nav">
           <%- if user_signed_in? %>
-             <!-- <li><%#link_to "Dashboard", user_path(current_user) %></li> -->
-             <!-- <li><%# link_to current_user.email, user_path(current_user) %>   |</li> -->
+             <li class='notification-icon'><%= image_tag('notification.svg') %></li>
              <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
           <%- else %>
              <li><%= link_to "Login", new_user_session_path %></li>
@@ -27,19 +27,24 @@
         </ul>
       </div>
     <% end %>
+    <div id="notifications"></div>
 
-    <div id="content">
-      <%= yield %>
-    </div>
-
-    <div id="footer">
-      <div class="love-vermont">
-        <p>Created with
-          <span class="heart"><%= image_tag('heart.svg') %></span>
-        from Vermont</p>
-        <%# image_tag('vermont-blue.png') %>
+    <div id="content" data-turbolinks="false">
+      <div class="landing">
+        <div id="home-header">
+          <h1 class="logo" data-turbolinks="false"><%= link_to "FreeDash", root_path %></h1>
+          <div class="landing-content">
+            <h1>We're building a brand new site to better meet the needs of our clients</h1>
+            <p>Thank you for your patience</p>
+          </div>
+        </div>
       </div>
+
+      </div>
+      <%# yield %>
     </div>
+
+    <%# render "layouts/footer"  unless @skip_footer %>
   </body>
 
 </html>
