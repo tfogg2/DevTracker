@@ -82,6 +82,7 @@ textarea{
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
   opacity: .9;
+  color: #D8000C;
   // background-color: #FFBABA;
 }
 #flash_alert{
@@ -89,9 +90,9 @@ textarea{
   color: #D8000C;
 }
 .error{
-  float: right;
+  text-align: center;
   color: #D8000C;
-  padding: 0px 70px;
+  display: none;
 }
 #error_explanation h2{
   -webkit-font-smoothing: antialiased;
@@ -273,6 +274,7 @@ textarea{
 }
 #form-content-project{
   width: 50%;
+  min-height: 80vh;
   height: 250px;
   margin: 0 auto;
 }
@@ -363,6 +365,7 @@ textarea{
   width: 50%;
   height: 40px;
   color: white;
+  cursor: pointer;
   font-size: 100%;
   border: none;
   margin: 40px auto;
