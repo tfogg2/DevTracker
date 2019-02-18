@@ -24,7 +24,6 @@
                <!-- <li><%# link_to "Chat", project_conversation_path(@project, @conversation), :controller => "users" %></li> -->
              <%# end %>
              <!-- <span>|</span> -->
-             <li class='notification-icon'><%= image_tag('notification.svg') %></li>
              <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
           <%- else %>
              <li><%= link_to "Login", new_user_session_path %></li>

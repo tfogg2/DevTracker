@@ -35,6 +35,12 @@ body{
   background: #f1f1f1;
   // background: #eaeaea;
 }
+input{
+  background: #f7f7f7;
+}
+textarea{
+  background: #f7f7f7;
+}
 .hidden {
   display: none;
 }
@@ -183,16 +189,16 @@ body{
 .hover-white.step{
   // background-color: #deefff;
   // box-shadow: none;
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
 }
 .hover-white.project{
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
 }
 .hover-white .step-content{
   background: #3a3a3a;
@@ -466,7 +472,7 @@ a.close{
 
 /* PROJECT */
 #project-show{
-  min-height: 450px;
+  min-height: 90vh;
   width: 98%;
   // height: calc(80vh - 50px);
   margin: 1% auto 0 auto;

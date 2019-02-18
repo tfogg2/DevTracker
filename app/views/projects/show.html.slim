@@ -55,32 +55,11 @@ div id="project-show"
     -if current_user.developer_for?(@project)
       .begin
 
-        h3.begin-text Begin by adding steps to your project
+        h3.begin-text
 
         = link_to '#', class:"create-step", data: {'project-id': @project.id } do
           button class="modal-btn" + Add Step
         end
-
-
-
-/- if current_user.developer_for?(@project) && @project.steps.any?
-/  .add-step-box
-  /  = link_to '#', class:"create-step", data: {'project-id': @project.id } do
-  /    button class="modal-btn" + Add Step
-  /  end
-/    share-project = link_to '#', data: {'project-id': @project.id, 'user-id': current_user.id }, class: "share-project inner-share" do
-/      span.modal-btn Share
-/    end
-
-  /#conversation-box
-    /h2.conversation-header Messages
-  / @conversations.each do |conversation|
-  /  #conversation-link
-  /    p = link_to 'Conversation', project_conversation_path(@project, conversation),  data:{'project-id': @project.id, 'conversation-id': conversation.id}
-    /#conversation
-    / = render 'conversations/conversation', {conversation: conversation, messages: conversation.messages, project: @project}
-  /  #new-message
-    /  = render 'messages/message_form', {project: @project, conversation: conversation, messages: conversation.messages}
 
 
 
