@@ -1,9 +1,9 @@
 p#notice = notice
   = link_to '&times;'.html_safe, project_path(@project), class:"close"
 
-div id="project-show"
+div class="project-show"
   .project-top
-    div id="project-title"
+    div class="project-title"
       h1.project-name = link_to @project.name, '#', data: {'project-id': @project.id, 'user-id': current_user.id}, class: 'modal-btn edit-project'
       p.description.project-description = @project.description
     - if @project.steps.any?
@@ -22,7 +22,7 @@ div id="project-show"
 
   -if @project.steps.any?
     div class="projects" data-turbolinks="false"
-      #steps
+      .steps
         - @project.steps.each_with_index do |s, i|
           div class="step modal-btn" = link_to '#', id: "edit-steps", data: {'project-id': @project.id,'step-id': s.id} do
             div class="title"

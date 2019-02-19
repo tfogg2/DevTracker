@@ -7,34 +7,29 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <div id="modal" data-turbolinks="false">
       <div id="modal-holder"></div>
     </div>
-    <% unless current_page?(root_path) %>
-      <div id="top-bar">
-        <h1 class="logo" data-turbolinks="false"><%= link_to "FreeDash", root_path %></h1>
-        <ul id="nav">
-          <%- if user_signed_in? %>
-             <!-- <li><%#link_to "Dashboard", user_path(current_user) %></li> -->
-             <!-- <li><%# link_to current_user.email, user_path(current_user) %>   |</li> -->
-             <%# if @project && @conversation %>
-               <!-- <li><%# link_to "Chat", project_conversation_path(@project, @conversation), :controller => "users" %></li> -->
-             <%# end %>
-             <!-- <span>|</span> -->
-             <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
-          <%- else %>
-             <li><%= link_to "Login", new_user_session_path %></li>
-             <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <%- end %>
-        </ul>
-      </div>
-    <% end %>
-    <div id="notifications"></div>
+    <%# unless current_page?(root_path) %>
+    <div class="top-bar">
+      <h1 class="logo" data-turbolinks="false"><%= link_to "FreeDash", root_path %></h1>
+      <ul class="nav">
+        <%- if user_signed_in? %>
+           <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
+        <%- else %>
+           <li><%= link_to "Login", new_user_session_path %></li>
+           <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <%- end %>
+      </ul>
+    </div>
+    <%# end %>
+    <div class="notifications"></div>
 
-    <div id="content" data-turbolinks="false">
+    <div class="content" data-turbolinks="false">
       <%= yield %>
     </div>
 

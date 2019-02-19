@@ -1,63 +1,42 @@
 
-#home
-  #home-nav
-    h1.logo = link_to "FreeDash", root_path
-    ul
-      - if user_signed_in?
-        li = link_to "Dashboard", user_path(current_user)
-        li = link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete
-      -else
-        li = link_to "Login", new_user_session_path
-        li = link_to "Sign up", new_user_registration_path
-  #home-content
-    .home-signup
-      = render '/devise/registrations/home'
-    .dash
-      h1 Built for freelance developers
-      p.home-message Freedash lets you create, manage and share your freelance projects from one simple dashboard.
-#home-bottom
-  .value-one.slide
-    h1 Improve Client Satisfaction
-    p Keeping clients in the loop leads to a better overall experience and for the freelance developer, that means more business.
-    .satisfaction
-  .value-two.slide
+.home
+  / .home-nav
+  /   h1.logo = link_to "FreeDash", root_path
+  /   ul
+  /     - if user_signed_in?
+  /       li = link_to "Dashboard", user_path(current_user)
+  /       li = link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete
+  /     -else
+  /       li = link_to "Login", new_user_session_path
+  /       li = link_to "Sign up", new_user_registration_path
+  .home-content
+    / .home-signup
+    /   = render '/devise/registrations/home'
+    .splash
+      h1 Built For Freelance Developers
+      p.splash-message Freedash lets you create, manage and share your freelance projects from one <b>simple dashboard.</b>
+      button.cta-btn = link_to "Try it Free", new_user_registration_path
+.home-bottom
+  .value.slide.first
+    h2 Stay Connected
+    p Keeping clients in the loop leads to a better overall experience on both sides.
+    .icon.synchronize
+  .value.slide
     h2 Keep your project organized
-    p Organization made easy. Create steps to keep track of what you’ve completed and what you have remaining.
-    .organization
-  .value-three.slide
+    p Organization made easy. Create steps to keep track of what you’ve completed and what tasks you have remaining.
+    .icon.organization
+  .value.slide
     h2 Track progress at a glance
     p It shouldn’t be difficult for clients to track your progress. Make it easy.
-    .progression
-  .value-four.slide
+    .icon.progression
+  .value.slide.last
     h2 Consolidate your projects
     p
       ' Manage your projects from sites like
       = link_to "Upwork", "https://www.upwork.com", target: :_blank
       '  or
       = link_to "Guru", "https://www.guru.com", target: :_blank
-      '  with one simple dashboard.
+      '  from one simple dashboard.
+    .icon.consolidate
   .start
-    button.slide = link_to "Start your first project", new_user_registration_path
-
-
-
-/  - if user_signed_in?
-/    = link_to new_project_path do
-/      button class="start-btn" Start your first project
-/    end
-/  -else
-/     = link_to new_user_registration_path do
-/       button class="start-btn" Start your first project
-/     end
-/  div class="login"
-/    p Already started?
-/    = link_to "Login", new_user_session_path
-
-
-  /ul class="nav"
-  /  - if user_signed_in?
-  /    li = link_to current_user.email, user_path(current_user)
-  /    li = link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete
-  /  - else
-  /    li = link_to "Login", new_user_session_path
-  /    li = link_to "Signup for free", new_user_registration_path
+    button.cta-btn = link_to "Get Started", new_user_registration_path

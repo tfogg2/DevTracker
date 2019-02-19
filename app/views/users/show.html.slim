@@ -5,11 +5,10 @@ p#notice = notice
 /  -if current_user.email === current_user.email
 /    li = link_to 'Edit', edit_user_path(current_user)
 - if !current_user.projects.any?
-  div class="projects-header"
-    h1 Project Dashboard
-    p Create, manage and share your freelance projects from the Dash
-    = link_to '#', data: current_user.id do
-      button class="modal-btn create-project" + Add Project
+  div class="projects p-dash"
+    = link_to '#', data: current_user.id, class:"add-project-link" do
+      .add-project-box.modal-btn.create-project
+        .plus
 - else
   div class="projects p-dash"
     .project-row
