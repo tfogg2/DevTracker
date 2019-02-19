@@ -314,7 +314,7 @@ textarea{
   background: white;
 }
 .inner-progress-bar{
-  background: #66b5e4;
+  background: #847eff;
   height: 15px;
   border-radius: 15px;
 }
@@ -547,7 +547,7 @@ textarea{
   background: url('plus.png') no-repeat;
 }
 .completed span{
-  // color: #66b5e4;
+  // color: #847eff;
   opacity: .4
 }
 .title{
@@ -948,7 +948,7 @@ a.close{
 }
 .id:hover .p-name{
   text-decoration: underline;
-  color: #66b5e4;
+  color: #847eff;
 }
 .id:hover .project-messages{
   background: #f5f5f5;
@@ -1006,7 +1006,7 @@ a.close{
 }
 #projects_search.focus{
   box-shadow: inset 0px 0 5px rgba(0,0,0,.3);
-  border: 1px solid #66b5e4;
+  border: 1px solid #847eff;
   outline: 0;
 }
 #search-modal{
