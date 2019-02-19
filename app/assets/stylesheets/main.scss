@@ -99,8 +99,11 @@ textarea{
 .top-bar .logo a{
   color: #2f2f2f;
   opacity: 1;
-  font-size: 32px;
+  font-size: 24px;
   text-decoration: none;
+}
+.top-bar .logo a span{
+  color: #847eff;
 }
 .top-bar .nav{
   width: fit-content;
@@ -141,7 +144,7 @@ textarea{
   color: #2f2f2f;
 }
 .cta-btn{
-  background: #c54cb6;
+  background: #847eff;
   margin: 50px auto;
   font-size: 16px;
   font-weight: 600;
@@ -731,8 +734,8 @@ a.close{
     width: 70%;
   }
   .content .home-content .splash{
-    width: 90%;
-    text-align: left;
+    width: 100%;
+    text-align: center;
     padding-top: 100px;
     margin: 0;
   }
